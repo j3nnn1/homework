@@ -1,0 +1,16 @@
+/*
+/div#centrar {
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+*/
+
+body { text-align: center;}
+body * { text-align: left;}
+
+div#centrar {
+    width:50%;
+    margin: 0 auto;
+}

@@ -1,0 +1,18 @@
+h1 {color: #000;
+    border: 10px solid #001298;
+    size: 18pt;
+}
+p {color: #D517C2; size: 10pt; }
+
+p:first-letter {
+color: #00FF00;
+size: 20pt;
+}
+
+div p {
+color: black;
+}
+
+p.nota {
+color: green;
+}

@@ -1,0 +1,43 @@
+
+div#pepito {
+
+    border: 1px solid block;
+    margin: 20px;
+    padding: 20px;
+    width: 200px;
+    height: 20px;
+    background-color: green;
+
+}
+
+p {
+font-size: 2em;
+}
+
+li em {color: olive;}
+/*todos los em que esten debajo de un li se pintaran de olivo,  esto es un selector por descendencia */
+
+h1 em,  h2 em,  h3 em { color:red; }
+/* Esto es una lista de selectores contextuales*/
+
+ol a em {font-weight: bold;}
+
+img[title] { border: 3px solid green; }
+img[title="Hola_jennifer"] { border: 3px solid red; }
+
+*[lang|="it"] {
+    font-family: SimSum-18030,SimHei,  serif;
+    border: 2px solid black;
+    font-size: 19pt;
+}
+
+blockquote:before {
+    content:'"';
+    font-size:100px;
+    color:purple;
+}
+blockquote:after {
+    content:'"';
+    font-size:100px;
+    color:purple;
+}
