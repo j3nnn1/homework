@@ -1,0 +1,9 @@
+---
+elements:
+  -type: Repeteable
+   name: my_rep
+   elements: 
+     - type:text
+       name: foo
+     - type: text
+       name: bar

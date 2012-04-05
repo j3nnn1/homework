@@ -1,0 +1,14 @@
+# Configuration LDAP
+Covetel::LDAP: 
+   host: 192.168.0.240
+   base: dc=example,dc=com,dc=ve
+   base_personas: ou=Personas,dc=example,dc=com,dc=ve
+   base_grupos: ou=Grupos,dc=example,dc=com,dc=ve
+   base_mantenimiento: ou=Mantenimiento,dc=example,dc=com,dc=ve
+   usuario_mantenimiento: cn=Usuario Mantenimiento
+   grupo_mantenimiento: cn=Grupo Mantenimiento
+   dn: cn=admin,dc=example,dc=com,dc=ve
+   password: elpassword
+   start_tls: 0
+   entry_class: Covetel::LDAP::Person
+   connection_class: Covetel::LDAP
