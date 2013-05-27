@@ -1,6 +1,6 @@
 require(DMwR)
 # must set ydata as factor and has to be placed at the end!!!!!!!!
-data =  read.table('creditosForSPSS_clean.csv', sep=',', header=T)
+data =  read.table('creditosForDoSmote.csv', sep=',', header=T)
 
 train <- sample(nrow(data), floor(nrow(data) * 0.66)) 
 training <- data[train, ] 
