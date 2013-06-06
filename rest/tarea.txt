@@ -1,0 +1,11 @@
+
+tomar la controladora 
+metodo POST para crear.
+metodo PUT para actualizar.
+implementar el metodo personas,  el metodo get pero en plural 
+
+personas_GET --> 
+plugin data tabla de jquery para recibir la lista.
+helper de controller rest,  para personalizar los mensajes de respuesta.
+
+

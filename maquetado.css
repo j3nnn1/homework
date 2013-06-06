@@ -1,0 +1,37 @@
+#header {
+    background: #ccc;
+    padding: 15px;
+}
+#left {
+    float: left;
+    width: 80%;
+    margin-left: 3%;
+    margin-right: 3%;
+}
+#right {
+    float:right;
+}
+#footer {
+clear: both; 
+padding: 3px;
+background: #666;
+}
+div#right li {
+    cursor: pointer;
+    list-style: none;
+    margin-top: 5px;
+    padding: 5px;
+}
+div#right li:hover {
+    color: white;
+}
+div#right li:active {
+    background-color: yellow;
+}
+div#right li:focus {
+    background-color: blue;
+}
+.enlace a:visited {
+    background-color: olive;
+}
+

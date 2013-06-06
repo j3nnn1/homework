@@ -1,0 +1,99 @@
+package rest::Controller::REST;
+use Moose;
+use namespace::autoclean;
+
+BEGIN {extends 'Catalyst::Controller::REST'; }
+
+=head1 NAME
+
+rest::Controller::REST - Catalyst Controller
+
+=head1 DESCRIPTION
+
+Catalyst Controller.
+
+=head1 METHODS
+
+=cut
+
+sub prueba :Local :ActionClass('REST') {
+
+}
+
+sub prueba_GET {
+
+	my ($self, $c) = @_;
+
+	#$self->status_ok($c,
+	#		 entity => {
+	#			nombre => 'Jennifer',
+	##			apellido => 'Maldonado'
+	#		 }
+	#		);
+	$self->status_ok( $c , entity => { radiohead => " Is a good band ! " } ) ;
+
+}
+
+sub prueba_POST {
+	my ($self, $c) = @_;
+	$self -> status_created($c ,
+				location => $c->req->uri->as_string ,
+				entity => {
+					radiohead => " Is a good band ! " ,
+					}
+				);
+
+}
+
+sub estado :Local :ActionClass('REST'){
+
+}
+
+sub estado_GET {
+
+	my ($self, $c) = @_;
+	$self-> status_gone ( $c,
+			message => " El documento fue eliminado . " ,);
+	
+
+}
+
+sub estado_POST {
+
+	my ($self, $c) = @_;
+	$self->status_not_found($c , message => "No puede encontrar lo que estas buscando" ,);
+
+}
+
+sub estado_PUT {
+
+	my ($self, $c) = @_;
+	$self->status_not_found($c , message => "No puede encontrar lo que estas buscando" ,);
+
+}
+
+=head2 index
+
+=cut
+
+sub index :Path :Args(0) {
+    my ( $self, $c ) = @_;
+
+    $c->response->body('Matched rest::Controller::REST in REST.');
+}
+
+
+=head1 AUTHOR
+
+Jenni,5555555,4444444,333333
+
+=head1 LICENSE
+
+This library is free software. You can redistribute it and/or modify
+it under the same terms as Perl itself.
+
+=cut
+
+__PACKAGE__->meta->make_immutable;
+
+1;

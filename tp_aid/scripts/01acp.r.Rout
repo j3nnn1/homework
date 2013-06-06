@@ -1,0 +1,46 @@
+
+R version 2.15.1 (2012-06-22) -- "Roasted Marshmallows"
+Copyright (C) 2012 The R Foundation for Statistical Computing
+ISBN 3-900051-07-0
+Platform: x86_64-unknown-linux-gnu (64-bit)
+
+R es un software libre y viene sin GARANTIA ALGUNA.
+Usted puede redistribuirlo bajo ciertas circunstancias.
+Escriba 'license()' o 'licence()' para detalles de distribucion.
+
+R es un proyecto colaborativo con muchos contribuyentes.
+Escriba 'contributors()' para obtener más información y
+'citation()' para saber cómo citar R o paquetes de R en publicaciones.
+
+Escriba 'demo()' para demostraciones, 'help()' para el sistema on-line de ayuda,
+o 'help.start()' para abrir el sistema de ayuda HTML con su navegador.
+Escriba 'q()' para salir de R.
+
+> library("rgl")
+> setwd('/media/misperoles/git/homework/tp_aid')
+> winewhite = read.table('./data/winewithoutliers.csv', sep=',', header=T)
+> 
+> winewhite.acp = prcomp(winewhite[,2:12], scale=T)
+> 
+> #Proportion of Variance 0.2817 0.1751 0.1410 0.1103 0.08721
+> summary(winewhite.acp)
+Importance of components:
+                          PC1    PC2    PC3    PC4    PC5     PC6     PC7
+Standard deviation     1.8573 1.2523 1.0943 1.0414 0.9867 0.87555 0.85508
+Proportion of Variance 0.3136 0.1426 0.1089 0.0986 0.0885 0.06969 0.06647
+Cumulative Proportion  0.3136 0.4562 0.5650 0.6636 0.7521 0.82181 0.88828
+                           PC8     PC9    PC10    PC11
+Standard deviation     0.75461 0.61252 0.52045 0.11587
+Proportion of Variance 0.05177 0.03411 0.02462 0.00122
+Cumulative Proportion  0.94005 0.97416 0.99878 1.00000
+> 
+> #acp
+> plot(winewhite.acp, type='l')
+> 
+> #biplot
+> biplot(winewhite.acp)
+> 
+> #scatterplot
+> ggplot(winewhite, aes(fixed.acidity, volatile.acidity)) + geom_point(colour="blue", alpha=I(0.2))
+Error: no se pudo encontrar la función "ggplot"
+Ejecución interrumpida
