@@ -1,0 +1,99 @@
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Ratio Remunercion Cantidad de Empleo</title>
+      <script type="text/javascript" src="http://d3js.org/d3.v3.min.js"></script>
+		<style type="text/css">	
+.axis path,
+.axis line {
+    fill: none;
+    stroke: black;
+    shape-rendering: crispEdges;
+}
+
+.axis text {
+    font-family: sans-serif;
+    font-size: 11px;
+}		
+		</style>
+	</head>
+	<body width="1000px">
+	<h2> Tasa de Remuneraci&oacute;n Cantidad de Empleo </h2>
+<script type="text/javascript">
+var dataset= [
+[3500164,559],
+[3810365,546],
+[4070928,544],
+[4034867,544],
+[3979311,544],
+[3905377,539],
+[3507681,566],
+[3710749,684],
+[4163498,825],
+[4671137,1009],
+[5123921,1250],
+[5564617,1522],
+[5904195,1983],
+[5816493,2398],
+[5960975,3064]];
+//d3.csv("Empleo.csv", function(data) {
+ //  dataset=data);
+//});	
+ var w = "1000";
+ var h = "400";
+ var svg = d3.select("body")
+            .append("svg")
+            .attr("width", w)
+            .attr("height", h);
+			
+ var maxvalX = d3.max(dataset, function(d) { return d[0]; });
+ var maxvalY = d3.max(dataset, function(d) { return d[1]; });
+ var minvalX = d3.min(dataset, function(d){ return d[0]; });
+ var minvalY = d3.min(dataset, function(d){ return d[1]; });
+ 
+ var xscale = d3.scale.linear()
+               .domain([minvalX, maxvalX ])
+               .range([50, (w-50)]);
+			   
+ var yscale = d3.scale.linear()
+               .domain([minvalY, (maxvalY)])
+               .range([50, (h-50)]);
+			   
+ var xAxis = d3.svg.axis()
+               .scale(xscale)
+               .orient("bottom");			   
+ var yAxis = d3.svg.axis()
+               .scale(yscale)
+			   .orient("right");
+			   
+ var xpadding = 10;
+ var ypadding = 40;
+ //scatterplot
+ svg.selectAll("circle") 
+   .data(dataset)
+   .enter()
+   .append("circle")
+   .attr("cx", function(d) {
+       return xscale(d[0]);
+   })
+   .attr("cy", function(d) {
+        if (d[1]!=maxvalY) {
+		    return yscale(maxvalY) - yscale(d[1]);
+		}
+        return 50;
+   })
+   .attr("r", 3)
+   .style("fill", "purple");
+
+//axis
+svg.append("g")
+   .attr("class", "axis")
+   .attr("transform", "translate(0," + (h - 20) + ")")
+   .call(xAxis);   
+svg.append("g")
+   .attr("class", "axis")
+   .attr("transform", "translate("+(w -30)+", 0)")
+   .call(yAxis);
+</script>
+</body>
+</html>
