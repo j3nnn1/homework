@@ -1,0 +1,59 @@
+<html lang="en">
+    <head>
+       <meta charset="utf-8">
+       <title>Haciendo un Mapa D3</title>
+       <script type="text/javascript" src="http://d3js.org/d3.v3.min.js"></script>
+       <script src="js/topojson.v0.min.js"></script>
+       <style type="text/css">	
+
+path {
+	  stroke: white;
+	    stroke-width: 0.25px;
+	      fill: grey;
+      }
+.axis path,
+.axis line {
+    fill: none;
+    stroke: black;
+    shape-rendering: crispEdges;
+}
+
+.axis text {
+    font-family: sans-serif;
+    font-size: 11px;
+}		
+		</style>
+	</head>
+	<body width="1000px">
+	<h2> Mapa </h2>
+<script type="text/javascript">
+var width = 960,
+    height = 500;
+var projection = d3.geo.mercator()
+	    .center([0, 5 ])
+	    .scale(900)
+	    .rotate([-180,0]);
+
+
+
+var svg = d3.select("body").append("svg")
+    .attr("width", width)
+        .attr("height", height);
+
+var path = d3.geo.path()
+	    .projection(projection);
+
+var g = svg.append("g");
+
+d3.json("data/provincias.geojson", function(error, topology) {
+    g.selectAll("path")
+      .data(topojson.object(topology, topology.objects.countries)
+          .geometries)
+    .enter()
+      .append("path")
+      .attr("d", path)
+});
+
+</script>
+</body>
+</html>
