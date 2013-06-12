@@ -3,7 +3,7 @@
        <meta charset="utf-8">
        <title>Haciendo un Mapa D3</title>
        <script type="text/javascript" src="http://d3js.org/d3.v3.min.js"></script>
-       <script src="js/topojson.v0.min.js"></script>
+       <script type="text/javascript" src="http://d3js.org/topojson.v1.min.js"></script>
        <style type="text/css">	
 
 path {
@@ -45,13 +45,21 @@ var path = d3.geo.path()
 
 var g = svg.append("g");
 
-d3.json("data/provincias.geojson", function(error, topology) {
-    g.selectAll("path")
-      .data(topojson.object(topology, topology.objects.countries)
+var e;
+
+d3.json("data/uk.json", function(error, topology) {
+      //console.log(topology);
+       svg.append("path")
+         .datum(topojson.feature(topology, topology.objects.subunits))
+	 .attr("d", path);
+
+   /*
+      g.selectAll("path")
+       .data(topojson.object(topology, topology.objects.countries)
           .geometries)
     .enter()
       .append("path")
-      .attr("d", path)
+      .attr("d", path) */
 });
 
 </script>
