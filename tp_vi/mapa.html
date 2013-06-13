@@ -5,9 +5,9 @@
        <!-- <script type="text/javascript" src="http://d3js.org/d3.v3.min.js"></script>
        <script type="text/javascript" src="http://d3js.org/topojson.v1.min.js"></script>
 <script type="text/javascript" src="http://d3js.org/queue.v1.min.js"></script> -->
-       <script type="text/javascript" src="d3.v3.min.js"></script>
-       <script type="text/javascript" src="topojson.v1.min.js"></script>
-<script type="text/javascript" src="queue.v1.min.js"></script> 
+       <script type="text/javascript" src="js/d3.v3.min.js"></script>
+       <script type="text/javascript" src="js/topojson.v1.min.js"></script>
+<script type="text/javascript" src="js/queue.v1.min.js"></script> 
        <style type="text/css">	
 
 .states {
@@ -65,8 +65,8 @@ var path = d3.geo.path()
        .projection(projection);
 
 queue()
-    .defer(d3.json, "salidaprovincias.topojson")
-    .defer(d3.json, "centroide_provincia.geoson")
+    .defer(d3.json, "provincias_polygon.topojson")
+    .defer(d3.json, "centroide_provincia.geojson")
     .await(ready);
 
 function ready(error, us, centroid) {
