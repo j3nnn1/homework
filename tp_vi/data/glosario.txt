@@ -1,0 +1,35 @@
+
+INDICADORES LABORALES
+
+Conceptos Básicos
+
+Población desocupada (D): se refiere a personas que, no teniendo ocupación, están buscando activamente trabajo.
+
+Población subocupada (SO):se refiere a los ocupados que trabajan menos de 35 horas semanales por causas involuntarias y están dispuestos a trabajar más horas.
+
+Subocupado demandante (SOD : es el ocupado que quiere trabajar más y está buscando activamente trabajarlaso.
+
+Subocupado no  demandante (SON ): está dispuesto a trabajar más horas, pero no está en búsqueda activa  de otra ocupación.
+
+Población ocupada:es la que tiene al menos una ocupación, sin importar la cantidad de horas que trabaja, es decir que se incluye a los subocupados.
+
+Población económicamente activa (PEA):la integran las personas que tienen una ocupación o que sin tenerla la están buscando activamente. Esta compuesta por la población ocupada más la población desocupada.
+
+ Metodología Utilizada por INDEC para el cálculo
+
+Tasa de actividad: calculada como porcentaje entre la población económicamente activa y la población total (PT).
+
+Tasa de empleo: calculada como porcentaje entre la población ocupada y la población total.
+
+Tasa de desocupación: calculada como porcentaje entre la población desocupada y la población económicamente activa.
+
+Tasa de subocupación horaria: calculada como porcentaje entre la población subocupada y la población económicamente activa.
+Tasa de subocupación demandante: calculada como porcentaje entre la población de subocupados demandantes y la población económicamente activa.
+
+Tasa de subocupación no demandante: calculada como porcentaje entre la población de subocupados no demandantes y la población económicamente activa.
+
+Tasa de Actividad:  PEA/PT
+Tasa de Empleo:  O/PT
+Tasa de Desocupación:  D/PEA
+Tasa de Subocupación Horaria:  SO/PEA
+Tasa de Subocupación Demandante:  SOD/PEA
