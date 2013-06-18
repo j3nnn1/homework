@@ -65,22 +65,22 @@ var path = d3.geo.path()
        .projection(projection);
 
 queue()
-    .defer(d3.json, "provincias_polygon.topojson")
+    .defer(d3.json, "argentina.topojson")
     .defer(d3.json, "centroide_provincia.geojson")
     .await(ready);
 
 function ready(error, us, centroid) {
-
+  console.log(us.objects);
   svg.append("path")
       .attr("class", "states")
-      .datum(topojson.feature(us, us.objects.provincias))
+      .datum(topojson.feature(us, us.objects.ARG_adm2))
       .attr("d", path);
 
   svg.selectAll(".symbol")
       .data(centroid.features.sort(function(a, b) { console.log(a); return b.properties.population - a.properties.population; }))
     .enter().append("path")
       .attr("class", "symbol")
-      .attr("d", path.pointRadius(function(d) { return radius(d.properties.population); }));
+      .attr("d", path.pointRadius(function(d) { return radius(d.properties.population); }));  
 } 
 
 
