@@ -1,6 +1,8 @@
 {
 "type": "FeatureCollection",
 "features": [
+{ "type": "Feature", "properties": { "UNION": -2147483648.000000, "ID_0": 11, "ISO": "ARG", "NAME_0": "Argentina", "ID_1": 1, "NAME_1": "Buenos Aires", "ID_2": 10, "NAME_2": "Bahia Blanca", "population": 33333 }, "geometry": { "type": "Point", "coordinates": [ -62.169571565270779, -38.58003467748344 ] } },
+
 { "type": "Feature", "properties": { "UNION": -2147483648.000000, "JURISDICCI": "SANTA CRUZ", "CAPITAL": "RIO GALLEGOS", "FUENTE": "IGN", "population": 673267}, "geometry": { "type": "Point", "coordinates": [ -69.956171, -48.815801 ] } }
 ,
 { "type": "Feature", "properties": { "UNION": -2147483648.000000, "JURISDICCI": "CHUBUT", "CAPITAL": "RAWSON", "FUENTE": "IGN", "population": 673267}, "geometry": { "type": "Point", "coordinates": [ -68.526361, -43.788560 ] } }
