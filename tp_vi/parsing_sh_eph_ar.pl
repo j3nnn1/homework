@@ -7,6 +7,12 @@ use Data::Dumper;
 my $parser = Spreadsheet::ParseExcel->new();
 my $workbook = $parser->parse('./data/sh_eph_continuatrimestral.xls');
 
+sub getcoordenate() {
+    my $province = shift;
+
+    
+}
+
 if ( !defined $workbook ) {
     die $parser->error(), ".\n";
 }
