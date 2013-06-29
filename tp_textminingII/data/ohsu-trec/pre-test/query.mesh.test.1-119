@@ -1,0 +1,833 @@
+<top>
+<num> Number: TST1
+<title> Acquired Immunodeficiency Syndrome
+<desc> Description:
+An acquired defect of cellular immunity associated with infection by the human immunodeficiency virus (HIV), a CD4-positive T-lymphocyte count under 200 cells/microliter or less than 14% of total lymphocytes, and increased susceptibility to opportunistic infections and malignant neoplasms. Clinical manifestations also include emaciation (wasting) and dementia. These elements reflect criteria for AIDS as defined by the CDC in 1993.
+</top>
+
+<top>
+<num> Number: TST2
+<title> Acute Disease
+<desc> Description:
+Disease having a short and relatively severe course.
+</top>
+
+<top>
+<num> Number: TST3
+<title> Adenocarcinoma
+<desc> Description:
+A malignant epithelial tumor with a glandular organization.
+</top>
+
+<top>
+<num> Number: TST4
+<title> Administration, Oral
+<desc> Description:
+The giving of drugs, chemicals, or other substances by mouth.
+</top>
+
+<top>
+<num> Number: TST5
+<title> Adolescence
+<desc> Description:
+The period of life beginning with the appearance of secondary sex characteristics and terminating with the cessation of somatic growth. The years usually referred to as adolescence lie between 13 and 18 years of age.
+</top>
+
+<top>
+<num> Number: TST6
+<title> Adult
+<desc> Description:
+A person having attained full growth or maturity. Adults are of 19 through 44 years of age.
+</top>
+
+<top>
+<num> Number: TST7
+<title> Age Factors
+<desc> Description:
+Age as a constituent element or influence contributing to the production of a result. It may be applicable to the cause or the effect of a circumstance. It is used with human or animal concepts but should be differentiated from AGING, a physiological process, and TIME FACTORS which refers only to the passage of time.
+</top>
+
+<top>
+<num> Number: TST8
+<title> Aged
+<desc> Description:
+A person 65 through 79 years of age. For a person older than 79 years, AGED, 80 AND OVER is available.
+</top>
+
+<top>
+<num> Number: TST9
+<title> Aged, 80 and over
+<desc> Description:
+A person 80 years of age and older.
+</top>
+
+<top>
+<num> Number: TST10
+<title> Aging
+<desc> Description:
+The gradual changes in the structure and function of humans and animals that occur with the passage of time, that do not result from disease or other gross accidents, and that eventually lead to the increased probability of death as the person or animal grows older. It does not apply to microorganisms. (From Dorland, 28th ed)
+</top>
+
+<top>
+<num> Number: TST11
+<title> Amino Acid Sequence
+<desc> Description:
+The order of amino acids as they occur in a polypeptide chain. This is referred to as the primary structure of proteins. It is of fundamental importance in determining PROTEIN CONFORMATION.
+</top>
+
+<top>
+<num> Number: TST12
+<title> Antibiotics
+<desc> Description:
+Chemical substances produced by microorganisms, that have the capacity, in dilute solutions, to inhibit the growth of or to kill other organisms. Antibiotics that are sufficiently nontoxic to the host are used as chemotherapeutic agents in the treatment of infectious diseases of man, animals, and plants. (Dorland, 28th ed)
+</top>
+
+<top>
+<num> Number: TST13
+<title> Antibodies, Monoclonal
+<desc> Description:
+Antibodies produced by clones of cells such as those isolated after hybridization of activated B lymphocytes with neoplastic cells. These hybrids are often referred to as hybridomas.
+</top>
+
+<top>
+<num> Number: TST14
+<title> Antineoplastic Agents, Combined
+<desc> Description:
+The use of two or more chemicals simultaneously or sequentially in the drug therapy of neoplasms. The drugs need not be in the same dosage form.
+</top>
+
+<top>
+<num> Number: TST15
+<title> Arthritis, Rheumatoid
+<desc> Description:
+A chronic systemic disease, primarily of the joints, marked by inflammatory changes in the synovial membranes and articular structures, widespread fibrinoid degeneration of the collagen fibers in mesenchymal tissues, and by atrophy and rarefaction of bony structures. Etiology is unknown, but autoimmune mechanisms have been implicated.
+</top>
+
+<top>
+<num> Number: TST16
+<title> Asthma
+<desc> Description:
+A form of bronchial disorder associated with airway obstruction, marked by recurrent attacks of paroxysmal dyspnea, with wheezing due to spasmodic contraction of the bronchi.
+</top>
+
+<top>
+<num> Number: TST17
+<title> B-Lymphocytes
+<desc> Description:
+Lymphoid cells concerned with humoral immunity. They are short-lived cells resembling bursa-derived lymphocytes of birds in their production of immunoglobulin upon appropriate stimulation.
+</top>
+
+<top>
+<num> Number: TST18
+<title> Bacterial Infections
+<desc> Description:
+Infections by bacteria, general or unspecified.
+</top>
+
+<top>
+<num> Number: TST19
+<title> Base Sequence
+<desc> Description:
+The sequence of purines and pyrimidines in nucleic acids and polynucleotides. It is also called nucleotide or nucleoside sequence.
+</top>
+
+<top>
+<num> Number: TST20
+<title> Biopsy
+<desc> Description:
+Removal and pathologic examination of specimens in the form of small pieces of tissue from the living body.
+</top>
+
+<top>
+<num> Number: TST21
+<title> Blood Glucose
+<desc> Description:
+Sugar in the blood, glucose, the form in which carbohydrate is carried in the blood, usually in a concentration of 70-100 mg per 100 ml. An abnormally diminished concentration of blood glucose is HYPOGLYCEMIA, an abnormally increased amount is HYPERGLYCEMIA. (From Dorland, 28th ed, p1601)
+</top>
+
+<top>
+<num> Number: TST22
+<title> Bone Marrow
+<desc> Description:
+The soft tissue filling the cavities of bones. Bone marrow exists in two types, yellow and red. Yellow marrow is found in the large cavities of large bones and consists mostly of fat cells and a few primitive blood cells. Red marrow is a hematopoietic tissue and is the site of production of erythrocytes and granular leukocytes. Bone marrow is made up of a framework of connective tissue containing branching fibers with the frame being filled with marrow cells.
+</top>
+
+<top>
+<num> Number: TST23
+<title> Brain
+<desc> Description:
+That part of the central nervous system contained within the cranium, comprising the prosencephalon, mesencephalon, and rhombencephalon. It is derived from the anterior part of the embryonic neural tube. Functions include muscle control and coordination, sensory reception and integration, speech production, memory storage, and the elaboration of thought and emotions. (Dorland, 28th ed)
+</top>
+
+<top>
+<num> Number: TST24
+<title> Breast Neoplasms
+<desc> Description:
+Tumors or cancer of the breast.
+</top>
+
+<top>
+<num> Number: TST25
+<title> Calcium
+<desc> Description:
+A basic element found in nearly all organized tissues. It is a member of the alkaline earth family of metals with the atomic symbol Ca, atomic number 20, and atomic weight 40. Calcium is the most abundant mineral in the body and combines with phosphorus to form calcium phosphate in the bones and teeth. It is essential for the normal functioning of nerves and muscles and plays a role in blood coagulation (as factor IV) and in many enzymatic processes.
+</top>
+
+<top>
+<num> Number: TST26
+<title> Carcinoma, Squamous Cell
+<desc> Description:
+A carcinoma derived from stratified squamous epithelium. It may also occur in sites where glandular or columnar epithelium is normally present. (From Stedman, 25th ed)
+</top>
+
+<top>
+<num> Number: TST27
+<title> Cell Division
+<desc> Description:
+The fission of a cell.
+</top>
+
+<top>
+<num> Number: TST28
+<title> Cells, Cultured
+<desc> Description:
+Cells propagated in vitro in special media conducive to their growth. Cultured cells are used to study developmental, morphologic, metabolic, physiologic, and genetic processes, among others.
+</top>
+
+<top>
+<num> Number: TST29
+<title> Child
+<desc> Description:
+A person 6 to 12 years of age. An individual 2 to 5 years old is CHILD, PRESCHOOL.
+</top>
+
+<top>
+<num> Number: TST30
+<title> Child, Preschool
+<desc> Description:
+A child between the ages of 2 and 5.
+</top>
+
+<top>
+<num> Number: TST31
+<title> Cholesterol
+<desc> Description:
+The principal sterol of all higher animals, distributed in body tissues, especially the brain and spinal cord, and in animal fats and oils.
+</top>
+
+<top>
+<num> Number: TST32
+<title> Chronic Disease
+<desc> Description:
+Diseases which have one or more of the following characteristics: they are permanent, leave residual disability, are caused by nonreversible pathological alteration, require special training of the patient for rehabilitation, or may be expected to require a long period of supervision, observation, or care. (Dictionary of Health Services Management, 2d ed)
+</top>
+
+<top>
+<num> Number: TST33
+<title> Clinical Trials
+<desc> Description:
+Pre-planned studies of the safety, efficacy, or optimum dosage schedule (if appropriate) of one or more diagnostic, therapeutic, or prophylactic drugs, devices, or techniques selected according to predetermined criteria of eligibility and observed for predefined evidence of favorable and unfavorable effects. This concept includes clinical trials conducted both in the U.S. and in other countries.
+</top>
+
+<top>
+<num> Number: TST34
+<title> Cloning, Molecular
+<desc> Description:
+The insertion of recombinant DNA molecules from prokaryotic and/or eukaryotic sources into a replicating vehicle, such as a plasmid or virus vector, and the introduction of the resultant hybrid molecules into recipient cells without altering the viability of those cells.
+</top>
+
+<top>
+<num> Number: TST35
+<title> Combined Modality Therapy
+<desc> Description:
+The treatment of a disease or condition by several different means simultaneously or sequentially. Chemoimmunotherapy, RADIOIMMUNOTHERAPY, chemoradiotherapy, cryochemotherapy, and SALVAGE THERAPY are seen most frequently, but their combinations with each other and surgery are also used.
+</top>
+
+<top>
+<num> Number: TST36
+<title> Coronary Disease
+<desc> Description:
+Disorder of cardiac function due to an imbalance between myocardial function and the capacity of the coronary vessels to supply sufficient flow for normal function. It is a form of MYOCARDIAL ISCHEMIA (insufficient blood supply to the heart muscle) caused by a decreased capacity of the coronary vessels.
+</top>
+
+<top>
+<num> Number: TST37
+<title> Coronary Vessels
+<desc> Description:
+The veins and arteries of the heart.
+</top>
+
+<top>
+<num> Number: TST38
+<title> Cyclosporins
+<desc> Description:
+A group of closely related cyclic undecapeptides from the fungi Trichoderma polysporum and Cylindocarpon lucidum. They have some antineoplastic and antifungal action and significant immunosuppressive effects. Cyclosporins have been proposed as adjuvants in tissue and organ transplantation to suppress graft rejection.
+</top>
+
+<top>
+<num> Number: TST39
+<title> Diagnosis, Differential
+<desc> Description:
+Determination of which one of two or more diseases or conditions a patient is suffering from by systematically comparing and contrasting results of diagnostic measures.
+</top>
+
+<top>
+<num> Number: TST40
+<title> Disease Models, Animal
+<desc> Description:
+Animal disease whose pathologic mechanisms are sufficiently similar to those of a different human disease for the animal disease to serve as a model. The animal disease may be either induced or naturally occurring.
+</top>
+
+<top>
+<num> Number: TST41
+<title> DNA
+<desc> Description:
+A deoxyribonucleotide polymer that is the primary genetic material of all cells. Eukaryotic and prokaryotic organisms normally contain DNA in a double-stranded state, yet several important biological processes transiently involve single-stranded regions. DNA, which consists of a polysugar-phosphate backbone possessing projections of purines (adenine and guanine) and pyrimidines (thymine and cytosine), forms a double helix that is held together by hydrogen bonds between these purines and pyrimidines (adenine to thymine and guanine to cytosine).
+</top>
+
+<top>
+<num> Number: TST42
+<title> Dogs
+<desc> Description:
+The domestic dog, Canis familiaris, comprising about 400 breeds, of the carnivore family Canidae. They are worldwide in distribution and live in association with people. (Walker's Mammals of the World, 5th ed, p1065)
+</top>
+
+<top>
+<num> Number: TST43
+<title> Dose-Response Relationship, Drug
+<desc> Description:
+The relationship between the dose of an administered drug and the response of the organism to the drug.
+</top>
+
+<top>
+<num> Number: TST44
+<title> Double-Blind Method
+<desc> Description:
+A method of studying a drug or procedure in which both the subjects and investigators are kept unaware of who is actually getting which specific treatment.
+</top>
+
+<top>
+<num> Number: TST45
+<title> Drug Administration Schedule
+<desc> Description:
+Time schedule for administration of a drug in order to achieve optimum effectiveness and convenience.
+</top>
+
+<top>
+<num> Number: TST46
+<title> Drug Evaluation
+<desc> Description:
+Any process by which toxicity, metabolism, absorption, elimination, preferred route of administration, safe dosage range, etc., for a drug or group of drugs is determined through clinical assessment in humans or veterinary animals.
+</top>
+
+<top>
+<num> Number: TST47
+<title> Drug Therapy, Combination
+<desc> Description:
+Drug therapy with two or more drugs given separately for a combined effect.
+</top>
+
+<top>
+<num> Number: TST48
+<title> Echocardiography
+<desc> Description:
+Ultrasonic recording of the size, motion, and composition of the heart and surrounding tissues. The standard approach is transthoracic.
+</top>
+
+<top>
+<num> Number: TST49
+<title> Electrocardiography
+<desc> Description:
+Recording of the moment-to-moment electromotive forces of the heart as projected onto various sites on the body's surface, delineated as a scalar function of time.
+</top>
+
+<top>
+<num> Number: TST50
+<title> Enzyme-Linked Immunosorbent Assay
+<desc> Description:
+An immunoassay utilizing an antibody labeled with an enzyme marker such as horseradish peroxidase. While either the enzyme or the antibody is bound to an immunosorbent substrate, they both retain their biologic activity; the change in enzyme activity as a result of the enzyme-antibody-antigen reaction is proportional to the concentration of the antigen and can be measured spectrophotometrically or with the naked eye. Many variations of the method have been developed.
+</top>
+
+<top>
+<num> Number: TST51
+<title> Escherichia coli
+<desc> Description:
+A species of gram-negative, facultatively anaerobic, rod-shaped bacteria commonly found in the lower part of the intestine of warm-blooded animals. It is usually nonpathogenic, but some strains are known to produce diarrhea and pyogenic infections.
+</top>
+
+<top>
+<num> Number: TST52
+<title> Evaluation Studies
+<desc> Description:
+Studies determining the effectiveness or value of processes, personnel, and equipment, or the material on conducting such studies. For drugs and devices, CLINICAL TRIALS, DRUG EVALUATION, and DRUG SCREENING are available.
+</top>
+
+<top>
+<num> Number: TST53
+<title> Exertion
+<desc> Description:
+Expenditure of energy by skeletal muscles. Intensity of exertion may be measured by rate of oxygen consumption, heat produced, or heart rate. Perceived exertion, a psychological measure of exertion, is included.
+</top>
+
+<top>
+<num> Number: TST54
+<title> Fluorescent Antibody Technique
+<desc> Description:
+Test for tissue antigen using either a direct method, by conjugation of antibody with fluorescent dye (FLUORESCENT ANTIBODY TECHNIQUE, DIRECT) or an indirect method, by formation of antigen-antibody complex which is then labeled with fluorescein-conjugated anti-immunoglobulin antibody (FLUORESCENT ANTIBODY TECHNIQUE, INDIRECT). The tissue is then examined by fluorescence microscopy.
+</top>
+
+<top>
+<num> Number: TST55
+<title> Follow-Up Studies
+<desc> Description:
+Studies in which individuals or populations are followed to assess the outcome of exposures, procedures, or effects of a characteristic, e.g., occurrence of disease.
+</top>
+
+<top>
+<num> Number: TST56
+<title> Gene Expression Regulation
+<desc> Description:
+Any of the processes by which nuclear, cytoplasmic, or intercellular factors influence the differential control of gene action at the level of transcription or translation. These processes include gene activation and genetic induction.
+</top>
+
+<top>
+<num> Number: TST57
+<title> Glucose
+<desc> Description:
+D-Glucose. A primary source of energy for living organisms. It is naturally occurring and is found in fruits and other parts of plants in its free state. It is used therapeutically in fluid and nutrient replacement.
+</top>
+
+<top>
+<num> Number: TST58
+<title> Graft Rejection
+<desc> Description:
+An immune response with both cellular and humoral components, directed against an allogeneic transplant, whose tissue antigens are not compatible with those of the recipient.
+</top>
+
+<top>
+<num> Number: TST59
+<title> Heart
+<desc> Description:
+The hollow, muscular organ that maintains the circulation of the blood.
+</top>
+
+<top>
+<num> Number: TST60
+<title> Heart Ventricle
+<desc> Description:
+The lower right and left chambers of the heart. The right pumps venous blood into the lungs and the left pumps oxygenated blood into the systemic arterial circulation.
+</top>
+
+<top>
+<num> Number: TST61
+<title> Hemodynamics
+<desc> Description:
+The movements of the blood and the forces involved in systemic or regional blood circulation.
+</top>
+
+<top>
+<num> Number: TST62
+<title> Hypertension
+<desc> Description:
+Persistently high arterial blood pressure. Currently accepted threshold levels are 140 mm Hg systolic and 90 mm Hg diastolic pressure.
+</top>
+
+<top>
+<num> Number: TST63
+<title> Immunoenzyme Techniques
+<desc> Description:
+Immunologic techniques based on the use of: (1) enzyme-antibody conjugates; (2) enzyme-antigen conjugates; (3) antienzyme antibody followed by its homologous enzyme; or (4) enzyme-antienzyme complexes. These are used histologically for visualizing or labeling tissue specimens.
+</top>
+
+<top>
+<num> Number: TST64
+<title> Infant
+<desc> Description:
+A child between 1 and 23 months of age.
+</top>
+
+<top>
+<num> Number: TST65
+<title> Infant, Newborn
+<desc> Description:
+An infant during the first month after birth.
+</top>
+
+<top>
+<num> Number: TST66
+<title> Infusions, Intravenous
+<desc> Description:
+The long-term (minutes to hours) administration of a fluid into the vein through venipuncture, either by letting the fluid flow by gravity or by pumping it.
+</top>
+
+<top>
+<num> Number: TST67
+<title> Insulin
+<desc> Description:
+A protein hormone secreted by beta cells of the pancreas. Insulin plays a major role in the regulation of glucose metabolism, generally promoting the cellular utilization of glucose. It is also an important regulator of protein and lipid metabolism. Insulin is used as a drug to control insulin-dependent diabetes mellitus.
+</top>
+
+<top>
+<num> Number: TST68
+<title> Interleukin-2
+<desc> Description:
+Soluble substances elaborated by antigen- or mitogen-stimulated T-lymphocytes which induce DNA synthesis in naive lymphocytes.
+</top>
+
+<top>
+<num> Number: TST69
+<title> Kinetics
+<desc> Description:
+The branch of dynamics that pertains to the turnover or rate of change of a specific factor (e.g., erythrocytes - erythrokinetics, leukocytes - leukokinetics, iron - ferrokinetics), commonly expressed as units of amount per unit time. (Dorland, 28th ed)
+</top>
+
+<top>
+<num> Number: TST70
+<title> Leukocyte Count
+<desc> Description:
+A count of the number of white blood cells per unit volume in venous blood. A differential leukocyte count measures the relative numbers of the different types of white cells.
+</top>
+
+<top>
+<num> Number: TST71
+<title> Lung
+<desc> Description:
+Either of the pair of organs occupying the cavity of the thorax that effect the aeration of the blood.
+</top>
+
+<top>
+<num> Number: TST72
+<title> Lung Neoplasms
+<desc> Description:
+Tumors or cancer of the LUNG.
+</top>
+
+<top>
+<num> Number: TST73
+<title> Lymphocyte Transformation
+<desc> Description:
+Morphologic alteration of small lymphocytes in culture into large blast-like cells able to synthesize DNA and RNA and to divide mitotically. It is induced by interleukins, mitogens such as phytohemagglutinins, and by specific antigens. It may also occur in vivo, as in graft rejection and chronic myelogenous leukemia.
+</top>
+
+<top>
+<num> Number: TST74
+<title> Lymphocytes
+<desc> Description:
+White blood cells formed in the body's lymphoid tissue. The nucleus is round or ovoid with coarse, irregularly clumped chromatin while the cytoplasm is typically pale blue with azurophilic (if any) granules. Most lymphocytes can be classified as either T or B (with subpopulations of each); those with characteristics of neither major class are called null cells.
+</top>
+
+<top>
+<num> Number: TST75
+<title> Mice
+<desc> Description:
+The common name for the species Mus musculus.
+</top>
+
+<top>
+<num> Number: TST76
+<title> Microscopy, Electron
+<desc> Description:
+Visual and photographic microscopy in which electron beams with wavelengths thousands of times shorter than visible light are used in place of light, thereby allowing much greater magnification.
+</top>
+
+<top>
+<num> Number: TST77
+<title> Monitoring, Physiologic
+<desc> Description:
+The continuous measurement of physiological processes, blood pressure, heart rate, renal output, reflexes, respiration, etc., in a patient or experimental animal; includes pharmacologic monitoring, the measurement of administered drugs or their metabolites in the blood, tissues, or urine.
+</top>
+
+<top>
+<num> Number: TST78
+<title> Muscle Contraction
+<desc> Description:
+A process leading to shortening and/or development of tension in muscle tissue. Muscle contraction occurs by a sliding filament mechanism whereby actin filaments slide inward among the myosin filaments.
+</top>
+
+<top>
+<num> Number: TST79
+<title> Mutation
+<desc> Description:
+Any detectable and heritable change in the genetic material not caused by genetic segregation or recombination, which is transmitted to daughter cells and to succeeding generations, providing it is not a dominant lethal factor.
+</top>
+
+<top>
+<num> Number: TST80
+<title> Myocardial Contraction
+<desc> Description:
+Contractile activity of the heart.
+</top>
+
+<top>
+<num> Number: TST81
+<title> Myocardial Infarction
+<desc> Description:
+Gross necrosis of the myocardium, as a result of interruption of the blood supply to the area. (Dorland, 27th ed)
+</top>
+
+<top>
+<num> Number: TST82
+<title> Myocardium
+<desc> Description:
+The middle and thickest layer of the heart wall consisting of cardiac muscle.
+</top>
+
+<top>
+<num> Number: TST83
+<title> Neoplasm Recurrence, Local
+<desc> Description:
+The local recurrence of a neoplasm following treatment. It arises from microscopic cells of the original neoplasm that have escaped therapeutic intervention and later become clinically visible at the original site.
+</top>
+
+<top>
+<num> Number: TST84
+<title> Neoplasm Staging
+<desc> Description:
+Methods which attempt to express in replicable terms the extent of the neoplasm in the patient.
+</top>
+
+<top>
+<num> Number: TST85
+<title> Neoplasms
+<desc> Description:
+New abnormal growth of tissue. Malignant neoplasms show a greater degree of anaplasia and have the properties of invasion and metastasis, compared to benign neoplasms.
+</top>
+
+<top>
+<num> Number: TST86
+<title> Neutrophils
+<desc> Description:
+Granular leukocytes having a nucleus with three to five lobes connected by slender threads of chromatin, and cytoplasm containing fine inconspicuous granules and stainable by neutral dyes.
+</top>
+
+<top>
+<num> Number: TST87
+<title> Nucleic Acid Hybridization
+<desc> Description:
+Widely used technique which exploits the ability of complementary sequences in single-stranded DNAs or RNAs to pair with each other to form a double helix. Hybridization can take place between two complimentary DNA sequences, between a single-stranded DNA and a complementary RNA, or between two RNA sequences. The technique is used to detect and isolate specific sequences, measure homology, or define other characteristics of one or both strands. (Kendrew, Encyclopedia of Molecular Biology, 1994, p503; Dorlands, 28th ed, p781)
+</top>
+
+<top>
+<num> Number: TST88
+<title> Oxygen
+<desc> Description:
+An element with atomic symbol O, atomic number 8, and atomic weight 16. It is the most abundant element on earth and essential for respiration.
+</top>
+
+<top>
+<num> Number: TST89
+<title> Oxygen Consumption
+<desc> Description:
+The rate at which oxygen is used by a tissue; microliters of oxygen STPD used per milligram of tissue per hour; the rate at which oxygen enters the blood from alveolar gas, equal in the steady state to the consumption of oxygen by tissue metabolism throughout the body. (Stedman, 25th ed, p346)
+</top>
+
+<top>
+<num> Number: TST90
+<title> Pain
+<desc> Description:
+An unpleasant sensation induced by noxious stimuli and generally received by specialized nerve endings.
+</top>
+
+<top>
+<num> Number: TST91
+<title> Phenotype
+<desc> Description:
+The outward appearance of the individual. It is the product of interactions between genes and between the genotype and the environment. This includes the killer phenotype, characteristic of YEASTS.
+</top>
+
+<top>
+<num> Number: TST92
+<title> Postoperative Complications
+<desc> Description:
+Pathologic processes that affect patients after a surgical procedure. They may or may not be related to the disease for which the surgery was done, and they may or may not be direct results of the surgery.
+</top>
+
+<top>
+<num> Number: TST93
+<title> Predictive Value of Tests
+<desc> Description:
+In screening and diagnostic tests, the probability that a person with a positive test is a true positive (i.e., has the disease), is referred to as the predictive value of a positive test; whereas, the predictive value of a negative test is the probability that the person with a negative test does not have the disease. Predictive value is related to the sensitivity and specificity of the test.
+</top>
+
+<top>
+<num> Number: TST94
+<title> Pregnancy
+<desc> Description:
+The condition of having a developing embryo or fetus in the body, after union of an ovum and spermatozoon. (Dorland, 27th ed)
+</top>
+
+<top>
+<num> Number: TST95
+<title> Prognosis
+<desc> Description:
+A prediction of the probable outcome of a disease based on a individual's condition and the usual course of the disease as seen in similar situations.
+</top>
+
+<top>
+<num> Number: TST96
+<title> Prospective Studies
+<desc> Description:
+Observation of a population for a sufficient number of persons over a sufficient number of years to generate incidence or mortality rates subsequent to the selection of the study group.
+</top>
+
+<top>
+<num> Number: TST97
+<title> Questionnaires
+<desc> Description:
+Predetermined sets of questions used to collect data - clinical data, social status, occupational group, etc. The term is often applied to a self-completed survey instrument.
+</top>
+
+<top>
+<num> Number: TST98
+<title> Random Allocation
+<desc> Description:
+A process involving chance used in therapeutic trials or other research endeavor for allocating experimental subjects, human or animal, between treatment and control groups, or among treatment groups. It may also apply to experiments on inanimate objects.
+</top>
+
+<top>
+<num> Number: TST99
+<title> Rats
+<desc> Description:
+The common name for the species Rattus norvegicus.
+</top>
+
+<top>
+<num> Number: TST100
+<title> Rats, Inbred Strains
+<desc> Description:
+Genetically identical individuals developed from brother and sister matings which have been carried out for twenty or more generations or by parent x offspring matings carried out with certain restrictions. This also includes animals with a long history of closed colony breeding.
+</top>
+
+<top>
+<num> Number: TST101
+<title> Recombinant Proteins
+<desc> Description:
+Proteins prepared by recombinant DNA technology.
+</top>
+
+<top>
+<num> Number: TST102
+<title> Recurrence
+<desc> Description:
+The return of a sign, symptom, or disease after a remission.
+</top>
+
+<top>
+<num> Number: TST103
+<title> Reference Values
+<desc> Description:
+The range or frequency distribution of a measurement in a population (of organisms, organs or things) that has not been selected for the presence of disease or abnormality.
+</top>
+
+<top>
+<num> Number: TST104
+<title> Regression Analysis
+<desc> Description:
+Procedures for finding the mathematical function which best describes the relationship between a dependent variable and one or more independent variables. In linear regression (see LINEAR MODELS) the relationship is constrained to be a straight line and LEAST-SQUARES ANALYSIS is used to determine the best fit. In logistic regression (see LOGISTIC MODELS) the dependent variable is qualitative rather than continuously variable and LIKELIHOOD FUNCTIONS are used to find the best relationship. In MULTIPLE REGRESSION the dependent variable is considered to depend on more than a single independent variable.
+</top>
+
+<top>
+<num> Number: TST105
+<title> Reoperation
+<desc> Description:
+A repeat operation for the same condition in the same patient. It includes reoperation for reexamination, reoperation for disease progression or recurrence, or reoperation following operative failure.
+</top>
+
+<top>
+<num> Number: TST106
+<title> Respiration
+<desc> Description:
+The act of breathing with the lungs, consisting of inspiration, or the taking into the lungs of the ambient air, and of expiration, or the expelling of the modified air which contains more carbon dioxide than the air taken in (Blakiston's Gould Medical Dictionary, 4th ed.). This does not include tissue respiration (= OXYGEN CONSUMPTION) or cell respiration (= CELL RESPIRATION).
+</top>
+
+<top>
+<num> Number: TST107
+<title> Retrospective Studies
+<desc> Description:
+Studies used to test etiologic hypotheses in which inferences about an exposure to putative causal factors are derived from data relating to characteristics of persons under study or to events or experiences in their past. The essential feature is that some of the persons under study have the disease or outcome of interest and their characteristics are compared with those of unaffected persons.
+</top>
+
+<top>
+<num> Number: TST108
+<title> Risk
+<desc> Description:
+The probability that an event will occur. It encompasses a variety of measures of the probability of a generally unfavorable outcome.
+</top>
+
+<top>
+<num> Number: TST109
+<title> RNA, Messenger
+<desc> Description:
+RNA sequences that serve as templates for protein synthesis. Bacterial mRNAs are generally primary transcripts in that they do not require post-transcriptional processing. Eukaryotic mRNA is synthesized in the nucleus and must be exported to the cytoplasm for translation. Most eukaryotic mRNAs have a sequence of polyadenylic acid at the 3' end, referred to as the poly(A) tail. The function of this tail is not known for certain, but it may play a role in the export of mature mRNA from the nucleus as well as in helping stabilize some mRNA molecules by retarding their degradation in the cytoplasm.
+</top>
+
+<top>
+<num> Number: TST110
+<title> Sex Factors
+<desc> Description:
+Maleness or femaleness as a constituent element or influence contributing to the production of a result. It may be applicable to the cause or effect of a circumstance. It is used with human or animal concepts but should be differentiated from SEX CHARACTERISTICS, anatomical or physiological manifestations of sex, and from SEX DISTRIBUTION, the number of males and females in given circumstances.
+</top>
+
+<top>
+<num> Number: TST111
+<title> Skin Neoplasms
+<desc> Description:
+Tumors or cancer of the SKIN.
+</top>
+
+<top>
+<num> Number: TST112
+<title> Smoking
+<desc> Description:
+Inhaling and exhaling the smoke of tobacco or something similar to tobacco.
+</top>
+
+<top>
+<num> Number: TST113
+<title> Syndrome
+<desc> Description:
+A symptom complex of unknown etiology, that is characteristic of a particular abnormality.
+</top>
+
+<top>
+<num> Number: TST114
+<title> T-Lymphocytes
+<desc> Description:
+Lymphocytes responsible for cell-mediated immunity. Two types have been identified - cytotoxic (T-LYMPHOCYTES, CYTOTOXIC) and helper T-lymphocytes (T-LYMPHOCYTES, HELPER-INDUCER). They are formed when lymphocytes circulate through the thymus gland and differentiate to thymocytes. When exposed to an antigen, they divide rapidly and produce large numbers of new T cells sensitized to that antigen.
+</top>
+
+<top>
+<num> Number: TST115
+<title> Time Factors
+<desc> Description:
+Elements of limited time intervals, contributing to particular results or situations.
+</top>
+
+<top>
+<num> Number: TST116
+<title> Tomography, X-Ray Computed
+<desc> Description:
+Tomography using x-ray transmission and a computer algorithm to reconstruct the image.
+</top>
+
+<top>
+<num> Number: TST117
+<title> Transcription, Genetic
+<desc> Description:
+The transfer of genetic information from DNA to messenger RNA by DNA-directed RNA polymerase. It includes reverse transcription and transcription of early and late genes expressed early in an organism's life cycle or during later development.
+</top>
+
+<top>
+<num> Number: TST118
+<title> Ultrasonography
+<desc> Description:
+The visualization of deep structures of the body by recording the reflections of echoes of pulses of ultrasonic waves directed into the tissues. Use of ultrasound for imaging or diagnostic purposes employs frequencies ranging from 1.6 to 10 megahertz.
+</top>
+
+<top>
+<num> Number: TST119
+<title> Kidney Transplantation
+<desc> Description:
+The transference of a kidney from one human or animal to another.
+</top>
+

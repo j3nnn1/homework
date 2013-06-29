@@ -1,0 +1,65 @@
+#!/usr/local/bin/perl
+
+# -----------------------------------------------------------------------
+#
+# This perl script extracts a fixed sample of 500 topics from MeSH topic
+# or qrels files:
+#
+#       Usage: perl mesh-sample.prl <FILE>
+#       <FILE> = query.mesh.1-4904 or qrels.mesh.XXX
+#
+# The script writes to file query.samp.1-500 or qrels.mesh.XXX.
+#
+# Note: the script needs the file "sample.map" to be in the same
+# directory.
+#
+# -----------------------------------------------------------------------
+
+($file) = @ARGV;
+
+if (@ARGV != 1) { &print_usage(); die; }
+
+if ($file =~ /query\.mesh/) { $query = 1; }
+elsif ($file =~ /qrels\.mesh/) { $query = 0; }
+else {
+    print "Legal file name must start with \"query.mesh\" ";
+    print "or \"qrels.mesh\".\n\n";
+    &print_usage(); die; }
+
+unless (open(SMP, "sample.map")) {
+    print "Couldn't find: sample.map\n\n";
+    &print_usage(); die; }
+
+$outf = $file;
+$outf =~ s/mesh/samp/;
+if ($outf =~ /query/) { $outf =~ s/1\-4904/1-500/; }
+
+open(IN, "$file") || die "Couldn't find: $file\n";
+open(OUT, "> $outf") || die "Couldn't write: $outf\n";
+
+while (<SMP>) {
+    chomp; ($smp, $msh) = split('\t', $_);
+    $MESH{$msh} = $smp; }
+
+if ($query == 1) {
+    while (<IN>) { if (/^<num>/) {
+	chomp; @token = split;
+	$qid = pop(@token);
+	if (exists $MESH{$qid}) {
+	    $title = <IN>; $desc1 = <IN>; $desc2 = <IN>;
+	    print OUT "<top>\n<num> Number: $MESH{$qid}\n";
+	    print OUT "${title}${desc1}${desc2}</top>\n\n"; }}}}
+else {
+    while (<IN>) {
+	chomp; ($qid, $did) = split('\t', $_);
+	if (exists $MESH{$qid}) {
+	    print OUT "$MESH{$qid}\t$did\n"; }}}
+
+sub print_usage {
+    print "This perl script extracts a fixed sample of 500 topics from ";
+    print "MeSH topic\nor qrels files:\n\n";
+    print "\tUsage: perl mesh-sample.prl <FILE>\n";
+    print "\t<FILE> = query.mesh.1-4904 or qrels.mesh.XXX\n\n";
+    print "The program writes to a file query.samp.1-500 or ";
+    print "qrels.samp.XXX.\n\nNote: the script needs the file ";
+    print "\"sample.map\" to be in the same\ndirectory.\n"; }
