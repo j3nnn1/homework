@@ -1,0 +1,97 @@
+<?xml version="1.0"?>
+
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one or more
+    contributor license agreements.  See the NOTICE file distributed with
+    this work for additional information regarding copyright ownership.
+    The ASF licenses this file to You under the Apache License, Version 2.0
+    the "License"); you may not use this file except in compliance with
+    the License.  You may obtain a copy of the License at
+ 
+        http://www.apache.org/licenses/LICENSE-2.0
+ 
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+ -->
+
+<project name="ohsumed" default="dist">
+
+  <import file="../collections-build.xml"/>
+
+  <property name="t9" location="${build.dir}/download/t9.filtering.tar.gz"/>
+  <available file="${t9}" property="t9.exists"/>
+
+  <target name="fetch" unless="t9.exists">
+    <mkdir dir="${build.dir}/download"/>
+    <get src="http://trec.nist.gov/data/filtering/t9.filtering.tar.gz"
+         dest="${t9}"/>
+  </target>
+
+  <target name="extract" depends="fetch">
+    <untar src="${t9}" dest="${build.dir}/extracted" compression="gzip">
+      <patternset>
+        <include name="ohsu-trec/trec9-*/*"/>
+      </patternset>
+    </untar>
+  </target>
+
+  <target name="dist" depends="compile,extract">
+    <mkdir dir="${dist.dir}"/>
+    <java classname="org.apache.orp.collections.ohsumed.OhsumedCorpusConverter">
+      <arg value="${build.dir}/extracted/ohsu-trec/trec9-train/ohsumed.87"/>
+      <arg value="${dist.dir}/train-corpus.gz"/>
+      <classpath refid="classpath"/>
+    </java>
+    <java classname="org.apache.orp.collections.ohsumed.OhsumedCorpusConverter">
+      <arg value="${build.dir}/extracted/ohsu-trec/trec9-test/ohsumed.88-91"/>
+      <arg value="${dist.dir}/test-corpus.gz"/>
+      <classpath refid="classpath"/>
+    </java>
+    <java classname="org.apache.orp.collections.ohsumed.OhsumedTopicConverter">
+      <arg value="${build.dir}/extracted/ohsu-trec/trec9-train/query.ohsu.1-63"/>
+      <arg value="${dist.dir}/queries-ohsu.txt"/>
+      <classpath refid="classpath"/>
+    </java>
+    <java classname="org.apache.orp.collections.ohsumed.OhsumedTopicConverter">
+      <arg value="${build.dir}/extracted/ohsu-trec/trec9-train/query.mesh.1-4904"/>
+      <arg value="${dist.dir}/queries-mesh.txt"/>
+      <classpath refid="classpath"/>
+    </java>
+    <concat destfile="${dist.dir}/queries.txt" fixlastline="yes"
+        encoding="UTF-8" outputencoding="UTF-8">
+      <filelist dir="${dist.dir}" files="queries-ohsu.txt,queries-mesh.txt"/>
+    </concat>
+    <java classname="org.apache.orp.collections.ohsumed.OhsumedQrelConverter">
+      <arg value="${build.dir}/extracted/ohsu-trec/trec9-train/qrels.mesh.batch.87"/>
+      <arg value="${dist.dir}/train-judgements-mesh.txt"/>
+      <classpath refid="classpath"/>
+    </java>
+    <java classname="org.apache.orp.collections.ohsumed.OhsumedQrelConverter">
+      <arg value="${build.dir}/extracted/ohsu-trec/trec9-train/qrels.ohsu.batch.87"/>
+      <arg value="${dist.dir}/train-judgements-ohsu.txt"/>
+      <classpath refid="classpath"/>
+    </java>
+    <concat destfile="${dist.dir}/train-judgements.txt" fixlastline="yes"
+        encoding="UTF-8" outputencoding="UTF-8">
+      <filelist dir="${dist.dir}" files="train-judgements-ohsu.txt,train-judgements-mesh.txt"/>
+    </concat>
+    <java classname="org.apache.orp.collections.ohsumed.OhsumedQrelConverter">
+      <arg value="${build.dir}/extracted/ohsu-trec/trec9-test/qrels.ohsu.88-91"/>
+      <arg value="${dist.dir}/test-judgements-ohsu.txt"/>
+      <classpath refid="classpath"/>
+    </java>
+    <java classname="org.apache.orp.collections.ohsumed.OhsumedQrelConverter">
+      <arg value="${build.dir}/extracted/ohsu-trec/trec9-test/qrels.mesh.88-91"/>
+      <arg value="${dist.dir}/test-judgements-mesh.txt"/>
+      <classpath refid="classpath"/>
+    </java>
+    <concat destfile="${dist.dir}/test-judgements.txt" fixlastline="yes"
+        encoding="UTF-8" outputencoding="UTF-8">
+      <filelist dir="${dist.dir}" files="test-judgements-ohsu.txt,test-judgements-mesh.txt"/>
+    </concat>
+  </target>
+
+</project>

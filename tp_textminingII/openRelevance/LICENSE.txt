@@ -1,0 +1,9 @@
+There is no explicit licensing information at the TREC site, the statement below was
+taken from the original OHSUMED corpus available here:
+
+	http://ir.ohsu.edu/ohsumed/ohsumed.html 
+
+The National Library of Medicine has agreed to make the MEDLINE references in the
+test database available for experimentation, restricted to the following conditions:
+1.  The data will not be used in any non-experimental clinical, library, or other setting.
+2.  Any human users of the data will explicitly be told that the data is incomplete and out-of-date.
