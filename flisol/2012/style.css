@@ -1,0 +1,55 @@
+
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin: auto;
+  position: relative;
+  width: 100%;
+//  text-align: center;
+}
+
+
+.container {
+  width: 100%;
+  margin: 0px 0px 0px 0px;
+}
+
+form {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+
+.node {
+  border: solid 1px white;
+  font: 10px sans-serif;
+  line-height: 12px;
+  overflow: hidden;
+  position: absolute;
+  text-indent: 2px;
+}
+
+.treemap {
+background-color: ccc;
+width: 80%;
+float: left;
+padding: 0 20 0 0;
+margin: 0px 0px 0px 0px;
+
+}
+
+#description {
+font:10px  sans-serif;
+clear: both;
+
+
+}
+
+#colors {
+font:10px  sans-serif;
+padding: 50px 0 0 0;
+}
+
+#colors ul li {
+list-style-type: none;
+}
+
