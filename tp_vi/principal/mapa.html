@@ -1,0 +1,65 @@
+<html lang="en">
+    <head>
+       <meta charset="utf-8">
+       <title>Haciendo un Mapa D3</title>
+       <!-- <script type="text/javascript" src="http://d3js.org/d3.v3.min.js"></script>
+       <script type="text/javascript" src="http://d3js.org/topojson.v1.min.js"></script>
+<script type="text/javascript" src="http://d3js.org/queue.v1.min.js"></script> -->
+       <script type="text/javascript" src="js/d3.v3.min.js"></script>
+       <script type="text/javascript" src="js/topojson.v1.min.js"></script>
+       <script type="text/javascript" src="js/queue.v1.min.js"></script> 
+       <link rel="stylesheet" href="css/mapa.css">
+       </head>
+       <body>
+           <h2> Mapa </h2>
+           <script type="text/javascript">
+           var width = 400,
+               height = 600;
+           var radius = d3.scale.sqrt()
+                                .domain([0, 1e6])
+                                .range([0, 10]);
+
+           var svg = d3.select("body").append("svg")
+                                      .attr("width", width)
+                                      .attr("height", height);
+
+           var projection = d3.geo.mercator()
+                                  .center([-70, -39 ])
+                                  .scale(700)
+                                  .translate([ 100 , 250 ])
+				  .precision(.1); 
+
+           var path = d3.geo.path()
+                            .projection(projection);
+
+           queue()
+           .defer(d3.json, "data/argentina.topojson")
+           .defer(d3.json, "data/centroide_provincia.geojson")
+           .defer(d3.json, "data/centroide_provincia2010.geojson")
+           .await(ready);
+
+function ready(error, us, centroid, cent2010) {
+  console.log(us.objects);
+
+  svg.append("path")
+      .attr("class", "states")
+      .datum(topojson.feature(us, us.objects.ARG_adm2))
+      .attr("d", path);
+
+  svg.selectAll(".symbol")
+      .data(centroid.features.sort(function(a, b) { console.log(a); return b.properties.population - a.properties.population; }))
+    .enter().append("path")
+      .attr("class", "symbol")
+      .attr("d", path.pointRadius(function(d) { return radius(d.properties.population); }));  
+
+  svg.selectAll(".symbol2")
+      .data(cent2010.features.sort(function(a, b) { console.log(a); return b.properties.population - a.properties.population; }))
+    .enter().append("path")
+      .attr("class", "symbol2")
+      //.style("fill", "red")
+      .attr("d", path.pointRadius(function(d) { return radius(d.properties.population); }));  
+
+} 
+</script>
+</body>
+</html>

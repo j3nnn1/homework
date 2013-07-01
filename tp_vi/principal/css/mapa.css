@@ -1,0 +1,31 @@
+.states {
+  fill: #ccc;
+  stroke: #fff;
+}
+
+.symbol {
+  fill: steelblue;
+  fill-opacity: .5;
+  stroke: #fff;
+}
+.symbol2 {
+  fill: red;
+  fill-opacity: .5;
+  stroke: #fff;
+}
+path {
+  stroke: white;
+  stroke-width: 0.25px;
+  fill: grey;
+}
+.axis path,
+.axis line {
+    fill: none;
+    stroke: black;
+    shape-rendering: crispEdges;
+}
+
+.axis text {
+    font-family: sans-serif;
+    font-size: 11px;
+}
