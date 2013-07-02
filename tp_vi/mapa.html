@@ -9,7 +9,6 @@
        <script type="text/javascript" src="js/topojson.v1.min.js"></script>
 <script type="text/javascript" src="js/queue.v1.min.js"></script> 
        <style type="text/css">	
-
 .states {
   fill: #ccc;
   stroke: #fff;
@@ -42,8 +41,8 @@ path {
 	<h2> Mapa </h2>
 <script type="text/javascript">
 
-var width = 1000,
-    height = 1000;
+var width = 800,
+    height = 800;
 
 var radius = d3.scale.sqrt()
     .domain([0, 1e6])
@@ -57,8 +56,8 @@ var svg = d3.select("body").append("svg")
 /* d3.json("salidaprovincias.topojson", function(error, uk) { */
 
 var projection = d3.geo.mercator()
-       .center([-80, -35 ])
-       .scale(900);
+       .center([-70, -37 ])
+       .scale(700);
 //	    .rotate([-180,0]);
 
 var path = d3.geo.path()

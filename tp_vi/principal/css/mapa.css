@@ -13,6 +13,24 @@
   fill-opacity: .5;
   stroke: #fff;
 }
+.symbol3 {
+  fill: green;
+  fill-opacity: .5;
+  stroke: #fff;
+}
+#empleo {
+background-color:  red; 
+fill-opacity: .5;
+}
+#desocupacion {
+background-color: steelblue;
+fill-opacity: .5;
+}
+#subocupacion_demandante {
+background-color: green;
+fill-opacity: .5;
+}
+
 path {
   stroke: white;
   stroke-width: 0.25px;

@@ -34,12 +34,11 @@
 
            queue()
            .defer(d3.json, "data/argentina.topojson")
-           .defer(d3.json, "data/centroide_provincia.geojson")
+           .defer(d3.json, "data/eph20101centroide.geojson")
            .defer(d3.json, "data/centroide_provincia2010.geojson")
            .await(ready);
 
 function ready(error, us, centroid, cent2010) {
-  console.log(us.objects);
 
   svg.append("path")
       .attr("class", "states")
@@ -47,19 +46,36 @@ function ready(error, us, centroid, cent2010) {
       .attr("d", path);
 
   svg.selectAll(".symbol")
-      .data(centroid.features.sort(function(a, b) { console.log(a); return b.properties.population - a.properties.population; }))
+      .data(centroid.features)
     .enter().append("path")
       .attr("class", "symbol")
-      .attr("d", path.pointRadius(function(d) { return radius(d.properties.population); }));  
+      .attr("d", path.pointRadius(function(d) { return radius(d.properties.desocupacion * 100000); }))  ;
 
   svg.selectAll(".symbol2")
-      .data(cent2010.features.sort(function(a, b) { console.log(a); return b.properties.population - a.properties.population; }))
-    .enter().append("path")
+      .data(centroid.features)
+      .enter().append("path")
       .attr("class", "symbol2")
-      //.style("fill", "red")
-      .attr("d", path.pointRadius(function(d) { return radius(d.properties.population); }));  
+      .attr("d", path.pointRadius(function(d) { return radius(d.properties.empleo * 100000); }));  
+
+  svg.selectAll(".symbol3")
+      .data(centroid.features)
+      .enter().append("path")
+      .attr("class", "symbol3")
+      .attr("d", path.pointRadius(function(d) { return radius(d.properties.subocupacion_demandante * 100000); }));  
 
 } 
+
 </script>
+<ul>
+<li  id='desocupacion'>
+Desocupacion
+</li>
+<li id='empleo'>
+Empleo
+</li>
+<li id='subocupacion_demandante'>
+Sub ocupacion Demandante
+</li>
+<ul>
 </body>
 </html>

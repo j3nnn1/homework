@@ -1,5 +1,34 @@
-#!/usr/bin/perl -w
+#
+#
+#Primer trimestre de 2003 => {
+#        Región Gran Buenos Aires => {
+#
+#        actividad =>,
+#        empleo=>
+#        desocupacion=>
+#        subocupacion demandante=>
+#        subocupacion no demandante=>
+#        },
+#        Ciudad de Buenos Aires => {
+#        actividad =>,
+#        empleo=>
+#        desocupacion=>
+#        subocupacion demandante=>
+#        subocupacion no demandante=>
+#        },
+#        Partidos del Gran Buenos Aires => {
+#        actividad =>,
+#        empleo=>
+#        desocupacion=>
+#        subocupacion demandante=>
+#        subocupacion no demandante=>
+#        },
+#},
+#Segundo trimestre de 2003 => {
+#},
+#
 use Spreadsheet::ParseExcel;
+
 use strict;
 use common::sense;
 use Data::Dumper;
@@ -90,15 +119,31 @@ for my $worksheet ( $workbook->worksheets() ) {
             $region = $region->value();
             
             if (isperiod($col))  {
+                my $columna;
                 $celltitle = $worksheet->get_cell( 2, $col );
-                $periodo = $celltitle->value(); 
-                $empleo->{$region}->{$periodo}->{'Actividad'} = $cell->value(); 
+                if ($celltitle) {
+                    $periodo = $celltitle->value(); 
+                }
+                if ($cell->value() eq '.' || $cell->value() eq ''){
+                    $columna = 'NA';
+                } else {
+                    $columna = $cell->value();
+                }
+
+                $empleo->{$region}->{$periodo}->{'Actividad'} = $columna; 
 
             } else {
-                if (isempleo($col)){ $empleo->{$region}->{$periodo}->{'Empleo'} = $cell->value(); }
-                if (isdesocupacion($col)){ $empleo->{$region}->{$periodo}->{'Desocupacion'} = $cell->value(); }
-                if (issubocu1($col)){ $empleo->{$region}->{$periodo}->{'subocupacion_demandante'} = $cell->value(); }
-                if (issubocu2($col)){ $empleo->{$region}->{$periodo}->{'subocupacion_no_demandante'} = $cell->value(); }
+                #removing . and null
+                my $columna;
+                if ($cell->value() eq '.' || $cell->value() eq ''){
+                    $columna = 'NA';
+                } else {
+                    $columna = $cell->value();
+                }
+                if (isempleo($col)){ $empleo->{$region}->{$periodo}->{'Empleo'} = $columna; }
+                if (isdesocupacion($col)){ $empleo->{$region}->{$periodo}->{'Desocupacion'} = $columna; }
+                if (issubocu1($col)){ $empleo->{$region}->{$periodo}->{'subocupacion_demandante'} = $columna; }
+                if (issubocu2($col)){ $empleo->{$region}->{$periodo}->{'subocupacion_no_demandante'} = $columna; }
             }
         }
         if ($empleo) {
@@ -109,6 +154,8 @@ for my $worksheet ( $workbook->worksheets() ) {
     }
 }
 
+##print Dumper @$arr_provincias;
+##die('HERE');
 my $empleo = {};
 
 foreach my $empleo (@{$arr_provincias}) {
@@ -124,6 +171,7 @@ foreach my $empleo (@{$arr_provincias}) {
            }
 #           print "$periodo:".$empleo->{$provincia}->{$periodo}."\n"; 
            foreach my $field (%{$empleo->{$provincia}->{$periodo}}) {
+#               print $field."ORDEN\n";
                my $value = $empleo->{$provincia}->{$periodo}->{$field};
                if ($value) {
                    push(@line, $value);

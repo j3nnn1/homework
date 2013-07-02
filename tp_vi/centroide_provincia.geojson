@@ -45,7 +45,7 @@
 ,
 { "type": "Feature", "properties": { "UNION": -2147483648.000000, "JURISDICCI": "JUJUY", "CAPITAL": "SAN SALVADOR DE JUJUY", "FUENTE": "IGN", "population":133455  }, "geometry": { "type": "Point", "coordinates": [ -65.769078, -23.318576 ] } }
 ,
-{ "type": "Feature", "properties": { "UNION": -2147483648.000000, "JURISDICCI": "TIERRA DEL FUEGO, ANTÁRTIDA E*", "CAPITAL": "USHUAIA", "FUENTE": "IGN", "population": 118881 }, "geometry": { "type": "Point", "coordinates": [ -64.544534, -53.416024 ] } }
+{ "type": "Feature", "properties": { "UNION": -2147483648.000000, "JURISDICCI": "TIERRA DEL FUEGO, ANTARTIDA E*", "CAPITAL": "USHUAIA", "FUENTE": "IGN", "population": 118881 }, "geometry": { "type": "Point", "coordinates": [ -64.544534, -53.416024 ] } }
 ,
 { "type": "Feature", "properties": { "UNION": -2147483648.000000, "JURISDICCI": "BUENOS AIRES", "CAPITAL": "LA PLATA", "FUENTE": "IGN", "population": 345775 }, "geometry": { "type": "Point", "coordinates": [ -60.556148, -36.673086 ] } }
 ,
