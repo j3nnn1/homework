@@ -1,25 +1,50 @@
 <html lang="en">
     <head>
        <meta charset="utf-8">
-       <title>Haciendo un Mapa D3</title>
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <title>Remuneraci&oacute;n Anual por Sector</title>
        <!-- <script type="text/javascript" src="http://d3js.org/d3.v3.min.js"></script>
        <script type="text/javascript" src="http://d3js.org/topojson.v1.min.js"></script>
-<script type="text/javascript" src="http://d3js.org/queue.v1.min.js"></script> -->
+       <script type="text/javascript" src="http://d3js.org/queue.v1.min.js"></script> -->
+       <script src="js/bootstrap.min.js"></script>
+       <script src="js/jquery.js"></script>
        <script type="text/javascript" src="js/d3.v3.min.js"></script>
        <script type="text/javascript" src="js/topojson.v1.min.js"></script>
        <script type="text/javascript" src="js/queue.v1.min.js"></script> 
+       <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
+       <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
        <link rel="stylesheet" href="css/mapa.css">
        </head>
        <body>
-           <h2> Mapa </h2>
+           <div class="navbar  navbar-static-top">
+           <div class="navbar-inner">
+               <a class="brand" href="index.html">Visualizaciones</a>
+		    <ul class="nav">
+			<li><a href="#">Integrantes</a></li>
+			<li class="divider-vertical"></li>
+			<li class="divider-vertical"></li>
+			<li><a href="empleo_sector.html">Empleo Anual Por Sector</a></li>
+			<li><a href="http://78.47.89.42:8100">Empleo Trimestral por provincia</a></li>
+			<li><a href="mapa.html">Remuración Anual por Sector</a></li>
+			<li><a href="maps_desocupacion.html">Coordenadas Paralelas</a></li>
+			<li class="divider-vertical"></li>
+			<li><a href="#">Referencias</a></li>
+		    </ul>
+           </div>
+           </div>
            <script type="text/javascript">
-           var width = 400,
+           $(document).ready(function(){
+           var width = 800,
                height = 600;
+           var color = new Array();
+               color['Empleo'] = "red";
+               color['Desocupacion'] = "steelblue";
+
            var radius = d3.scale.sqrt()
                                 .domain([0, 1e6])
                                 .range([0, 10]);
 
-           var svg = d3.select("body").append("svg")
+           var svg = d3.select("#mapa2010").append("svg")
                                       .attr("width", width)
                                       .attr("height", height);
 
@@ -38,44 +63,51 @@
            .defer(d3.json, "data/centroide_provincia2010.geojson")
            .await(ready);
 
-function ready(error, us, centroid, cent2010) {
+           function ready(error, us, centroid, cent2010) {
 
-  svg.append("path")
-      .attr("class", "states")
-      .datum(topojson.feature(us, us.objects.ARG_adm2))
-      .attr("d", path);
+           svg.append("path")
+              .attr("class", "states")
+              .datum(topojson.feature(us, us.objects.ARG_adm2))
+              .attr("d", path);
 
-  svg.selectAll(".symbol")
-      .data(centroid.features)
-    .enter().append("path")
-      .attr("class", "symbol")
-      .attr("d", path.pointRadius(function(d) { return radius(d.properties.desocupacion * 100000); }))  ;
+           svg.selectAll(".symbol")
+              .data(centroid.features)
+              .enter().append("path")
+              .attr("class", "symbol")
+              .attr("d", path.pointRadius(function(d) { return radius(d.properties.desocupacion * 100000); }))  ;
 
-  svg.selectAll(".symbol2")
-      .data(centroid.features)
-      .enter().append("path")
-      .attr("class", "symbol2")
-      .attr("d", path.pointRadius(function(d) { return radius(d.properties.empleo * 100000); }));  
+           svg.selectAll(".symbol2")
+              .data(centroid.features)
+              .enter().append("path")
+              .attr("class", "symbol2")
+              .attr("d", path.pointRadius(function(d) { return radius(d.properties.empleo * 100000); }));  
 
-  svg.selectAll(".symbol3")
-      .data(centroid.features)
-      .enter().append("path")
-      .attr("class", "symbol3")
-      .attr("d", path.pointRadius(function(d) { return radius(d.properties.subocupacion_demandante * 100000); }));  
-
-} 
-
+           var legend = svg.selectAll(".legend")  
+                           .data(Object.keys(color))
+                           .enter().append("g")
+                           .attr("class", "legend")
+                           .attr("transform", function(d, i){ return "translate(0,"+ i * 20 + ")"; });
+           legend.append("rect") 
+                 .attr("x", width - 300)
+                 .attr("width", 18)
+                 .attr("height", 18)
+                 .attr("y", 30 )
+                 .style("fill", function (d, i) { console.log(d); return color[d]});
+           legend.append("text")
+                 .attr("x", width - 400)
+                 .attr("y", 40)
+                 .attr("dy", ".35em")
+                 .text(function(d){return d;});
+           }
+           }); 
 </script>
-<ul>
-<li  id='desocupacion'>
-Desocupacion
-</li>
-<li id='empleo'>
-Empleo
-</li>
-<li id='subocupacion_demandante'>
-Sub ocupacion Demandante
-</li>
-<ul>
+           <div class="container-fluid">
+               <div class="row-fluid">
+               <div class="span3">
+               Esto es un Texto
+               </div>
+               <div class="span9" id="mapa2010">
+               </div>
+           </div>
 </body>
 </html>
