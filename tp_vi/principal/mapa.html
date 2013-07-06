@@ -6,12 +6,14 @@
        <!-- <script type="text/javascript" src="http://d3js.org/d3.v3.min.js"></script>
        <script type="text/javascript" src="http://d3js.org/topojson.v1.min.js"></script>
        <script type="text/javascript" src="http://d3js.org/queue.v1.min.js"></script> -->
-       <script src="js/bootstrap.min.js"></script>
        <script src="js/jquery.js"></script>
+       <script src="js/bootstrap.js"></script>
        <script type="text/javascript" src="js/d3.v3.min.js"></script>
        <script type="text/javascript" src="js/topojson.v1.min.js"></script>
        <script type="text/javascript" src="js/queue.v1.min.js"></script> 
-       <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
+       <script type="text/javascript" src="js/jquery.tipsy.js"></script>
+
+       <link href="css/bootstrap-responsive.css" rel="stylesheet">
        <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
        <link rel="stylesheet" href="css/mapa.css">
        </head>
@@ -58,48 +60,86 @@
                             .projection(projection);
 
            queue()
-           .defer(d3.json, "data/argentina.topojson")
+           .defer(d3.json, "data/arg_adm1.topojson")
            .defer(d3.json, "data/eph20101centroide.geojson")
            .defer(d3.json, "data/centroide_provincia2010.geojson")
            .await(ready);
 
            function ready(error, us, centroid, cent2010) {
 
-           svg.append("path")
-              .attr("class", "states")
-              .datum(topojson.feature(us, us.objects.ARG_adm2))
-              .attr("d", path);
+           var tooltip = d3.select("#mapa2010").append("div")   
+                       .attr("class", "tooltip")               
+                       .style("opacity", 0.5);
+           
+           //drawing each province
+           //taking from http://bost.ocks.org/mike/map/
+           //and here http://techslides.com/d3-world-maps-tooltips-zooming-and-queue/
+           svg.selectAll(".province")
+              .data(topojson.feature(us, us.objects.ARG_adm1).features)
+              .enter().append("path")
+              .attr("class", function(d,i){return "province_"+d.properties.ID_1})
+              .attr("d", path)
+              .on("mouseover", function(d,i){
+                   d3.select(this).style("fill", "green");
+                   var mouse = d3.mouse(svg.node()).map( function(d) { return parseInt(d); } );
+                   tooltip.classed("hidden", false)
+                         .attr("style", "left:"+(mouse[0]+25)+"px;top:"+mouse[1]+"px")
+                         .html(dohtmltooltips(d));
+                   })
+              .on("mouseout",  function(d,i) {
+                  d3.select(this).style("fill", "gray");
+                  tooltip.classed("hidden", true);
+              });
 
+           //drawing unemployment
            svg.selectAll(".symbol")
               .data(centroid.features)
               .enter().append("path")
               .attr("class", "symbol")
-              .attr("d", path.pointRadius(function(d) { return radius(d.properties.desocupacion * 100000); }))  ;
+              .attr("d", path.pointRadius(
+		function(d) { 
+                 return radius(d.properties.desocupacion * 100000); 
+                }));
 
+           //drawing employment
            svg.selectAll(".symbol2")
               .data(centroid.features)
               .enter().append("path")
               .attr("class", "symbol2")
               .attr("d", path.pointRadius(function(d) { return radius(d.properties.empleo * 100000); }));  
 
+           // drawing legend
            var legend = svg.selectAll(".legend")  
                            .data(Object.keys(color))
                            .enter().append("g")
                            .attr("class", "legend")
                            .attr("transform", function(d, i){ return "translate(0,"+ i * 20 + ")"; });
+
            legend.append("rect") 
                  .attr("x", width - 300)
                  .attr("width", 18)
                  .attr("height", 18)
                  .attr("y", 30 )
-                 .style("fill", function (d, i) { console.log(d); return color[d]});
+                 .style("fill", function (d, i) { return color[d]});
            legend.append("text")
                  .attr("x", width - 400)
                  .attr("y", 40)
                  .attr("dy", ".35em")
                  .text(function(d){return d;});
+
+           //drawin tooltips
+           dohtmltooltips = function(d) {
+               var html;
+               html = 'Provincia: ' + d.properties.NAME_1;
+               html = html + '<br/>'+' Actividad:'+ d.properties.actividad;
+               html = html + '<br/>'+' Desocupación:'+ d.properties.desocupacion;
+               html = html + '<br/>'+' Empleo:'+ d.properties.empleo;
+               html = html + '<br/>'+' SubOcupación Demandante:'+ d.properties.subocupacion_demandante;
+               return html;
            }
-           }); 
+
+           } //end function ready d3
+           }); //end document ready jquery
 </script>
            <div class="container-fluid">
                <div class="row-fluid">
