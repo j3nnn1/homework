@@ -155,11 +155,14 @@
                   var xmax = d3.max(data_points, function(d) {return d[0]}); 
                   var xmin = d3.min(data_points, function(d) {return d[0]}); 
 
-                  var ymin =  d3.min(data_points, function(d) {return d[1]});
+                  var ymin =  d3.min(data_points, function(d) {if(d[1]!=0){ return d[1]}});
                   var ymax =  d3.max(data_points, function(d) {return d[1]}); 
                   
+
+                  var rmin =  d3.min(data_points, function(d) {if(d[1]!=0){ return d[1]}});
+                  var rmax =  d3.max(data_points, function(d) {return d[1]}); 
                   //axis scatterplot
-                  var ypadding = 30;
+                  var ypadding = 20;
                   var xpadding = 50;
 
 
@@ -171,14 +174,18 @@
                                .domain([ymin, ymax])
                                .range([(scatt_height - (ypadding * 2)), ypadding]);           
 
+                  var rscale = d3.scale.linear()
+				 .domain([ymin, ymax ])
+				 .range([2, 5]);
+
                  circle = scatter.selectAll("circle")
                          .data(data_points)
                          .enter()
                          .append("circle")  
                          .attr("cx", function(d) {return xscale(parseInt(d[0]))} )
                          .attr("cy", function(d) {return (yscale(d[1])); })
-                         .attr("r", 3)
-                         .attr("fill","purple");
+                         .attr("r", function(d) {return (rscale(d[1]));})
+                         .attr("fill","steelblue");
 
                  var xAxis = d3.svg.axis()
                                    .scale(xscale)
@@ -212,11 +219,23 @@
               .data(centroid.features)
               .enter().append("path")
               .attr("class", "symbol")
-              .attr("d", path.pointRadius(
-		function(d) { 
-                 return radius(d.properties.desocupacion); 
-                }));
+              .attr("d", path.pointRadius( function(d) { return radius(d.properties.desocupacion) }));
 
+           var show_unemployment = function(d, event) {
+                 event
+                .transition()
+                .delay(10)
+                .duration(2000)
+                .attr("d", path.pointRadius( function(d) { return radius(d.properties.desocupacion) }))
+                .each("end", show_employment);
+           }
+           var show_employment = function(d, event) {
+                d3.select(this)
+                .attr("class", "symbol2")
+                .transition()
+                .duration(10)
+                .attr("d", path.pointRadius( function(d) { return radius(d.properties.empleo) }));
+           }
            //drawing employment
            svg.selectAll(".symbol2")
               .data(centroid.features)
@@ -232,8 +251,14 @@
               })
               .on("mouseout",  function(d,i) {
                   tooltip.classed("hidden", true);
+              })
+              .on("mousedown", function(d,i) {
+                 console.log('Hola mouse down');
+                 evento = d3.select(this);
+                 show_unemployment(d, evento);
               });
 
+           
            // drawing legend
            var legend = svg.selectAll(".legend")  
                            .data(Object.keys(color))
