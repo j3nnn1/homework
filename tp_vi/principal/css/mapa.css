@@ -4,26 +4,26 @@
 }
 
 .symbol {
-  fill: steelblue;
-  fill-opacity: .5;
+  fill: red;
+  fill-opacity: .9;
   stroke: #fff;
 }
 .symbol2 {
-  fill: red;
-  fill-opacity: .5;
-  stroke: #fff;
-}
-.symbol3 {
   fill: green;
   fill-opacity: .5;
   stroke: #fff;
 }
+.symbol3 {
+  fill: red;
+  fill-opacity: .5;
+  stroke: #fff;
+}
 #empleo {
-background-color:  red; 
+background-color:  green; 
 fill-opacity: .5;
 }
 #desocupacion {
-background-color: steelblue;
+background-color: red;
 fill-opacity: .5;
 }
 #subocupacion_demandante {
@@ -48,21 +48,10 @@ path {
     font-size: 11px;
 }
 
-/*div.tooltip {   
-  position: absolute;           
-  text-align: center;           
-  width: 60px;                  
-  height: 28px;                 
-  padding: 2px;             
-  font: 12px sans-serif;        
-  background: lightsteelblue;   
-  border: 0px;      
-  border-radius: 8px;           
-  pointer-events: none;         
-} */
 .hidden { 
   display: none; 
 }
+
 div.tooltip {
   color: #222; 
   background: #fff; 
@@ -74,3 +63,4 @@ div.tooltip {
   position: absolute;
 }
 
+ text.legend_activity  { fill: #242930; }
