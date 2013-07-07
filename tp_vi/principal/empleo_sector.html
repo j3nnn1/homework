@@ -73,6 +73,11 @@ svg.append("text")
 d3.csv("data/empleo_sector.csv", function(error, data) {
   color.domain(d3.keys(data[0]).filter(function(key) { return key !== "Sector"; }));
 
+  var tooltip = d3.select("#barras").append("div")   
+                       .attr("class", "tooltip")               
+                       .style("opacity", 0.5);
+           
+
   data.forEach(function(d) {
     var y0 = 0;
     d.ages = color.domain().map(function(name) { return {name: name, y0: y0, y1: y0 += +d[name]}; });
@@ -111,8 +116,21 @@ d3.csv("data/empleo_sector.csv", function(error, data) {
       .attr("width", x.rangeBand())
       .attr("y", function(d) { return y(d.y1); })
       .attr("height", function(d) { return y(d.y0) - y(d.y1); })
-      .style("fill", function(d) { return color(d.name); });
+      .style("fill", function(d) { return color(d.name); })
+      .on("mouseover", function(d,i){
+         var mouse = d3.mouse(svg.node()).map( function(d) { return parseInt(d); } );
+             tooltip.classed("hidden", false)
+                         .attr("style", "left:"+(mouse[0]+25)+"px;top:"+mouse[1]+"px")
+                         .html(dohtmltooltips(d));
 
+
+       });
+  var dohtmltooltips = function(d){
+        html = 'Sector:'+d.name;
+        html = html +'<br/>y0:'+d.y0;
+        html = html +'<br/>y1:'+d.y1;
+	return html;
+      }
   var legend = svg.selectAll(".legend")
       .data(color.domain().slice().reverse())
       .enter().append("g")
@@ -133,6 +151,7 @@ d3.csv("data/empleo_sector.csv", function(error, data) {
       .style("text-anchor", "end")
       .style("font-size", "10px")
       .text(function(d) { return d; });
+ //adding tooltips
 
 });
 
