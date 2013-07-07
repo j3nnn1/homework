@@ -127,8 +127,9 @@ d3.csv("data/empleo_sector.csv", function(error, data) {
        });
   var dohtmltooltips = function(d){
         html = 'Sector:'+d.name;
-        html = html +'<br/>y0:'+d.y0;
-        html = html +'<br/>y1:'+d.y1;
+        html = html +'<br/>#Empleo actual sector:'+d.y1;
+        html = html +'<br/>#Empleo anterior sector:'+d.y0;
+        html = html +'<br/>%:'+Math.round((d.y0/d.y1) * 100);
 	return html;
       }
   var legend = svg.selectAll(".legend")
