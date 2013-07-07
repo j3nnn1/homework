@@ -106,7 +106,14 @@
               .data(centroid.features)
               .enter().append("path")
               .attr("class", "symbol2")
-              .attr("d", path.pointRadius(function(d) { return radius(d.properties.empleo * 100000); }));  
+              .attr("d", path.pointRadius(function(d) { return radius(d.properties.empleo * 100000); }))
+              .on("mouseover", function(d,i){
+		var mouse = d3.mouse(svg.node()).map( function(d) { return parseInt(d); } );
+                tooltip.classed("hidden", false)
+                         .attr("style", "left:"+(mouse[0]+25)+"px;top:"+mouse[1]+"px")
+                         .html(dohtmltooltips(d));
+
+              });  
 
            // drawing legend
            var legend = svg.selectAll(".legend")  
@@ -130,7 +137,17 @@
            //drawin tooltips
            dohtmltooltips = function(d) {
                var html;
-               html = 'Provincia: ' + d.properties.NAME_1;
+               if (d.properties.ISO==null & d.properties.NAME_1!=null ) {
+                   html = 'Provincia: ' + d.properties.NAME_1.toLowerCase();
+               }
+               else {
+                   if (d.properties.NAME_2=="Bahia Blanca") {
+                       html = 'Provincia: ' + d.properties.NAME_2.toLowerCase();
+                   }
+                   else {
+                       html = 'Provincia: ' + (d.properties.JURISDICCI).toLowerCase();
+                   }
+               }
                html = html + '<br/>'+' Actividad:'+ d.properties.actividad;
                html = html + '<br/>'+' Desocupación:'+ d.properties.desocupacion;
                html = html + '<br/>'+' Empleo:'+ d.properties.empleo;

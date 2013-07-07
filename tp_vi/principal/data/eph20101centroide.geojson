@@ -59,12 +59,12 @@
          "type":"Feature",
          "properties":{
             "population":673267,
-            "empleo":"42.2",
-            "actividad":"44.8",
+            "empleo":"38.9",
+            "actividad":"40.6",
             "JURISDICCI":"CHUBUT",
             "CAPITAL":"RAWSON",
-            "subocupacion_demandante":"5.4",
-            "desocupacion":"5.8",
+            "subocupacion_demandante":"1.1",
+            "desocupacion":"4.2",
             "UNION":-2147483648,
             "subocupacion_no_demandante":"1.8",
             "FUENTE":"IGN"
