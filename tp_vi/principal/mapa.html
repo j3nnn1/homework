@@ -36,6 +36,7 @@
            </div>
            <script type="text/javascript">
            $(document).ready(function(){
+
            var width = 800,
                height = 600;
            var color = new Array();
@@ -43,8 +44,8 @@
                color['Desocupacion'] = "steelblue";
 
            var radius = d3.scale.sqrt()
-                                .domain([0, 1e6])
-                                .range([0, 10]);
+                                .domain([0, 50])
+                                .range([0, 16]);
 
            var svg = d3.select("#mapa2010").append("svg")
                                       .attr("width", width)
@@ -98,7 +99,7 @@
               .attr("class", "symbol")
               .attr("d", path.pointRadius(
 		function(d) { 
-                 return radius(d.properties.desocupacion * 100000); 
+                 return radius(d.properties.desocupacion); 
                 }));
 
            //drawing employment
@@ -106,14 +107,17 @@
               .data(centroid.features)
               .enter().append("path")
               .attr("class", "symbol2")
-              .attr("d", path.pointRadius(function(d) { return radius(d.properties.empleo * 100000); }))
+              .attr("d", path.pointRadius(function(d) { return radius(d.properties.empleo); }))
               .on("mouseover", function(d,i){
 		var mouse = d3.mouse(svg.node()).map( function(d) { return parseInt(d); } );
                 tooltip.classed("hidden", false)
                          .attr("style", "left:"+(mouse[0]+25)+"px;top:"+mouse[1]+"px")
                          .html(dohtmltooltips(d));
 
-              });  
+              })
+              .on("mouseout",  function(d,i) {
+                  tooltip.classed("hidden", true);
+              });
 
            // drawing legend
            var legend = svg.selectAll(".legend")  
@@ -141,6 +145,7 @@
                    html = 'Provincia: ' + d.properties.NAME_1.toLowerCase();
                }
                else {
+                   
                    if (d.properties.NAME_2=="Bahia Blanca") {
                        html = 'Provincia: ' + d.properties.NAME_2.toLowerCase();
                    }
