@@ -155,15 +155,19 @@
                   data_points = new Array();                  
 
                   data.forEach(function(d){
-                         data_points.push([format.parse(d.Periodo), d.empleo]);
+                         console.log('empleo: ');
+                         console.log(d.empleo);
+                         if (d.empleo > 6) {
+                             data_points.push([format.parse(d.Periodo), d.empleo]);
+                         }
                        });
 
                   // scale scatterplot
                   var ymin =  d3.min(data_points, function(d) {if(d[1]!=0){ return parseFloat(d[1])}});
                   var ymax =  d3.max(data_points, function(d) {if(d[1]!=0){ return parseFloat(d[1])}}); 
                   
-                  var rmin =  d3.min(data_points, function(d) {if(d[1]!=0){ return d[1]}});
-                  var rmax =  d3.max(data_points, function(d) {return d[1]}); 
+                  var rmin =  d3.min(data_points, function(d) {if(d[1]!=0){ return parseFloat(d[1])}});
+                  var rmax =  d3.max(data_points, function(d) {return parseFloat(d[1])}); 
                   //axis scatterplot
                   var ypadding = 20;
                   var xpadding = 50;
@@ -186,13 +190,29 @@
                          .enter()
                          .append("circle")  
                          .attr("cx", function(d) {return xscale(d[0])} )
-                         .attr("cy", function(d) {return (yscale(d[1])); })
+                         .attr("cy", function(d) {
+                                         if (d[1]>6 ) {
+                                         return (yscale(d[1]));
+                                         } 
+                                      })
                          .attr("r", function(d) {
                              var r = rscale(parseFloat(d[1]))
-                             if (r > 0) {return r}
+                             if (d[1] > 0) {return r}
                              else {return 1;}
                          })
-                         .attr("fill","steelblue");
+                         .attr("fill","steelblue"); 
+                 /*var line = d3.svg.line()
+                                  .x(function(d){return xscale(d[0])})
+                                  .y(function(d){ console.log(d[1]); if (d[1]!=0){ return yscale(d[1]);} else { console.log('entro en el 0'); console.log(d[1]); console.log(yscale(1)); return yscale(1); } }); */
+
+                 /* scatter.append("svg:path").attr("d", line(data_points)); */
+
+                 /*var pathsline = scatter.selectAll("path")
+                                        .data(data_points);
+                 pathsline.enter()
+                          .append("svg:path")
+                          .attr("class", "lines")
+                          .attr("d", line(d));*/
 
                  var xAxis = d3.svg.axis()
                                    .scale(xscale)

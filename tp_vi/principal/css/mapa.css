@@ -35,7 +35,7 @@ fill-opacity: .5;
 
 path {
   stroke: gray;
-//  stroke-width: 0.25px;
+  stroke-width: 1.25px;
 //  fill: grey;
 }
 
@@ -83,4 +83,7 @@ text.legend_activity  { fill: #242930; }
 }
 .grid path {
       stroke-width: 0;
-} */
+}  */
+text {
+    font-family: Arial;
+}
