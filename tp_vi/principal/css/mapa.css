@@ -4,14 +4,16 @@
 }
 
 .symbol {
-  fill: red;
+  fill: yellow;
   fill-opacity: .9;
   stroke: #fff;
+  stroke-width: 0.25px;
 }
 .symbol2 {
-  fill: green;
+  fill: rgb(230,85,13);
   fill-opacity: .5;
   stroke: #fff;
+  stroke-width: 0.25px;
 }
 .symbol3 {
   fill: red;
@@ -32,14 +34,15 @@ fill-opacity: .5;
 }
 
 path {
-  stroke: white;
-  stroke-width: 0.25px;
-  fill: grey;
+  stroke: gray;
+//  stroke-width: 0.25px;
+//  fill: grey;
 }
+
 .axis path,
 .axis line {
     fill: none;
-    stroke: black;
+    stroke: gray;
     shape-rendering: crispEdges;
 }
 
@@ -47,6 +50,8 @@ path {
     font-family: sans-serif;
     font-size: 11px;
 }
+
+
 
 .hidden { 
   display: none; 
@@ -63,4 +68,19 @@ div.tooltip {
   position: absolute;
 }
 
- text.legend_activity  { fill: #242930; }
+text.legend_activity  { fill: #242930; }
+
+/*.grid .tick {
+    stroke: lightgrey;
+    opacity: 0.7;
+}
+.grid path {
+      stroke-width: 0;
+}
+.grid .tick {
+    stroke: lightgrey;
+    opacity: 0.7;
+}
+.grid path {
+      stroke-width: 0;
+} */
