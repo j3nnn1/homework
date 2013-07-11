@@ -1,0 +1,559 @@
+{
+   "features" : [
+      {
+         "geometry" : {
+            "coordinates" : [
+               -62.1695715652708,
+               -38.5800346774834
+            ],
+            "type" : "Point"
+         },
+         "type" : "Feature",
+         "properties" : {
+            "population" : 33333,
+            "ID_1" : 1,
+            "empleo" : "37.3",
+            "actividad" : "47.6",
+            "NAME_0" : "Argentina",
+            "subocupacion_demandante" : "12.7",
+            "desocupacion" : "21.7",
+            "NAME_2" : "Bahia Blanca",
+            "subocupacion_no_demandante" : "6.4",
+            "UNION" : -2147483648,
+            "ISO" : "ARG",
+            "NAME_1" : "Buenos Aires",
+            "ID_2" : 10,
+            "ID_0" : 11
+         }
+      },
+      {
+         "geometry" : {
+            "coordinates" : [
+               -69.956171,
+               -48.815801
+            ],
+            "type" : "Point"
+         },
+         "type" : "Feature",
+         "properties" : {
+            "population" : 673267,
+            "empleo" : "NA",
+            "actividad" : "NA",
+            "JURISDICCI" : "SANTA CRUZ",
+            "CAPITAL" : "RIO GALLEGOS",
+            "subocupacion_demandante" : "NA",
+            "desocupacion" : "NA",
+            "UNION" : -2147483648,
+            "subocupacion_no_demandante" : "NA",
+            "FUENTE" : "IGN"
+         }
+      },
+      {
+         "geometry" : {
+            "coordinates" : [
+               -68.526361,
+               -43.78856
+            ],
+            "type" : "Point"
+         },
+         "type" : "Feature",
+         "properties" : {
+            "population" : 673267,
+            "empleo" : "NA",
+            "actividad" : "NA",
+            "JURISDICCI" : "CHUBUT",
+            "CAPITAL" : "RAWSON",
+            "subocupacion_demandante" : "NA",
+            "desocupacion" : "NA",
+            "UNION" : -2147483648,
+            "subocupacion_no_demandante" : "NA",
+            "FUENTE" : "IGN"
+         }
+      },
+      {
+         "geometry" : {
+            "coordinates" : [
+               -67.229379,
+               -40.40617
+            ],
+            "type" : "Point"
+         },
+         "type" : "Feature",
+         "properties" : {
+            "population" : 673267,
+            "empleo" : "NA",
+            "actividad" : "NA",
+            "JURISDICCI" : "RIO NEGRO",
+            "CAPITAL" : "VIEDMA",
+            "subocupacion_demandante" : "NA",
+            "desocupacion" : "NA",
+            "UNION" : -2147483648,
+            "subocupacion_no_demandante" : "NA",
+            "FUENTE" : "IGN"
+         }
+      },
+      {
+         "geometry" : {
+            "coordinates" : [
+               -70.118448,
+               -38.641459
+            ],
+            "type" : "Point"
+         },
+         "type" : "Feature",
+         "properties" : {
+            "population" : 432444,
+            "empleo" : "NA",
+            "actividad" : "NA",
+            "JURISDICCI" : "NEUQUEN",
+            "CAPITAL" : "NEUQUEN",
+            "subocupacion_demandante" : "NA",
+            "desocupacion" : "NA",
+            "UNION" : -2147483648,
+            "subocupacion_no_demandante" : "NA",
+            "FUENTE" : "IGN"
+         }
+      },
+      {
+         "geometry" : {
+            "coordinates" : [
+               -65.44651,
+               -37.131976
+            ],
+            "type" : "Point"
+         },
+         "type" : "Feature",
+         "properties" : {
+            "population" : 344322,
+            "empleo" : "NA",
+            "actividad" : "NA",
+            "JURISDICCI" : "LA PAMPA",
+            "CAPITAL" : "SANTA ROSA",
+            "subocupacion_demandante" : "NA",
+            "desocupacion" : "NA",
+            "UNION" : -2147483648,
+            "subocupacion_no_demandante" : "NA",
+            "FUENTE" : "IGN"
+         }
+      },
+      {
+         "geometry" : {
+            "coordinates" : [
+               -68.582565,
+               -34.630697
+            ],
+            "type" : "Point"
+         },
+         "type" : "Feature",
+         "properties" : {
+            "population" : 512333,
+            "empleo" : "36.8",
+            "actividad" : "44.3",
+            "JURISDICCI" : "MENDOZA",
+            "CAPITAL" : "MENDOZA",
+            "subocupacion_demandante" : "12.3",
+            "desocupacion" : "16.9",
+            "UNION" : -2147483648,
+            "subocupacion_no_demandante" : "4.4",
+            "FUENTE" : "IGN"
+         }
+      },
+      {
+         "geometry" : {
+            "coordinates" : [
+               -66.034833,
+               -33.75136
+            ],
+            "type" : "Point"
+         },
+         "type" : "Feature",
+         "properties" : {
+            "population" : 512333,
+            "empleo" : "NA",
+            "actividad" : "NA",
+            "JURISDICCI" : "SAN LUIS",
+            "CAPITAL" : "SAN LUIS",
+            "subocupacion_demandante" : "NA",
+            "desocupacion" : "NA",
+            "UNION" : -2147483648,
+            "subocupacion_no_demandante" : "NA",
+            "FUENTE" : "IGN"
+         }
+      },
+      {
+         "geometry" : {
+            "coordinates" : [
+               -59.201191,
+               -32.056479
+            ],
+            "type" : "Point"
+         },
+         "type" : "Feature",
+         "properties" : {
+            "population" : 3213123,
+            "empleo" : "NA",
+            "actividad" : "NA",
+            "JURISDICCI" : "ENTRE RIOS",
+            "CAPITAL" : "PARANA",
+            "subocupacion_demandante" : "NA",
+            "desocupacion" : "NA",
+            "UNION" : -2147483648,
+            "subocupacion_no_demandante" : "NA",
+            "FUENTE" : "IGN"
+         }
+      },
+      {
+         "geometry" : {
+            "coordinates" : [
+               -63.799748,
+               -32.148536
+            ],
+            "type" : "Point"
+         },
+         "type" : "Feature",
+         "properties" : {
+            "population" : 3213123,
+            "empleo" : "NA",
+            "actividad" : "NA",
+            "JURISDICCI" : "CORDOBA",
+            "CAPITAL" : "CORDOBA",
+            "subocupacion_demandante" : "NA",
+            "desocupacion" : "NA",
+            "UNION" : -2147483648,
+            "subocupacion_no_demandante" : "NA",
+            "FUENTE" : "IGN"
+         }
+      },
+      {
+         "geometry" : {
+            "coordinates" : [
+               -68.895138,
+               -30.86084
+            ],
+            "type" : "Point"
+         },
+         "type" : "Feature",
+         "properties" : {
+            "population" : 321443,
+            "empleo" : "NA",
+            "actividad" : "NA",
+            "JURISDICCI" : "SAN JUAN",
+            "CAPITAL" : "SAN JUAN",
+            "subocupacion_demandante" : "NA",
+            "desocupacion" : "NA",
+            "UNION" : -2147483648,
+            "subocupacion_no_demandante" : "NA",
+            "FUENTE" : "IGN"
+         }
+      },
+      {
+         "geometry" : {
+            "coordinates" : [
+               -60.9489,
+               -30.707118
+            ],
+            "type" : "Point"
+         },
+         "type" : "Feature",
+         "properties" : {
+            "population" : 336663,
+            "empleo" : "34.2",
+            "actividad" : "44.1",
+            "JURISDICCI" : "SANTA FE",
+            "CAPITAL" : "SANTA FE",
+            "subocupacion_demandante" : "10.1",
+            "desocupacion" : "22.4",
+            "UNION" : -2147483648,
+            "subocupacion_no_demandante" : "6.1",
+            "FUENTE" : "IGN"
+         }
+      },
+      {
+         "geometry" : {
+            "coordinates" : [
+               -67.176776,
+               -29.685406
+            ],
+            "type" : "Point"
+         },
+         "type" : "Feature",
+         "properties" : {
+            "population" : 544444,
+            "empleo" : "NA",
+            "actividad" : "NA",
+            "JURISDICCI" : "LA RIOJA",
+            "CAPITAL" : "LA RIOJA",
+            "subocupacion_demandante" : "NA",
+            "desocupacion" : "NA",
+            "UNION" : -2147483648,
+            "subocupacion_no_demandante" : "NA",
+            "FUENTE" : "IGN"
+         }
+      },
+      {
+         "geometry" : {
+            "coordinates" : [
+               -57.803792,
+               -28.780208
+            ],
+            "type" : "Point"
+         },
+         "type" : "Feature",
+         "properties" : {
+            "population" : 331111,
+            "empleo" : "NA",
+            "actividad" : "NA",
+            "JURISDICCI" : "CORRIENTES",
+            "CAPITAL" : "CORRIENTES",
+            "subocupacion_demandante" : "NA",
+            "desocupacion" : "NA",
+            "UNION" : -2147483648,
+            "subocupacion_no_demandante" : "NA",
+            "FUENTE" : "IGN"
+         }
+      },
+      {
+         "geometry" : {
+            "coordinates" : [
+               -65.364528,
+               -26.947357
+            ],
+            "type" : "Point"
+         },
+         "type" : "Feature",
+         "properties" : {
+            "population" : 221111,
+            "empleo" : "NA",
+            "actividad" : "NA",
+            "JURISDICCI" : "TUCUMAN",
+            "CAPITAL" : "SAN MIGUEL DE TUCUMAN",
+            "subocupacion_demandante" : "NA",
+            "desocupacion" : "NA",
+            "UNION" : -2147483648,
+            "subocupacion_no_demandante" : "NA",
+            "FUENTE" : "IGN"
+         }
+      },
+      {
+         "geometry" : {
+            "coordinates" : [
+               -63.250226,
+               -27.785092
+            ],
+            "type" : "Point"
+         },
+         "type" : "Feature",
+         "properties" : {
+            "population" : 199111,
+            "empleo" : "NA",
+            "actividad" : "NA",
+            "JURISDICCI" : "SANTIAGO DEL ESTERO",
+            "CAPITAL" : "SANTIAGO DEL ESTERO",
+            "subocupacion_demandante" : "NA",
+            "desocupacion" : "NA",
+            "UNION" : -2147483648,
+            "subocupacion_no_demandante" : "NA",
+            "FUENTE" : "IGN"
+         }
+      },
+      {
+         "geometry" : {
+            "coordinates" : [
+               -54.651474,
+               -26.875138
+            ],
+            "type" : "Point"
+         },
+         "type" : "Feature",
+         "properties" : {
+            "population" : 111781,
+            "empleo" : "NA",
+            "actividad" : "NA",
+            "JURISDICCI" : "MISIONES",
+            "CAPITAL" : "POSADAS",
+            "subocupacion_demandante" : "NA",
+            "desocupacion" : "NA",
+            "UNION" : -2147483648,
+            "subocupacion_no_demandante" : "NA",
+            "FUENTE" : "IGN"
+         }
+      },
+      {
+         "geometry" : {
+            "coordinates" : [
+               -66.943482,
+               -27.336948
+            ],
+            "type" : "Point"
+         },
+         "type" : "Feature",
+         "properties" : {
+            "population" : 1111,
+            "empleo" : "NA",
+            "actividad" : "NA",
+            "JURISDICCI" : "CATAMARCA",
+            "CAPITAL" : "SAN FERNANDO DEL VALLE DE CATAMARCA",
+            "subocupacion_demandante" : "NA",
+            "desocupacion" : "NA",
+            "UNION" : -2147483648,
+            "subocupacion_no_demandante" : "NA",
+            "FUENTE" : "IGN"
+         }
+      },
+      {
+         "geometry" : {
+            "coordinates" : [
+               -60.765795,
+               -26.386517
+            ],
+            "type" : "Point"
+         },
+         "type" : "Feature",
+         "properties" : {
+            "population" : 188111,
+            "empleo" : "NA",
+            "actividad" : "NA",
+            "JURISDICCI" : "CHACO",
+            "CAPITAL" : "RESISTENCIA",
+            "subocupacion_demandante" : "NA",
+            "desocupacion" : "NA",
+            "UNION" : -2147483648,
+            "subocupacion_no_demandante" : "NA",
+            "FUENTE" : "IGN"
+         }
+      },
+      {
+         "geometry" : {
+            "coordinates" : [
+               -59.934358,
+               -24.893106
+            ],
+            "type" : "Point"
+         },
+         "type" : "Feature",
+         "properties" : {
+            "population" : 167111,
+            "empleo" : "NA",
+            "actividad" : "NA",
+            "JURISDICCI" : "FORMOSA",
+            "CAPITAL" : "FORMOSA",
+            "subocupacion_demandante" : "NA",
+            "desocupacion" : "NA",
+            "UNION" : -2147483648,
+            "subocupacion_no_demandante" : "NA",
+            "FUENTE" : "IGN"
+         }
+      },
+      {
+         "geometry" : {
+            "coordinates" : [
+               -64.812913,
+               -24.3
+            ],
+            "type" : "Point"
+         },
+         "type" : "Feature",
+         "properties" : {
+            "population" : 118881,
+            "empleo" : "NA",
+            "actividad" : "NA",
+            "JURISDICCI" : "SALTA",
+            "CAPITAL" : "SALTA",
+            "subocupacion_demandante" : "NA",
+            "desocupacion" : "NA",
+            "UNION" : -2147483648,
+            "subocupacion_no_demandante" : "NA",
+            "FUENTE" : "IGN"
+         }
+      },
+      {
+         "geometry" : {
+            "coordinates" : [
+               -65.769078,
+               -23.318576
+            ],
+            "type" : "Point"
+         },
+         "type" : "Feature",
+         "properties" : {
+            "population" : 133455,
+            "empleo" : "NA",
+            "actividad" : "NA",
+            "JURISDICCI" : "JUJUY",
+            "CAPITAL" : "SAN SALVADOR DE JUJUY",
+            "subocupacion_demandante" : "NA",
+            "desocupacion" : "NA",
+            "UNION" : -2147483648,
+            "subocupacion_no_demandante" : "NA",
+            "FUENTE" : "IGN"
+         }
+      },
+      {
+         "geometry" : {
+            "coordinates" : [
+               -64.544534,
+               -53.416024
+            ],
+            "type" : "Point"
+         },
+         "type" : "Feature",
+         "properties" : {
+            "population" : 118881,
+            "empleo" : "NA",
+            "actividad" : "NA",
+            "JURISDICCI" : "TIERRA DEL FUEGO, ANTARTIDA E*",
+            "CAPITAL" : "USHUAIA",
+            "subocupacion_demandante" : "NA",
+            "desocupacion" : "NA",
+            "UNION" : -2147483648,
+            "subocupacion_no_demandante" : "NA",
+            "FUENTE" : "IGN"
+         }
+      },
+      {
+         "geometry" : {
+            "coordinates" : [
+               -60.556148,
+               -36.673086
+            ],
+            "type" : "Point"
+         },
+         "type" : "Feature",
+         "properties" : {
+            "population" : 345775,
+            "empleo" : "37.3",
+            "actividad" : "47.6",
+            "JURISDICCI" : "BUENOS AIRES",
+            "CAPITAL" : "LA PLATA",
+            "subocupacion_demandante" : "12.7",
+            "desocupacion" : "21.7",
+            "UNION" : -2147483648,
+            "subocupacion_no_demandante" : "6.4",
+            "FUENTE" : "IGN"
+         }
+      },
+      {
+         "geometry" : {
+            "coordinates" : [
+               -58.445443,
+               -34.614498
+            ],
+            "type" : "Point"
+         },
+         "type" : "Feature",
+         "properties" : {
+            "population" : 366455,
+            "empleo" : "37.3",
+            "actividad" : "47.6",
+            "JURISDICCI" : "CIUDAD AUTONOMA DE BUENOS AIRE",
+            "CAPITAL" : "BUENOS AIRES",
+            "subocupacion_demandante" : "12.7",
+            "desocupacion" : "21.7",
+            "UNION" : -2147483648,
+            "subocupacion_no_demandante" : "6.4",
+            "FUENTE" : "IGN"
+         }
+      }
+   ],
+   "type" : "FeatureCollection"
+}
