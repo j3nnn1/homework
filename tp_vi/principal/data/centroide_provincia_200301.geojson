@@ -213,14 +213,14 @@
          "type" : "Feature",
          "properties" : {
             "population" : 3213123,
-            "empleo" : "NA",
-            "actividad" : "NA",
+            "empleo" : "34.8",
+            "actividad" : "45.6",
             "JURISDICCI" : "CORDOBA",
             "CAPITAL" : "CORDOBA",
-            "subocupacion_demandante" : "NA",
-            "desocupacion" : "NA",
+            "subocupacion_demandante" : "14.0",
+            "desocupacion" : "23.6",
             "UNION" : -2147483648,
-            "subocupacion_no_demandante" : "NA",
+            "subocupacion_no_demandante" : "4.9",
             "FUENTE" : "IGN"
          }
       },
@@ -257,14 +257,14 @@
          "type" : "Feature",
          "properties" : {
             "population" : 336663,
-            "empleo" : "34.2",
-            "actividad" : "44.1",
+            "empleo" : "0",
+            "actividad" : "0",
             "JURISDICCI" : "SANTA FE",
             "CAPITAL" : "SANTA FE",
-            "subocupacion_demandante" : "10.1",
-            "desocupacion" : "22.4",
+            "subocupacion_demandante" : "0",
+            "desocupacion" : "0",
             "UNION" : -2147483648,
-            "subocupacion_no_demandante" : "6.1",
+            "subocupacion_no_demandante" : "0",
             "FUENTE" : "IGN"
          }
       },
@@ -323,14 +323,14 @@
          "type" : "Feature",
          "properties" : {
             "population" : 221111,
-            "empleo" : "NA",
-            "actividad" : "NA",
+            "empleo" : "36.3",
+            "actividad" : "41.7",
             "JURISDICCI" : "TUCUMAN",
             "CAPITAL" : "SAN MIGUEL DE TUCUMAN",
-            "subocupacion_demandante" : "NA",
-            "desocupacion" : "NA",
+            "subocupacion_demandante" : "19.0",
+            "desocupacion" : "21.2",
             "UNION" : -2147483648,
-            "subocupacion_no_demandante" : "NA",
+            "subocupacion_no_demandante" : "4.8",
             "FUENTE" : "IGN"
          }
       },
