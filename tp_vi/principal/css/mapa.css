@@ -4,13 +4,13 @@
 }
 
 .symbol {
-  fill: yellow;
-  fill-opacity: .9;
+  fill: #78C679 ;
+  fill-opacity: 1;
   stroke: #fff;
   stroke-width: 0.25px;
 }
 .symbol2 {
-  fill: rgb(230,85,13);
+  fill: green;
   fill-opacity: .5;
   stroke: #fff;
   stroke-width: 0.25px;

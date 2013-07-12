@@ -40,8 +40,8 @@
            var width = 800,
                height = 600;
            var color = new Array();
-               color['Empleo'] = "rgb(230,85,13)";
-               color['Desocupacion'] = "yellow";
+               color['Empleo'] = "#10785a";
+               color['Desocupacion'] = "#3ca33c";
 
            //coloring by activity,
            //var scale_color_provinces =  colorbrewer.Blues[9].reverse().concat(colorbrewer.YlGn[9]);
@@ -335,6 +335,7 @@
                  .attr("height", 18)
                  .attr("y", 30 )
                  .style("fill", function (d, i) { return color[d]});
+
            legend.append("text")
                  .attr("x", width - 400)
                  .attr("y", 40)

@@ -3,32 +3,6 @@
       {
          "geometry":{
             "coordinates":[
-               -62.1695715652708,
-               -38.5800346774834
-            ],
-            "type":"Point"
-         },
-         "type":"Feature",
-         "properties":{
-            "population":33333,
-            "ID_1":1,
-            "empleo":"40.8",
-            "actividad":"44.9",
-            "NAME_0":"Argentina",
-            "subocupacion_demandante":"6.1",
-            "desocupacion":"9.0",
-            "NAME_2":"Bahia Blanca",
-            "subocupacion_no_demandante":"2.7",
-            "UNION":-2147483648,
-            "ISO":"ARG",
-            "NAME_1":"Buenos Aires",
-            "ID_2":10,
-            "ID_0":11
-         }
-      },
-      {
-         "geometry":{
-            "coordinates":[
                -69.956171,
                -48.815801
             ],
