@@ -9,9 +9,10 @@
 }
 .parallax .contenido{
 	position: relative;
-	top:400px;
+//	top:400px;
 	text-align: center;
 	color: #FFF;
+        font-wight: 900px; 
 }
 .wrapper{
 	position: relative;
@@ -26,7 +27,8 @@
 
 }
 #uno{
-	background: url(../img/cc_cap_federal.jpg);
+	background: url(../img/comparacion.jpeg);
+        backgrounf: gray;
 	background-size: 100% 100%;
 }
 #dos{
