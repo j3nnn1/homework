@@ -1,0 +1,280 @@
+<html lang="en">
+    <head>
+       <meta charset="utf-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <title>Remuneraci&oacute;n Anual por Sector</title>
+       <!-- <script type="text/javascript" src="http://d3js.org/d3.v3.min.js"></script>
+       <script type="text/javascript" src="http://d3js.org/topojson.v1.min.js"></script>
+       <script type="text/javascript" src="http://d3js.org/queue.v1.min.js"></script> -->
+       <script src="js/jquery.js"></script>
+       <script src="js/bootstrap.js"></script>
+       <script type="text/javascript" src="js/d3.v3.min.js"></script>
+       <script type="text/javascript" src="js/topojson.v1.min.js"></script>
+       <script type="text/javascript" src="js/queue.v1.min.js"></script> 
+       <script type="text/javascript" src="js/jquery.tipsy.js"></script>
+       <script type="text/javascript" src="js/colorbrewer/colorbrewer.js"></script>
+       <script type="text/javascript" src="js/init.js"></script>
+       <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+       <script src="js/jquery-1.6.1.min.js"></script>
+       <script src="js/bootstrap.min.js"></script>
+
+       <link href="css/bootstrap-responsive.css" rel="stylesheet">
+       <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+       <link rel="stylesheet" href="css/mapa.css">
+       </head>
+       <body>
+	   <style>
+#intro {
+    background: url(img/intro.png) 50% 0 fixed;
+    height: auto; 
+    margin: 0 auto;
+    width: 100%;
+    position: relative;
+    box-shadow: 0 0 50px rgba(0,0,0,0.8);
+    padding: 100px 0;
+}
+.indice {
+    font-size: 20px;
+    color: #6BAED6;
+}
+.indice ul li {
+    list-style: none;
+}
+#indice {
+    background: url(img/intro.png) 50% 0 fixed;
+    height: auto; 
+    margin: 0 auto;
+    width: 100%;
+    position: relative;
+    box-shadow: 0 0 50px rgba(0,0,0,0.8);
+    padding: 300px 0;
+}
+#home4 {
+    background: url(img/intro.png) 50% 0 fixed;
+    height: auto; 
+    margin: 0 auto;
+    width: 100%;
+    position: relative;
+    box-shadow: 0 0 50px rgba(0,0,0,0.8);
+    padding: 200px 0;
+}
+#home {
+    background: url(img/intro.png) 50% 0 fixed;
+    height: auto; 
+    margin: 0 auto;
+    width: 100%;
+    position: relative;
+    box-shadow: 0 0 50px rgba(0,0,0,0.8);
+    padding: 100px 0;
+}
+#home2 {
+    background: url(img/intro.png) 50% 0 fixed;
+    height: auto; 
+    margin: 0 auto;
+    width: 100%;
+    position: relative;
+    box-shadow: 0 0 50px rgba(0,0,0,0.8);
+    padding: 200px 0;
+}
+#home3 {
+    background: url(img/intro.png) 50% 0 fixed;
+    height: auto; 
+    margin: 0 auto;
+    width: 100%;
+    position: relative;
+    box-shadow: 0 0 50px rgba(0,0,0,0.8);
+    padding: 200px 0;
+}
+#about {
+    background: url(img/about.png) 50% 0 fixed;
+    height: auto;
+    margin: 0 auto;
+    width: 100%;
+    position: relative;
+    box-shadow: 0 0 50px rgba(0,0,0,0.8);
+    padding: 100px 0;
+    color: #fff;
+}
+.titulo {
+     fill: steelblue;
+	 stroke: #fff;
+	 font-size  : 14;
+
+}
+.titulo_head {
+	 color: #6BAED6;
+	 font-weiht: bold;
+	 font-size  : 18;
+}
+.legend_activity {
+    fill: #fff;
+	stroke: #fff;
+}
+	   </style>
+           <script>
+$(document).ready(function(){
+   // cache the window object
+   $window = $(window);
+ 
+   $('section[data-type="background"]').each(function(){
+     // declare the variable to affect the defined data-type
+     var $scroll = $(this);
+                     
+      $(window).scroll(function() {
+        // HTML5 proves useful for helping with creating JS functions!
+        // also, negative value because we're scrolling upwards                            
+        var yPos = -($window.scrollTop() / $scroll.data('speed'));
+         
+        // background position
+        var coords = '50% '+ yPos + 'px';
+ 
+        // move the background
+        $scroll.css({ backgroundPosition: coords });   
+      }); // end window scroll
+   });  // end section function
+}); // close out script
+           </script>
+           <div class="navbar navbar-fixed-top">
+           <div class="navbar-inner">
+               <a class="brand" href="index.html">Visualizaciones</a>
+		    <ul class="nav">
+			<li><a href="#">Integrantes</a></li>
+			<li class="divider-vertical"></li>
+			<li class="divider-vertical"></li>
+			<li><a href="empleo_sector.html">Empleo Anual Por Sector</a></li>
+			<li class="active"><a href="mapa.html">Empleo Trimestral por Provincia </a></li>
+			<li><a href="maps_desocupacion.html">Coordenadas Paralelas</a></li>
+			<li class="divider-vertical"></li>
+			<li><a href="referencias.html">Referencias</a></li>
+		    </ul>
+           </div>
+           </div>
+           <section id="indice" data-speed="4" data-type="background">
+               <div class="container">
+			<div class="row-fluid">
+                            <div class="span3"> 
+                            </div>
+                            <div class="span9">
+                                 <div class="indice">
+                                 <ul>
+                                      <li>
+                                           Tasa de Actividad.
+                                      </li>
+                                      <li>
+                                           Tasa de Empleo
+                                      </li>
+                                      <li>
+                                           Tasa de Desocupaci&oacute;n
+                                      </li>
+                                      <li>
+                                           Tasa de Subocupaci&oacute;n Demandante
+                                      </li>
+                                 </ul>
+                                 </div>
+                            </div>
+                        </div>
+               </div>
+           </section>
+
+	   <!-- Section 1 -->
+	   <section id="home" data-speed="6" data-type="background">
+	       <div class="container">
+		    <p class="titulo_head">Primer Trimestre.<p>
+			<div class="row-fluid">
+				<div class="span4 ">
+                                     <img width="800px" height="600px" src="svgs/mapa200301.png">
+				</div>
+				<div class="span4 ">
+                                     <img src="svgs/mapa200701.png">
+				</div>
+				<div class="span4 ">
+                                     <img src="svgs/mapa201001.png">
+				</div>
+                        </div>
+               </div>
+           </section>
+           	    <!-- Section 2 -->
+	   <section id="home2" data-speed="8" data-type="background">
+	       <div class="container">
+		   
+		    <p class="titulo_head">Segundo Trimestre.<p>
+		
+			<div class="row-fluid">
+		        <div class="span4 ">
+                                     <img src="svgs/mapa200302.png">
+		        </div><!-- /.span4 -->
+		        <div class="span4 ">
+                                     <img src="svgs/mapa200702.png">
+		        </div><!-- /.span4 -->
+		        <div class="span4 ">
+                                     <img src="svgs/mapa201002.png">
+		        </div><!-- /.span4 -->
+	    	</div>
+	       </div>
+	   </section>
+           <section id="home3" data-speed="4" data-type="background">
+	       <div class="container">
+		   
+		    <p class="titulo_head">Tercer Trimestre.<p>
+		
+			<div class="row-fluid">
+		        <div class="span4 ">
+                                     <img src="svgs/mapa200303.png">
+		        </div><!-- /.span4 -->
+		        <div class="span4 ">
+                                     <img src="svgs/mapa200703.png">
+		        </div><!-- /.span4 -->
+		        <div class="span4 ">
+                                     <img src="svgs/mapa201003.png">
+		        </div><!-- /.span4 -->
+	    	</div>
+	       </div>
+	   </section>
+           <section id="home4" data-speed="6" data-type="background">
+	       <div class="container">
+		   
+		    <p class="titulo_head">Cuarto Trimestre.<p>
+		
+			<div class="row-fluid">
+		        <div class="span4 ">
+                                     <img src="svgs/mapa200304.png">
+		        </div><!-- /.span4 -->
+		        <div class="span4 ">
+                                     <img src="svgs/mapa200704.png">
+		        </div><!-- /.span4 -->
+		        <div class="span4 ">
+                                     <img src="svgs/mapa201004.png">
+		        </div><!-- /.span4 -->
+	    	</div>
+	       </div>
+	   </section>
+	   <!-- Section 3 -->
+	   <section id="intro" data-speed="8" data-type="background">
+			<div class="container">
+			
+	    	<div class="hero-unit">
+	    		<h2> Comentarios Finales.</h2>
+	    		<ul>
+				<li><p>Buenos Aires, Mendoza, Tucuman y C&oacute;rdoba, permanecen con un comportamiento creciente en cuanto a Actividad</p></li>
+				<li><p>La Tasa de Empleo fue en incremento en todas las provincias exceptuando en San Luis. </p></li>
+				<li><p>La Provincia La Pampa, tiene un crecimiento progresivo en este periodo y su mejor periodo es el Tercer Trimestre.</p></li>
+				<li><p>El 2007 fue el punto m&aacute; alto para tierra del fuego, mostrando un desarrollo de la industria (Ley de Promoci&oacute; Industrial para Fierra del Fuego).</p></li>
+
+				<li><p>M&aacute; provincias se suman al grupo tienen tasa de actividad superior a 40, (La Pampa, Salta y Santa F&eacute;).</p></li>
+				<li><p>La Tasa de Desocupaci&oacute;n, en San Luis y Santa cruz incrementa, en el resto de las provincias disminuye.</p></li>
+				</ul>
+	    	</div>
+	    </div>
+	    </div>
+	   </section>
+	   <!-- Section 4 -->
+	   <section id="intro" data-speed="6" data-type="background">
+	   <div class="row-fluid">
+		        <div class="span9 text-center">
+				  <h1>Gracias!</h1>
+		          <img src="img/gracias.jpg">
+		        </div>
+	   </div>
+	   </section>
+       </body>
+       </html>

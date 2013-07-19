@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title> Hola que hace ? </title>
+<link href="style.css" type="text/css" rel="stylesheet">
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script src="jquery-1.10.0.min.js"></script>
+<script src="treemap.js"></script>
+</head>
+<body>
+<div id="container" class="container">
+<form>
+  <label><input type="radio" name="mode" value="size" checked> Num. Followers</label>
+  <label><input type="radio" name="mode" value="count"> Quantity Users/App</label>
+</form>
+    <div id="treemap" class="treemap">
+    </div>
+    <div id="colors">
+        <ul>
+        </ul>
+    </div>
+</div>
+<br/>
+<br/>
+<span id="description">
+Each color Represent an App Client For Twitter, and The checkbox "size" show the quantity of followers.
+And the checkbox "count", the quantity of people using the App.
+<p>Reference and Thanks: http://bl.ocks.org/mbostock/4063582</p>
+</span>
+</body>
+</html>

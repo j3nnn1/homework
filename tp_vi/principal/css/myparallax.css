@@ -1,0 +1,52 @@
+.parallax{
+	background-attachment: fixed;
+	margin: 0px;
+	padding: 0px;
+	margin-top: -30px;
+	width: 100%;
+	height: 900px;
+	position: relative;
+}
+.parallax .contenido{
+	position: relative;
+//	top:400px;
+	text-align: center;
+	color: #FFF;
+        font-wight: 900px; 
+}
+.wrapper{
+	position: relative;
+	
+}
+.wrapper div{
+	position: fixed;
+	width: 60px;
+	height: 60px;
+	border-radius: 50px;
+	background-color: #FFF;
+
+}
+#uno{
+	background: url(../img/comparacion.jpeg);
+        backgrounf: gray;
+	background-size: 100% 100%;
+}
+#dos{
+	background: url(../img/cc_puente_mujer.jpg);
+	background-size: 100% 100%;
+}
+
+#tres {
+	background: url(../img/cc_puerto_madero.jpg);
+	background-size: 100% 100%;
+}
+
+#cuatro {
+	background: url(../img/cc_pza_mayo.jpg);
+	background-size: 100% 100%;
+}
+
+#cinco {
+	background: url(../img/compras-buenos-aires-abasto.jpg);
+	background-size: 100% 100%;
+}

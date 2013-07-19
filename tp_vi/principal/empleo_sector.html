@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+    <meta charset="utf-8">
+    <head>
+        <title>Evolución del Empleo Anual Por Sector.</title>
+        <link href="css/empleo_sector.css" rel="stylesheet" media="screen">
+        <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
+        <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+        <script type="text/javascript" src="js/d3.v3.min.js"></script>
+        <script src="js/jquery.js"></script>
+        <script src="js/bootstrap.js"></script>
+    </head>
+<body width="1000px">
+<div class="navbar  navbar-static-top">
+    <div class="navbar-inner">
+        <a class="brand" href="index.html">Inflación y Empleo</a>
+            <ul class="nav">
+                <li><a href="#">Integrantes</a></li>
+                <li class="divider-vertical"></li>
+                <li class="divider-vertical"></li>
+                <li class="active"><a href="empleo_sector.html">Empleo Anual Por Sector</a></li>
+                <li><a href="mapa.html">Empleo Trimestral por provincia</a></li>
+                <li><a href="vision_macro.html">Visión Macro</a></li>
+                <li class="divider-vertical"></li>
+                <li><a href="referencias.html">Referencias</a></li>
+            </ul>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="span3">
+    <br>
+    <ul class="nav nav-list navbar-inner navbar-inverse">
+	  <li class="nav-header">Gráficos</li>
+	  <li class="active"><a href="empleo_sector.html"> Empleo Anual por Sector</a></li>
+	  <li>
+	      <a href="empleo_sector_tableau.html">Distribución Total por Sector.</a>
+	  </li>
+	  <li>
+	      <a href="empleo_sector_intersectorial.html"> Gráfico Intersectorial. </a>
+	  </li>
+    </ul>
+    </div>
+    <div class="span9" id="barras">
+    </div>
+</div>
+<script>
+
+var margin = {top: 100, right: 290, bottom: 30, left: 40},
+    width = 800 - margin.left - margin.right,
+    height = 500 - margin.top - margin.bottom;
+
+var x = d3.scale.ordinal()
+    .rangeRoundBands([0, width], .1);
+
+var y = d3.scale.linear()
+    .rangeRound([height, 0]);
+
+var color = d3.scale.ordinal()
+    .range([d3.rgb(141,211,199), d3.rgb(255,255,179), d3.rgb(190,186,218), d3.rgb(251,128,114), d3.rgb(128,177,211), d3.rgb(253,180,98), d3.rgb(179,222,105), d3.rgb(252,205,229), d3.rgb(217,217,217), d3.rgb(188,128,189), d3.rgb(204,235,197), d3.rgb(255,237,111), d3.rgb(137,160,166)]);
+
+var xAxis = d3.svg.axis()
+    .scale(x)
+    .orient("bottom");
+
+var yAxis = d3.svg.axis()
+    .scale(y)
+    .orient("left")
+    .tickFormat(d3.format(".2s"));
+
+var svg = d3.select("#barras").append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+    .append("g")
+    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+svg.append("text")
+        .attr("x", ((width + margin.right + margin.left) / 2))             
+        .attr("y", 0 - (margin.top / 2))
+        .attr("text-anchor", "middle")  
+        .style("text-decoration", "underline")  
+        .style("font-size", "14px")
+        .text("Evolucion del trabajo por sector de actividad");
+
+d3.csv("data/empleo_sector.csv", function(error, data) {
+  color.domain(d3.keys(data[0]).filter(function(key) { return key !== "Sector"; }));
+
+  var tooltip = d3.select("#barras").append("div")   
+                       .attr("class", "tooltip")               
+                       .style("opacity", 0.5);
+           
+
+  data.forEach(function(d) {
+    var y0 = 0;
+    d.ages = color.domain().map(function(name) { return {name: name, y0: y0, y1: y0 += +d[name]}; });
+    d.total = d.ages[d.ages.length - 1].y1;
+  });
+
+  //data.sort(function(a, b) { return a.total - b.total; });
+
+  x.domain(data.map(function(d) { return d.Sector; }));
+  y.domain([0, d3.max(data, function(d) { return d.total; })]);
+
+  svg.append("g")
+      .attr("class", "x axis")
+      .attr("transform", "translate(0," + height + ")")
+      .call(xAxis);
+
+  svg.append("g")
+      .attr("class", "y axis")
+      .call(yAxis)
+      .append("text")
+      .attr("transform", "rotate(-90)")
+      .attr("y", 6)
+      .attr("dy", ".71em")
+      .style("text-anchor", "end")
+      .text("Trabajo");
+
+  var state = svg.selectAll(".state")
+      .data(data)
+    .enter().append("g")
+      .attr("class", "g")
+      .attr("transform", function(d) { return "translate(" + x(d.Sector) + ",0)"; });
+
+  state.selectAll("rect")
+      .data(function(d) { return d.ages; })
+    .enter().append("rect")
+      .attr("width", x.rangeBand())
+      .attr("y", function(d) { return y(d.y1); })
+      .attr("height", function(d) { return y(d.y0) - y(d.y1); })
+      .style("fill", function(d) { return color(d.name); })
+      .on("mouseover", function(d,i){
+         var mouse = d3.mouse(svg.node()).map( function(d) { return parseInt(d); } );
+             tooltip.classed("hidden", false)
+                         .attr("style", "left:"+(mouse[0]+25)+"px;top:"+mouse[1]+"px")
+                         .html(dohtmltooltips(d));
+
+
+       });
+  var dohtmltooltips = function(d){
+        html = 'Sector:'+d.name;
+        html = html +'<br/>#Empleo actual sector:'+d.y1;
+        html = html +'<br/>#Empleo anterior sector:'+d.y0;
+	return html;
+      }
+  var legend = svg.selectAll(".legend")
+      .data(color.domain().slice().reverse())
+      .enter().append("g")
+      .attr("class", "legend")
+      .attr("transform", function(d, i) { return "translate(0," + i * 20 + ")"; });
+
+  legend.append("rect")
+      .attr("x", width + margin.right - 18)
+      .attr("width", 18)
+      .attr("height", 18)
+      .attr("y", margin.bottom )
+      .style("fill", color);
+
+ legend.append("text")
+      .attr("x", width + margin.right -18)
+      .attr("y", margin.bottom + 10)
+      .attr("dy", ".35em")
+      .style("text-anchor", "end")
+      .style("font-size", "10px")
+      .text(function(d) { return d; });
+ //adding tooltips
+
+});
+
+</script>
+</body>

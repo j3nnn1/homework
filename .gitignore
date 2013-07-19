@@ -3,3 +3,8 @@ withR/*.RData
 *.Rout
 *.RData
 *~
+*.swp
+*.csv
+*.geojson
+*.topojson
+*.txt

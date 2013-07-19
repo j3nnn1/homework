@@ -1,0 +1,412 @@
+<html lang="en">
+    <head>
+       <meta charset="utf-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <title>Remuneraci&oacute;n Anual por Sector</title>
+       <!-- <script type="text/javascript" src="http://d3js.org/d3.v3.min.js"></script>
+       <script type="text/javascript" src="http://d3js.org/topojson.v1.min.js"></script>
+       <script type="text/javascript" src="http://d3js.org/queue.v1.min.js"></script> -->
+       <script src="js/jquery.js"></script>
+       <script src="js/bootstrap.js"></script>
+       <script type="text/javascript" src="js/d3.v3.min.js"></script>
+       <script type="text/javascript" src="js/topojson.v1.min.js"></script>
+       <script type="text/javascript" src="js/queue.v1.min.js"></script> 
+       <script type="text/javascript" src="js/jquery.tipsy.js"></script>
+       <script type="text/javascript" src="js/colorbrewer/colorbrewer.js"></script>
+
+       <link href="css/bootstrap-responsive.css" rel="stylesheet">
+       <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+       <link rel="stylesheet" href="css/mapa.css">
+       </head>
+       <body>
+           <div class="navbar  navbar-static-top">
+           <div class="navbar-inner">
+               <a class="brand" href="index.html">Visualizaciones</a>
+		    <ul class="nav">
+			<li><a href="#">Integrantes</a></li>
+			<li class="divider-vertical"></li>
+			<li class="divider-vertical"></li>
+			<li><a href="empleo_sector.html">Empleo Anual Por Sector</a></li>
+			<li class="active"><a href="mapa.html">Empleo Trimestral por Provincia </a></li>
+			<li><a href="maps_desocupacion.html">Coordenadas Paralelas</a></li>
+			<li class="divider-vertical"></li>
+			<li><a href="referencias.html">Referencias</a></li>
+		    </ul>
+           </div>
+           </div>
+           <script type="text/javascript">
+           $(document).ready(function(){
+
+           var width = 800,
+               height = 600;
+           var color = new Array();
+               color['Empleo'] = "#10785a";
+               color['Desocupacion'] = "#3ca33c";
+
+           //coloring by activity,
+           //var scale_color_provinces =  colorbrewer.Blues[9].reverse().concat(colorbrewer.YlGn[9]);
+           var scale_color_provinces =  colorbrewer.Blues[9];
+	   var actividad = d3.scale.quantile()
+                                   .domain([0,55])
+                                   .range(scale_color_provinces);
+
+           var radius = d3.scale.sqrt()
+                                .domain([0, 50])
+                                .range([0, 16]);
+
+           var svg = d3.select("#mapa2010").append("svg")
+                                      .attr("width", width)
+                                      .attr("height", height);
+
+           //legend to activity 
+           var leg_act =  svg.append("g").attr("id", "leg_act");
+           var swatch = leg_act.selectAll("rect").data(actividad.quantiles());
+               swatch.enter()
+                 .append("rect")
+                 .attr("width", 18)
+                 .attr("height", 18)
+                 .attr("x", function(d,i){ return ( i*18)})
+                 .attr("y", height- 30);
+               swatch.style("fill", function(d,i){ return (actividad(d)) });
+
+           //legend label to activity
+           var label_act = leg_act.selectAll("text").data( actividad.quantiles());
+           label_act.enter().append("text").attr("x", 0).attr("y", height ).text("Actividad Año 2010");
+           label_act.enter()
+                    .append("text")
+                    .classed("legend_activity", true)
+                    .attr("x", function(d, i){ return (2 + (i * 18))})
+                    .attr("y",  (height - 30));
+
+           label_act.text( function(d,i){ 
+              return d3.round(d); 
+           });
+
+
+           var format = d3.time.format("%Y%m");
+
+           var projection = d3.geo.mercator()
+                                  .center([-70, -39 ])
+                                  .scale(700)
+                                  .translate([ 100 , 250 ])
+				  .precision(.1); 
+
+           var path = d3.geo.path()
+                            .projection(projection);
+
+           queue()
+           .defer(d3.json, "data/arg_adm1.topojson.201002")
+           .defer(d3.json, "data/eph20101centroide.geojson")
+           .defer(d3.csv, "data/eph_ciudadBuenosAires_mapa.csv")
+           .defer(d3.csv, "data/eph_Argentina.csv")
+           .await(ready);
+
+           function ready(error, us, centroid, cdadbsas, bsas) {
+
+           var tooltip = d3.select("#mapa2010").append("div")   
+                       .attr("class", "tooltip")               
+                       .style("opacity", 0.5);
+
+           var scatt_width = 550;
+           var scatt_height = 200;
+
+           //scatterplot
+           var scatter = svg.append("g")
+                               .attr("class","scatterplot")
+                               .attr("transform", function(d, i){ return ("translate("+ (width - scatt_width)+","+ (height - scatt_height) + ")"); }); 
+           var circle = scatter.selectAll("circle");
+
+
+           //drawing each province
+           //taking from http://bost.ocks.org/mike/map/
+           //and here http://techslides.com/d3-world-maps-tooltips-zooming-and-queue/
+           svg.selectAll(".province")
+              .data(topojson.feature(us, us.objects.ARG_adm1).features)
+              .enter().append("path")
+              .attr("class", function(d,i){return "province_"+d.properties.ID_1})
+              .attr("d", path)
+              .style("fill", function(d){ return actividad(d.properties.actividad); })
+              .on("mouseover", function(d,i){
+                   d3.select(this).style("fill", "rgb(2, 56, 88)");
+                   var mouse = d3.mouse(svg.node()).map( function(d) { return parseInt(d); } );
+                   tooltip.classed("hidden", false)
+                         .attr("style", "left:"+(mouse[0]+25)+"px;top:"+mouse[1]+"px")
+                         .html(dohtmltooltips(d));
+                   })
+              .on("mouseout",  function(d,i) {
+                  d3.select(this).style("fill", actividad(d.properties.actividad));
+                  tooltip.classed("hidden", true);
+
+                  circle = d3.selectAll("circle");
+                  circle.transition()
+                       .attr("r", 0)
+                       .remove();
+
+                  d3.selectAll(".axis").remove(); 
+                  d3.selectAll(".scatter").remove(); 
+                  d3.selectAll(".grid").remove(); 
+ 
+              })
+              .on("click", function(d,i){
+
+                 
+                  data = getDataForLine(d.properties.ID_1, bsas);
+                  data_points = new Array();                  
+
+                  data.forEach(function(d){
+                         console.log('empleo: ');
+                         console.log(d.empleo);
+                         if (d.empleo > 6) {
+                             data_points.push([format.parse(d.Periodo), d.empleo]);
+                         }
+                       });
+
+                  // scale scatterplot
+                  var ymin =  d3.min(data_points, function(d) {if(d[1]!=0){ return parseFloat(d[1])}});
+                  var ymax =  d3.max(data_points, function(d) {if(d[1]!=0){ return parseFloat(d[1])}}); 
+                  
+                  var rmin =  d3.min(data_points, function(d) {if(d[1]!=0){ return parseFloat(d[1])}});
+                  var rmax =  d3.max(data_points, function(d) {return parseFloat(d[1])}); 
+                  //axis scatterplot
+                  var ypadding = 20;
+                  var xpadding = 50;
+
+                  scatter.append("text").attr("class", "scatter").attr("x", xpadding).attr("y", height-600  ).text("Tasa de Empleo x Año");
+                  var xscale = d3.time.scale()
+                                 .domain([format.parse('200301'), format.parse('201301')])
+                                 .rangeRound([xpadding, scatt_width + (xpadding* 2)]);
+
+                  var yscale = d3.scale.linear()
+                               .domain([ymin, ymax])
+                               .range([(scatt_height - (ypadding*2)), ypadding]);           
+
+                  var rscale = d3.scale.linear()
+				 .domain([ymin, ymax ])
+				 .range([2, 5]);
+
+                 circle = scatter.selectAll("circle")
+                         .data(data_points)
+                         .enter()
+                         .append("circle")  
+                         .attr("cx", function(d) {return xscale(d[0])} )
+                         .attr("cy", function(d) {
+                                         if (d[1]>6 ) {
+                                         return (yscale(d[1]));
+                                         } 
+                                      })
+                         .attr("r", function(d) {
+                             var r = rscale(parseFloat(d[1]))
+                             if (d[1] > 0) {return r}
+                             else {return 1;}
+                         })
+                         .attr("fill","steelblue"); 
+                 /*var line = d3.svg.line()
+                                  .x(function(d){return xscale(d[0])})
+                                  .y(function(d){ console.log(d[1]); if (d[1]!=0){ return yscale(d[1]);} else { console.log('entro en el 0'); console.log(d[1]); console.log(yscale(1)); return yscale(1); } }); */
+
+                 /* scatter.append("svg:path").attr("d", line(data_points)); */
+
+                 /*var pathsline = scatter.selectAll("path")
+                                        .data(data_points);
+                 pathsline.enter()
+                          .append("svg:path")
+                          .attr("class", "lines")
+                          .attr("d", line(d));*/
+
+                 var xAxis = d3.svg.axis()
+                                   .scale(xscale)
+                                   .orient("bottom")
+                                   .ticks(d3.time.years, 2)
+                                   .tickSubdivide(9)
+                                   .tickPadding(5);
+
+                 var yAxis = d3.svg.axis()
+                                   .scale(yscale)
+                                   .tickSubdivide(10)
+                                   .orient("left")
+                                   .ticks(5);
+                 
+                 scatter.append("g")
+                        .attr("class", "axis")
+                        .attr("transform", "translate(" + (ypadding +25) + ",0)")
+                        .call(yAxis);
+
+                 scatter.append("g").attr("class", "axis")
+                                    .attr("transform", "translate(0," + (scatt_height - ypadding -17 ) + ")")
+                                    .call(xAxis);
+
+                 /*var ticks = xscale.ticks(4);
+
+                 scatter.selectAll("path.xgrid")
+                        .data(ticks)
+                        .enter()
+                        .append("path")
+                        .attr("class", "grid")
+                        .attr("d",function(d) {
+                            return  "M"+xscale(d) + 
+                                    " "+xpadding +
+                                    "L" + xscale(d) +
+                                    " " + (scatt_height-ypadding -10);} );
+
+                 var ticks = yscale.ticks(4);
+                 scatter.selectAll("path.xgrid")
+                        .data(ticks)
+                        .enter()
+                        .append("path")
+                        .attr("class", "grid")
+                        .attr("d",function(d) {
+                             result =  "M"+(ypadding+35) + 
+                                    " "+yscale(d) +
+                                    "L" + (scatt_width)+
+                                    " " + yscale(d) ;
+                            console.log(result);
+                            return result;
+                         } ); */
+
+
+              });
+
+           //get data for update
+           var getDataForLine = function(id, d) {
+		  return d.filter(function(d) { return (parseInt(id) == parseInt(d.provincia_id)); });
+               
+           }
+           //drawing unemployment
+           svg.selectAll(".symbol")
+              .data(centroid.features)
+              .enter().append("path")
+              .attr("class", "symbol")
+              .attr("d", path.pointRadius( function(d) { return radius(1) }))
+              .transition()
+              .delay(2000)
+              .attr("d", path.pointRadius( function(d) {
+                   var r = radius(d.properties.desocupacion); 
+                   if( r > 0) { return r; } 
+                   else { return 1;}  
+              }));
+
+           var show_unemployment = function(d, event) {
+                 event
+                .transition()
+                .delay(10)
+                .duration(2000)
+                .attr("d", path.pointRadius( function(d) { return radius(d.properties.desocupacion) }))
+                .each("end", show_employment);
+           }
+           var show_employment = function(d, event) {
+                d3.select(this)
+                .attr("class", "symbol2")
+                .transition()
+                .duration(10)
+                .attr("d", path.pointRadius( function(d) { return radius(d.properties.empleo) }));
+           }
+           //drawing employment
+           svg.selectAll(".symbol2")
+              .data(centroid.features)
+              .enter().append("path")
+              .attr("class", "symbol2")
+              .attr("d", path.pointRadius(function(d) { return radius(d.properties.empleo); }))
+              .on("mouseover", function(d,i){
+		var mouse = d3.mouse(svg.node()).map( function(d) { return parseInt(d); } );
+                tooltip.classed("hidden", false)
+                         .attr("style", "left:"+(mouse[0]+25)+"px;top:"+mouse[1]+"px")
+                         .html(dohtmltooltips(d));
+
+              })
+              .on("mouseout",  function(d,i) {
+                  tooltip.classed("hidden", true);
+              })
+              .on("mousedown", function(d,i) {
+                 evento = d3.select(this);
+                 show_unemployment(d, evento);
+              });
+
+           
+           // drawing legend
+           var legend = svg.selectAll(".legend")  
+                           .data(Object.keys(color))
+                           .enter().append("g")
+                           .attr("class", "legend")
+                           .attr("transform", function(d, i){ return "translate(0,"+ i * 20 + ")"; });
+
+           legend.append("rect") 
+                 .attr("x", width - 300)
+                 .attr("width", 18)
+                 .attr("height", 18)
+                 .attr("y", 30 )
+                 .style("fill", function (d, i) { return color[d]});
+
+           legend.append("text")
+                 .attr("x", width - 400)
+                 .attr("y", 40)
+                 .attr("dy", ".35em")
+                 .text(function(d){return d + ' 2010';});
+
+
+           //drawin tooltips
+           dohtmltooltips = function(d) {
+               var html;
+               if (d.properties.ISO==null & d.properties.NAME_1!=null ) {
+                   html = 'Provincia: ' + d.properties.NAME_1.toLowerCase();
+               }
+               else {
+                   
+                   if (d.properties.NAME_2=="Bahia Blanca") {
+                       html = 'Provincia: ' + d.properties.NAME_2.toLowerCase();
+                   }
+                   else {
+                       html = 'Provincia: ' + (d.properties.JURISDICCI).toLowerCase();
+                   }
+               }
+               html = html + '<br/>'+' Actividad:'+ d.properties.actividad;
+               html = html + '<br/>'+' Desocupación:'+ d.properties.desocupacion;
+               html = html + '<br/>'+' Empleo:'+ d.properties.empleo;
+               html = html + '<br/>'+' SubOcupación Demandante:'+ d.properties.subocupacion_demandante;
+               return html;
+           }
+
+           } //end function ready d3
+           }); //end document ready jquery
+</script>
+           <div class="container-fluid">
+               <div class="row-fluid">
+               <div class="span3">
+               <span> 
+               <br/>
+               <br/>
+               <b>Glosario:</b> 
+               <br/>
+               <br/>
+               <b>Actividad:</b> se refiere a la Tasa de Actividad Cálculada como porcentaje entre la población económicamente activa y la población total (PT)
+               <br/>
+               <b>Empleo:</b> calculada como porcentaje entre la población ocupada y la población total. 
+               <br/>
+               <b>Desocupación:</b>  porcentaje entre la población desocupada y la población económicamente activa. 
+               <br/>
+               <b>Subocupación demandante:</b> porcentaje entre la población de subocupados demandantes y la población económicamente activa. 
+               <br/>
+               Para el Año 2010 en el primer trimestre se podrían agrupar de acuerdo a su actividad a las siguientes provincias:
+               <br/>
+               <b>Buenos Aires, Santa Fe, Córdoba, la Pampa, Río Negro </b>. Con una tasa de actividad superior a 40, sin embargo su comportamiento en cuanto a la tasa de empleo a través de los años no es similar, comparando los años que poseen data.
+               <b> Formosa, Chaco y Misiones </b> Tiene la tasa más baja de actividad. <br/>
+               <br> <b>Chubut, Neuquén, San Luis, La Rioja, San Juan, Catamarca, Santiago del Estero, Jujuy, Corrientes </b>
+               Tiene una tasa intermedia de Actividad. La tasa de desocupación más alta reside en la provincia Salta, y la más baja en la provincia: Misiones, Formosa y San Luis.
+               <br>
+               <a href="http://estadistica.cba.gov.ar/Encuestas/EncuestaPermanentedeHogares/Metodolog%C3%ADaEPH/tabid/405/language/es-AR/Default.aspx"> Referencia del Indec</a>
+               <br/>
+               <a href="mapa2003.html"> Mapa del Año 2003 </a>
+               <br/>
+               <a href="mapa2007.html"> Mapa del Año 2007 </a>
+               <br/>
+               <a href="http://78.47.89.42:8100">ScatterPlot sobre Empleo Trimestral por provincia</a>
+
+
+               <br/>
+               
+               </span> 
+               </div>
+               <div class="span9 well" id="mapa2010">
+               </div>
+           </div>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Visualizaciones desde la Perspectiva Econ&oacute;mica de Argentina.</title>
+  <script src="shared/jquery.js" type="text/javascript"></script>
+  <script src="shared/shiny.js" type="text/javascript"></script>
+  <script src="shared/slider/js/jquery.slider.min.js"></script>
+  <script src="shared/bootstrap/js/bootstrap.min.js"></script>
+  <link href="css/visualize.css" rel="stylesheet" media="screen">
+  <link rel="stylesheet" type="text/css" href="shared/shiny.css"/>
+  <link rel="stylesheet" type="text/css" href="shared/slider/css/jquery.slider.min.css"/>
+  <link rel="stylesheet" type="text/css" href="shared/bootstrap/css/bootstrap.min.css"/>
+  <link rel="stylesheet" type="text/css" href="shared/bootstrap/css/bootstrap-responsive.min.css"/>
+</head>
+<body>
+<div class="navbar  navbar-static-top">
+    <div class="navbar-inner">
+        <a class="brand" href="http://j3nnn1.github.io/homework/tp_vi/principal/index.html">Visualizaciones</a>
+            <ul class="nav">
+                <li><a href="#">Integrantes</a></li>
+                <li class="divider-vertical"></li>
+                <li class="divider-vertical"></li>
+                <li><a href="http://j3nnn1.github.io/homework/tp_vi/principal/empleo_sector.html">Empleo Anual Por Sector</a></li>
+                <li><a href="http://78.47.89.42:8100">Empleo Trimestral por provincia</a></li>
+                <li><a href="http://j3nnn1.github.io/homework/tp_vi/principal/mapa.html">Remuración Anual por Sector</a></li>
+                <li><a href="http://j3nnn1.github.io/homework/tp_vi/principal/maps_desocupacion.html">Coordenadas Paralelas</a></li>
+                <li class="divider-vertical"></li>
+                <li><a href="#">Referencias</a></li>
+            </ul>
+    </div>
+</div>
+<div class="container-fluid">
+  <div class="row-fluid">
+    <div class="span12" style="padding: 10px 0px;">
+      <h1>Desocupación y Empleo por Provincias (2003 - 2010)</h1>
+    </div>
+  </div>
+  <div class="row-fluid">
+    <div class="span4">
+      <form class="well">
+        <label class="control-label" for="dataset">Provincia:</label>
+        <select id="dataset">
+          <option value="Ciudad de Buenos Aires" selected="selected">Ciudad de Buenos Aires</option>
+          <option value="Corrientes">Corrientes</option>
+          <option value="Cordoba">Cordoba</option>
+          <option value="Formosa">Formosa</option>
+          <option value="Catamarca">Catamarca</option>
+          <option value="Mendoza">Mendoza</option>
+          <option value="Rosario">Rosario</option>
+          <option value="San Juan">San Juan</option>
+          <option value="Santa Fe">Santa Fe</option>
+          <option value="Tucuman">Tucuman</option>
+          <option value="Jujuy">Jujuy</option>
+          <option value="Rioja">Rioja</option>
+          <option value="Neuquen">Neuquen</option>
+          <option value="Entre Rios">Entre Rios</option>
+          <option value="Bs As">Bs As</option>
+          <option value="Chubut">Chubut</option>
+          <option value="Chaco">Chaco</option>
+          <option value="Misiones">Misiones</option>
+          <option value="San Luis">San Luis</option>
+          <option value="Salta">Salta</option>
+          <option value="Santiago">Santiago</option>
+          <option value="Santa Cruz">Santa Cruz</option>
+          <option value="La Pampa">La Pampa</option>
+          <option value="Tierra Fuego">Tierra Fuego</option>
+          <option value="Rio Negro">Rio Negro</option>
+        </select>
+      </form>
+    </div>
+    <div class="span8">
+      <div id="desPlot" class="shiny-html-output"></div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

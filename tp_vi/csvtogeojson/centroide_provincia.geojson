@@ -1,0 +1,55 @@
+{
+"type": "FeatureCollection",
+"features": [
+{ "type": "Feature", "properties": { "UNION": -2147483648.000000, "ID_0": 11, "ISO": "ARG", "NAME_0": "Argentina", "ID_1": 1, "NAME_1": "Buenos Aires", "ID_2": 10, "NAME_2": "Bahia Blanca", "population": 33333 }, "geometry": { "type": "Point", "coordinates": [ -62.169571565270779, -38.58003467748344 ] } },
+
+{ "type": "Feature", "properties": { "UNION": -2147483648.000000, "JURISDICCI": "SANTA CRUZ", "CAPITAL": "RIO GALLEGOS", "FUENTE": "IGN", "population": 673267}, "geometry": { "type": "Point", "coordinates": [ -69.956171, -48.815801 ] } }
+,
+{ "type": "Feature", "properties": { "UNION": -2147483648.000000, "JURISDICCI": "CHUBUT", "CAPITAL": "RAWSON", "FUENTE": "IGN", "population": 673267}, "geometry": { "type": "Point", "coordinates": [ -68.526361, -43.788560 ] } }
+,
+{ "type": "Feature", "properties": { "UNION": -2147483648.000000, "JURISDICCI": "RIO NEGRO", "CAPITAL": "VIEDMA", "FUENTE": "IGN", "population": 673267}, "geometry": { "type": "Point", "coordinates": [ -67.229379, -40.406170 ] } }
+,
+{ "type": "Feature", "properties": { "UNION": -2147483648.000000, "JURISDICCI": "NEUQUEN", "CAPITAL": "NEUQUEN", "FUENTE": "IGN", "population": 432444 }, "geometry": { "type": "Point", "coordinates": [ -70.118448, -38.641459 ] } }
+,
+{ "type": "Feature", "properties": { "UNION": -2147483648.000000, "JURISDICCI": "LA PAMPA", "CAPITAL": "SANTA ROSA", "FUENTE": "IGN", "population": 344322 }, "geometry": { "type": "Point", "coordinates": [ -65.446510, -37.131976 ] } }
+,
+{ "type": "Feature", "properties": { "UNION": -2147483648.000000, "JURISDICCI": "MENDOZA", "CAPITAL": "MENDOZA", "FUENTE": "IGN", "population":512333 }, "geometry": { "type": "Point", "coordinates": [ -68.582565, -34.630697 ] } }
+,
+{ "type": "Feature", "properties": { "UNION": -2147483648.000000, "JURISDICCI": "SAN LUIS", "CAPITAL": "SAN LUIS", "FUENTE": "IGN",  "population":512333 }, "geometry": { "type": "Point", "coordinates": [ -66.034833, -33.751360 ] } }
+,
+{ "type": "Feature", "properties": { "UNION": -2147483648.000000, "JURISDICCI": "ENTRE RIOS", "CAPITAL": "PARANA", "FUENTE": "IGN",   "population":3213123 }, "geometry": { "type": "Point", "coordinates": [ -59.201191, -32.056479 ] } }
+,
+{ "type": "Feature", "properties": { "UNION": -2147483648.000000, "JURISDICCI": "CORDOBA", "CAPITAL": "CORDOBA", "FUENTE": "IGN", "population":3213123  }, "geometry": { "type": "Point", "coordinates": [ -63.799748, -32.148536 ] } }
+,
+{ "type": "Feature", "properties": { "UNION": -2147483648.000000, "JURISDICCI": "SAN JUAN", "CAPITAL": "SAN JUAN", "FUENTE": "IGN", "population":321443  }, "geometry": { "type": "Point", "coordinates": [ -68.895138, -30.860840 ] } }
+,
+{ "type": "Feature", "properties": { "UNION": -2147483648.000000, "JURISDICCI": "SANTA FE", "CAPITAL": "SANTA FE", "FUENTE": "IGN", "population":336663 }, "geometry": { "type": "Point", "coordinates": [ -60.948900, -30.707118 ] } }
+,
+{ "type": "Feature", "properties": { "UNION": -2147483648.000000, "JURISDICCI": "LA RIOJA", "CAPITAL": "LA RIOJA", "FUENTE": "IGN", "population":544444 }, "geometry": { "type": "Point", "coordinates": [ -67.176776, -29.685406 ] } }
+,
+{ "type": "Feature", "properties": { "UNION": -2147483648.000000, "JURISDICCI": "CORRIENTES", "CAPITAL": "CORRIENTES", "FUENTE": "IGN",   "population":331111 }, "geometry": { "type": "Point", "coordinates": [ -57.803792, -28.780208 ] } }
+,
+{ "type": "Feature", "properties": { "UNION": -2147483648.000000, "JURISDICCI": "TUCUMAN", "CAPITAL": "SAN MIGUEL DE TUCUMAN", "FUENTE": "IGN",  "population":221111 }, "geometry": { "type": "Point", "coordinates": [ -65.364528, -26.947357 ] } }
+,
+{ "type": "Feature", "properties": { "UNION": -2147483648.000000, "JURISDICCI": "SANTIAGO DEL ESTERO", "CAPITAL": "SANTIAGO DEL ESTERO", "FUENTE": "IGN", "population":199111  }, "geometry": { "type": "Point", "coordinates": [ -63.250226, -27.785092 ] } }
+,
+{ "type": "Feature", "properties": { "UNION": -2147483648.000000, "JURISDICCI": "MISIONES", "CAPITAL": "POSADAS", "FUENTE": "IGN", "population":111781  }, "geometry": { "type": "Point", "coordinates": [ -54.651474, -26.875138 ] } }
+,
+{ "type": "Feature", "properties": { "UNION": -2147483648.000000, "JURISDICCI": "CATAMARCA", "CAPITAL": "SAN FERNANDO DEL VALLE DE CATAMARCA", "FUENTE": "IGN", "population":1111  }, "geometry": { "type": "Point", "coordinates": [ -66.943482, -27.336948 ] } }
+,
+{ "type": "Feature", "properties": { "UNION": -2147483648.000000, "JURISDICCI": "CHACO", "CAPITAL": "RESISTENCIA", "FUENTE": "IGN", "population":188111  }, "geometry": { "type": "Point", "coordinates": [ -60.765795, -26.386517 ] } }
+,
+{ "type": "Feature", "properties": { "UNION": -2147483648.000000, "JURISDICCI": "FORMOSA", "CAPITAL": "FORMOSA", "FUENTE": "IGN", "population":167111  }, "geometry": { "type": "Point", "coordinates": [ -59.934358, -24.893106 ] } }
+,
+{ "type": "Feature", "properties": { "UNION": -2147483648.000000, "JURISDICCI": "SALTA", "CAPITAL": "SALTA", "FUENTE": "IGN", "population":118881  }, "geometry": { "type": "Point", "coordinates": [ -64.812913, -24.300000 ] } }
+,
+{ "type": "Feature", "properties": { "UNION": -2147483648.000000, "JURISDICCI": "JUJUY", "CAPITAL": "SAN SALVADOR DE JUJUY", "FUENTE": "IGN", "population":133455  }, "geometry": { "type": "Point", "coordinates": [ -65.769078, -23.318576 ] } }
+,
+{ "type": "Feature", "properties": { "UNION": -2147483648.000000, "JURISDICCI": "TIERRA DEL FUEGO, ANTARTIDA E*", "CAPITAL": "USHUAIA", "FUENTE": "IGN", "population": 118881 }, "geometry": { "type": "Point", "coordinates": [ -64.544534, -53.416024 ] } }
+,
+{ "type": "Feature", "properties": { "UNION": -2147483648.000000, "JURISDICCI": "BUENOS AIRES", "CAPITAL": "LA PLATA", "FUENTE": "IGN", "population": 345775 }, "geometry": { "type": "Point", "coordinates": [ -60.556148, -36.673086 ] } }
+,
+{ "type": "Feature", "properties": { "UNION": -2147483648.000000, "JURISDICCI": "CIUDAD AUTONOMA DE BUENOS AIRE", "CAPITAL": "BUENOS AIRES", "FUENTE": "IGN",  "population": 366455  }, "geometry": { "type": "Point", "coordinates": [ -58.445443, -34.614498 ] } }
+
+]
+}
