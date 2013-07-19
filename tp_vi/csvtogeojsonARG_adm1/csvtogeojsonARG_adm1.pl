@@ -12,7 +12,7 @@ use JSON;
 #if province_csv = province_geojson or city_geojson 
     #add features in geojson
 
-my $filenameIN = 'eph20130706_200301.csv';
+my $filenameIN = 'eph20130706.201004.csv';
 
 open(FILE, '<', $filenameIN);
 open(FILECENTRO, '<', 'ARG_adm1.geojson');
