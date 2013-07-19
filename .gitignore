@@ -2,4 +2,6 @@ withR/*.RData
 *~
 *.swp
 *.nosubir
+*.csv
+*.geojson
 
