@@ -8,3 +8,4 @@ withR/*.RData
 *.geojson
 *.topojson
 *.txt
+*.pyc
