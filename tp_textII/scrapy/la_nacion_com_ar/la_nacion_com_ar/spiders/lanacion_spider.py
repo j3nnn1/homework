@@ -22,11 +22,14 @@ class LanacionSpider(BaseSpider):
    name = "lanacion" 
    allowed_domains = ["www.lanacion.com.ar"]
    start_urls = [
-        "http://www.lanacion.com.ar/1604151-el-gobierno-ratifico-a-cesar-milani-es-el-jefe-del-ejercito",
-        "http://www.lanacion.com.ar/1604221-los-candidatos-de-unen-debatieron-con-duras-criticas-al-gobierno",
-        "http://www.lanacion.com.ar/1604148-cristina-kirchner-santiago-del-estero",
-        "http://www.lanacion.com.ar/1603840-el-doble-estandar-de-los-derechos-humanos-en-la-politica-exterior-de-cristina",
-        "http://www.lanacion.com.ar/1602716-abajo-colon-arriba-chevron",
+    "http://www.lanacion.com.ar/1607024-la-cosecha-record-no-le-basto-al-gobierno-para-sumar-reservas-en-el-banco-central",
+    "http://www.lanacion.com.ar/1607004-ypf-preve-un-petroleo-30-mas-caro",
+    "http://www.lanacion.com.ar/1607006-esperan-que-siga-fuerte-el-consumo-hasta-fin-de-ano-pero-se-debilita-en-los-sectores-bajos",
+    "http://www.lanacion.com.ar/1607007-se-extiende-el-furor-por-los-cupones-en-divisas",
+    "http://www.lanacion.com.ar/1607009-suiza-dara-datos-pero-acoto-la-ambicion-de-la-afip",
+    "http://www.lanacion.com.ar/1598293-la-soja-y-el-maiz-se-negociaron-sin-cambios",
+    "http://www.lanacion.com.ar/1598296-se-extendio-el-rebote-entre-los-activos-locales",
+    "http://www.lanacion.com.ar/1598376-que-pasa",
    ]
    def parse(self, response):
        hxs = HtmlXPathSelector(response)
