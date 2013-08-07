@@ -9,3 +9,5 @@ withR/*.RData
 *.topojson
 *.txt
 *.pyc
+*.xml
+Mistwitter
