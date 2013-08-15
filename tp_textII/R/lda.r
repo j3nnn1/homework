@@ -1,4 +1,4 @@
-
+# taken from here: http://stackoverflow.com/questions/16396090/r-topic-modeling-lda-model-labeling-fuction
 library(topicmodels)
 data(AssociatedPress)
 train <- AssociatedPress[1:100]
