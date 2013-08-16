@@ -23,17 +23,33 @@ var div = d3.select(".treemap").append("div")
     .style("left", margin.left + "px")
     .style("top", margin.top + "px");
 
+// Parent topic
+// child documents
 d3.json("economia_topic.json", function(error, root) {
  
   if (!error) {
 		var parents = new Array();
+		var tooltip = d3.select("#treemap").append("div")
+                       .attr("class", "tooltip")
+                       .style("opacity", 0.5);
+		var dohtmltooltips = function(d){
+			html = 'topic:'+d.parent.name;
+			return html;
+        }
         var node = div.datum(root).selectAll(".node")
 			  .data(treemap.nodes)
 			  .enter().append("div")
 			  .attr("class", "node")
 			  .call(position)
 			  .style("background", function(d) { return d.children ? color(d.name) : null; })
-			  .text(function(d) { parents.push(!d.children ? null : d.name) ; return d.children ? null : d.name; });
+			  .text(function(d) { parents.push(!d.children ? null : d.name) ; return d.children ? null : d.name; })
+			  .on("mouseover", function(d) {
+			    
+                var mouse = d3.mouse(this).map( function(d) { return parseInt(d); } );
+				tooltip.classed("hidden", false)
+                       .attr("style", "left:"+(mouse[0] + d.x)+"px;top:"+(d.y + mouse[1])+"px")
+                       .html(dohtmltooltips(d));
+			  });
 		
 		parents = parents.filter(function(val) { return val !== null; });
 		$.each(parents, function(ind, val){
