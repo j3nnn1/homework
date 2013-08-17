@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>reveal.js - Slide Backgrounds</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<link rel="stylesheet" href="./css/reveal.min.css">
+		<link rel="stylesheet" href="./css/theme/beige.css" id="theme">
+                <!-- <link rel="stylesheet" href="css/theme/default.css" id="theme"> -->
+                <style>
+                span p {
+                    font-size:12px;
+                }
+                ul li {
+                    list-style-type:none;
+                    font-size:12px; !important
+                }
+                ol li {
+                    font-size:12px; 
+                }
+                .little {
+                    font-size:12px; 
+                }
+                </style>
+	</head>
+	<body>
+		<div class="reveal">
+
+			<div class="slides">
+					<section>
+					<section data-background-transition="slide" data-background="assets/image1.png">
+						<h3>Modelado de Topicos</h3>
+                                                <p> En un lugar de la Mancha, de cuyo nombre no quiero acordarme, no ha mucho tiempo que vivía un hidalgo de los de lanza en astillero, adarga antigua, rocín flaco y galgo corredor. Una olla de algo más vaca que carnero, salpicón las más noches, duelos y quebrantos los sábados, lantejas los viernes, algún palomino de añadidura los domingos, consumían las tres partes de su hacienda. El resto della concluían sayo de velarte, calzas de velludo para las fiestas, con sus pantuflos de lo mesmo, y los días de entresemana se honraba con su vellorí de lo más fino. Tenía en su casa una ama que pasaba de los cuarenta, y una sobrina que no llegaba a los veinte, y un mozo de campo y plaza, que así ensillaba el rocín como tomaba la podadera. Frisaba la edad de nuestro hidalgo con los cincuenta años; era de complexión recia, seco de carnes, enjuto de rostro, gran madrugador y amigo de la caza. Quieren decir que tenía el sobrenombre de Quijada, o Quesada, que en esto hay alguna diferencia en los autores que deste caso escriben; aunque, por conjeturas verosímiles, se deja entender que se llamaba Quejana. Pero esto importa poco a nuestro cuento; basta que en la narración dél no se salga un punto de la verdad. 
+Esofdkjdskdkjfnjkfdkjdfs</p>
+					</section>
+					<section data-background-transition="slide" data-background="assets/image1.png">
+                                                <h3>Utilidad.</h3>
+						<ul>
+						<li class="fragment" data-fragment-index="0">
+						    Puede ser usado para clasificar documentos similares
+						</li>
+						<li class="fragment" data-fragment-index="1">
+						    Mejorar la idexación de texto y los métodos de recuperación de la información
+						</li>
+						<li class="fragment" data-fragment-index="2">
+						    Identificar la evolución de ciertos tópicos sobre un periodo de Tiempo
+						</li>
+						<li class="fragment" data-fragment-index="3">
+						    Encontrar relaciones entre diferentes tópicos
+						</li>
+						<li class="fragment" data-fragment-index="4">
+						    Predecir citaciones en base a la presencia de similares topicos en un texto
+						</li>
+						<li class="fragment" data-fragment-index="5">
+						    Encontrar patrones repetitivos que pueden derivar de la estructura del texto.
+						</li>
+					</section>
+					<section data-background-transition="slide" data-background="assets/image1.png">
+                                        <p>
+                                        <h4> En Resumen: <h4>
+                                        <ol>
+                                            <li class="fragment little" data-fragment-index="0">
+                                            Hacer un modelo en base a 10000 documentos.                                 
+                                            </li>
+                                            
+                                            <li class="fragment little" data-fragment-index="1">
+                                            Asignar un topico a nuevos documentos. 
+                                            </li>
+                                        </ol>
+                                        </p>
+					</section>
+				</section>
+                                <section>
+					<h2>¿Cómo lo hicimos?</h2>
+                                        <img width="900" height="600" src="img/structure.png" alt="Estructura del Modelado">
+				</section>
+
+				<section data-background="rgba(0, 100, 100, 0.2)">
+					<section>
+						<h2>Background applied to stack</h2>
+					</section>
+					<section>
+						<h2>Background applied to stack</h2>
+					</section>
+					<section data-background="rgba(100, 0, 0, 0.2)">
+						<h2>Background applied to slide inside of stack</h2>
+					</section>
+				</section>
+
+				<section data-background-transition="slide" data-background="assets/image1.png" style="background: rgba(255,255,255,0.9)">
+					<h2>Background image</h2>
+				</section>
+
+				<section>
+					<section data-background-transition="slide" data-background="assets/image1.png" style="background: rgba(255,255,255,0.9)">
+						<h2>Background image</h2>
+					</section>
+					<section data-background-transition="slide" data-background="assets/image1.png" style="background: rgba(255,255,255,0.9)">
+						<h2>Background image</h2>
+					</section>
+				</section>
+
+				<section data-background="assets/image2.png" data-background-size="100px" data-background-repeat="repeat" data-background-color="#111" style="background: rgba(255,255,255,0.9)">
+					<h2>Background image</h2>
+					<pre>data-background-size="100px" data-background-repeat="repeat" data-background-color="#111"</pre>
+				</section>
+
+				<section data-background="#888888">
+					<h2>Same background twice (1/2)</h2>
+				</section>
+				<section data-background="#888888">
+					<h2>Same background twice (2/2)</h2>
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="./js/head.min.js"></script>
+		<script src="./js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				center: true,
+				// rtl: true,
+
+				transition: 'linear',
+				// transitionSpeed: 'slow',
+				// backgroundTransition: 'linear'
+			});
+
+		</script>
+
+	</body>
+</html>
