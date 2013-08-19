@@ -36,10 +36,10 @@ class LanacionSpider(BaseSpider):
        item = LaNacionComArItem()
        item['title'] = hxs.select('/html/body/section/section/section[6]/article/section[2]/h1').extract()
        item['content']= hxs.select('//*[@id="cuerpo"]').extract()
-       item['content'] = HTMLParser.HTMLParser().unescape(item['content'])
-       item['title'] = HTMLParser.HTMLParser().unescape(item['title'])
-       item['title'] = str(item['title']).replace(' ', '_').replace(',','').replace('"','').replace(';','').replace("'","")
-       item['content'] = str(item['content']).replace(',','').replace('"','').replace("'","").replace(';', '')
+       item['content'] = HTMLParser.HTMLParser().unescape(item['content'])[0].encode("utf-8")
+       item['title'] = HTMLParser.HTMLParser().unescape(item['title'])[0].encode("utf-8")
+       item['title'] = item['title'].replace(' ', '_').replace(',','').replace('"','').replace(';','').replace("'","")
+       item['content'] = item['content'].replace(',','').replace('"','').replace("'","").replace(';', '')
 
        return item       
 
