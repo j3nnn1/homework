@@ -14,8 +14,9 @@ threshold  = 0.5
 topic_prefix = 20000
 
 
-compo = open("eldiplo_sample.txt", "r")
-out = open("eldiplo_compisition.out", "w")
+compo = open("iteracion3/noticias_composition.txt", "r")
+out = open("iteracion3/noticias_composition.txt.edgeslist", "w")
+
 
 def getCountWord(topics):
     count=0

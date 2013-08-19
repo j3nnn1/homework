@@ -6,8 +6,8 @@ function position() {
       .style("height", function(d) { return Math.max(0, d.dy - 1) + "px"; });
 }
 var margin = {top: 40, right: 10, bottom: 10, left: 10},
-    width = 1000 - margin.left - margin.right,
-    height = 650 - margin.top - margin.bottom;
+    width = 800 - margin.left - margin.right,
+    height = 550 - margin.top - margin.bottom;
 
 var color = d3.scale.category20c();
 

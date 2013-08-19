@@ -13,8 +13,8 @@ threshold  = 0.5
 topic_prefix = 20000
 
 
-compo = open("sample.txt", "r")
-out = open("sample.txt.out", "w")
+compo = open("noticias_composition.txt", "r")
+out = open("noticias_composition.txt.edgelists", "w")
 
 def getCountWord(topics):
     count=0

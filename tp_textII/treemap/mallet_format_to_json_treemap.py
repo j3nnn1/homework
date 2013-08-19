@@ -8,9 +8,9 @@
 # docno => name, topics => topico1 => val_topico1
 #
 import json
-
-compo = open("eldiplo_composition.txt", "r")
-out = open("eldiplo_composition.txt.json", "w")
+threshold = 0.01
+compo = open("iteracion3/noticias_composition.txt", "r")
+out = open("iteracion3/noticias_composition.json", "w")
 
 composition = {}
 
@@ -89,10 +89,13 @@ treejson = create_parent()
 for i, topic in enumerate(topics):
     treejson['children'].append(create_node(topic))
     for doc, val in composition.items():
-        name = doc
+        name = composition[doc]['name']
         size = composition[doc]['topics'][topic]
-        leaf = create_leaf(name, size)
-        treejson['children'][i]['children'].append(leaf)
-         
-out.write(json.dumps(treejson))
 
+        print float(size)
+
+        if (float(size) > threshold):
+            leaf = create_leaf(name, size)
+            treejson['children'][i]['children'].append(leaf)
+out.write(json.dumps(treejson))
+print "Listo!"
