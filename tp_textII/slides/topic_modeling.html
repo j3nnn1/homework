@@ -89,7 +89,7 @@ fueron generadas aleatoriamente, y no tiene relación la secuencia en la que apa
                                         <h4> En Resumen: <h4>
                                         <ol>
                                             <li class="fragment little" data-fragment-index="0">
-                                            Hacer un modelo en base a 10000 documentos.                                 
+                                            Hacer un modelo en base a 10.000 documentos aproximadamente.                                 
                                             </li>
                                             
                                             <li class="fragment little" data-fragment-index="1">
@@ -104,17 +104,104 @@ fueron generadas aleatoriamente, y no tiene relación la secuencia en la que apa
                                         <img width="900" height="600" src="img/structure.png" alt="Estructura del Modelado">
 				</section>
 
-				<section data-background="rgba(0, 100, 100, 0.2)">
-					<section>
-						<h2>Background applied to stack</h2>
+                                <section>
+                                        <h5> Topicos k = 4</h5>
+                                        <ul>
+                                           <li>
+                                             0 : europa rusia guerra fiscal crisis mayor mundial euros snowden america muertos apoyo menos iran amenaza unidos reino unido asuncion 
+                                           </li>
+                                           <li>
+1 : dolares usd gas precios menos blue cristina venezuela inflacion natural acuerdo crudo mayor ipsa imacec ivp utm petroleo bolsa
+                                           </li>
+                                           <li>
+2 : alta productos fernandez mexico campos cristina maria luz juan martin ritmo kirchner ranking consecutivo aniversario luis hombre manufacturera puntos
+                                           </li>
+                                           <li>
+3 : crisis crecimiento reforma america centro venezuela desarrollo latina ministro plan mayor deuda mundial comercio inversiones economico problemas rol unidos
+                                           </li>
+                                        </ul>
+                                </section>
+
+                                <section>
+					<h5> Qué tan bueno eran los modelos?</h5>
+                                        <img width="1000" height="600" src="img/perplexity_k4.png" alt="Perplejidad del Modelado">
+                                </section>
+				<section data-background="assets/image1.png">
+					<h5> Con k = 4 y el intervalo=10 </h5>
+                                        <img width="1000" height="600" src="img/tremap_k4.10_P0.9995_unigram.png" alt="Estructura del Modelado">
+				</section>
+				<section data-background="assets/image1.png">
+					<h5> Con k=6 y el intervalo=5 </h5>
+                                        <img width="1000" height="600" src="img/treemap_k6.5_P0.9992_unigram.png" alt="Estructura del Modelado">
+				</section>
+				<section data-background="assets/image1.png">
+					<h5> Con k=8 y el intervalo=5 </h5>
+                                        <img width="1000" height="600" src="img/tremap_k8.5_P0.998_unigram.png" alt="Estructura del Modelado">
+				</section>
+				<section data-background="assets/image1.png">
+					<h5> Con k=10 y el intervalo=20 </h5>
+                                        <img width="1000" height="600" src="img/tremap_k10.20_P0.998_unigram.png" alt="Estructura del Modelado">
+				</section>
+				<section data-background="assets/image1.png">
+					<h5> Y así sucesivamente.. </h5>
+                                        <img width="1000" height="600" src="img/perplexity.png" alt="Estructura del Modelado">
+				</section>
+				<section data-background="assets/image1.png">
+					<h5> El Modelo con mayor Peso de topico.. </h5>
+                                        <img width="1000" height="600" src="img/burble_k8.5.mallet_keys.png" alt="Estructura del Modelado">
+				</section>
+                                <section data-background="assets/image1.png">
+                                        <h5> A tomar en cuenta:</h5>
+                                        <ul> 
+                                        <li>
+                                         El Parametro DirichLet permite darle un peso al tópico, haciendo que sobresalgo por encima de otros tópicos, y la variacion de este parametros permite un mejor ajuste del modelo. El intervalo permite que el software realice un calculo optimizado  de los parametros alfa y beta cada N iteraciones.
+                                        </li>
+                                        <li>
+                                               Conforme se añaden más topicos el modelo se vuelve más específico, y tiende a colocar todos los documentos que pertenecen a un diario en un mismo tópico, para k=10, ocurrió esto, de 10 topicos 8 tenía una probabilidad alta por encima de 0.998  y 7 topicos estaban asociados a un solo diario. No existe un modelo mejor que otro depende del objetivo. Si se desea realizar una clasificador de texto en base al modelado de tópicos, podríamos usar k=cantidad de clases y modificar los parametros que permitan reducir la perplejidad al máximo, de forma que cada tópica pueda representar una clase.
+                                        </li>
+                                        </ul> 
+                                </section>
+                                <section  data-background="assets/image1.png">
+                                    <h5> En resumen: </h5>
+                                    <p>
+					Importante es saber que luego de cada ejecución, siempre arrojará resultados diferentes ya que Mallet utiliza Gibbs sampling por defecto, para calcular la probabilidad a posteriori. Por ende la comparación entre modelos no es muy práctica.
+                                    </p>
+                                    <p>
+La cantidad de tópicos recomendada no existe por ende se debe realizar una
+gran cantidad de iteraciones para observar cual se ajusta mejor a la data.
+Usualmente mientras más general menor cantidad de topicos mientras más especifico 
+cada topico tendrá menor cantidad de diarios.
+                                    </p>
+                                </section>
+<!--
+				<section data-background-transition="slide" data-background="assets/image1.png" style="background: rgba(255,255,255,0.9)">
+					<h2>Background image</h2>
+				</section>
+
+				<section>
+					<section data-background-transition="slide" data-background="assets/image1.png" style="background: rgba(255,255,255,0.9)">
+						<h2>Background image</h2>
 					</section>
-					<section>
-						<h2>Background applied to stack</h2>
-					</section>
-					<section data-background="rgba(100, 0, 0, 0.2)">
-						<h2>Background applied to slide inside of stack</h2>
+					<section data-background-transition="slide" data-background="assets/image1.png" style="background: rgba(255,255,255,0.9)">
+						<h2>Background image</h2>
 					</section>
 				</section>
+				<section data-background="assets/image2.png" data-background-size="100px" data-background-repeat="repeat" data-background-color="#111" style="background: rgba(255,255,255,0.9)">
+					<h2>Background image</h2>
+					<pre>data-background-size="100px" data-background-repeat="repeat" data-background-color="#111"</pre>
+				</section>
+
+				<section data-background="#888888">
+					<h2>Same background twice (1/2)</h2>
+				</section>
+				<section data-background="#888888">
+					<h2>Same background twice (2/2)</h2>
+				</section>
+
+			</div>
+
+                                        </ul>
+                                </section>
 
 				<section data-background-transition="slide" data-background="assets/image1.png" style="background: rgba(255,255,255,0.9)">
 					<h2>Background image</h2>
@@ -143,6 +230,37 @@ fueron generadas aleatoriamente, y no tiene relación la secuencia en la que apa
 
 			</div>
 
+                                        </ul>
+                                </section>
+
+				<section data-background-transition="slide" data-background="assets/image1.png" style="background: rgba(255,255,255,0.9)">
+					<h2>Background image</h2>
+				</section>
+
+				<section>
+					<section data-background-transition="slide" data-background="assets/image1.png" style="background: rgba(255,255,255,0.9)">
+						<h2>Background image</h2>
+					</section>
+					<section data-background-transition="slide" data-background="assets/image1.png" style="background: rgba(255,255,255,0.9)">
+						<h2>Background image</h2>
+					</section>
+				</section>
+
+				<section data-background="assets/image2.png" data-background-size="100px" data-background-repeat="repeat" data-background-color="#111" style="background: rgba(255,255,255,0.9)">
+					<h2>Background image</h2>
+					<pre>data-background-size="100px" data-background-repeat="repeat" data-background-color="#111"</pre>
+				</section>
+
+				<section data-background="#888888">
+					<h2>Same background twice (1/2)</h2>
+				</section>
+				<section data-background="#888888">
+					<h2>Same background twice (2/2)</h2>
+				</section>
+
+			</div>
+
+-->
 		</div>
 
 		<script src="./js/head.min.js"></script>
