@@ -9,12 +9,12 @@
 # index > 2 topic and incidence
 # threshold
 
-threshold  = 0.9
+threshold  = float(0.99999999992)
 topic_prefix = 20000
 
 
-compo = open("iteracion3/noticias_word-topic-counts.txt", "r")
-out = open("iteracion3/noticias_word-topic-counts.txt.edgeslist", "w")
+compo = open("iteracion4/noticias_word-topic-counts.4.10.txt", "r")
+out = open("iteracion4/noticias_word-topic-counts.4.10.txt.edgeslist", "w")
 
 def getCountWord(topics):
     count=0
@@ -25,6 +25,7 @@ def getCountWord(topics):
 
 
 for line in compo:
+    incidence_word=0
     fields = line.split(' ')
     fields[-1] = fields[-1].strip()
     source = fields[0]
