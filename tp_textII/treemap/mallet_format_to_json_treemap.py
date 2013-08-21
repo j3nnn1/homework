@@ -8,9 +8,9 @@
 # docno => name, topics => topico1 => val_topico1
 #
 import json
-threshold = 0.01
-compo = open("iteracion3/noticias_composition.txt", "r")
-out = open("iteracion3/noticias_composition.json", "w")
+threshold = float(0.998)
+compo = open("iteracion8/noticias_composition.16.5.txt", "r")
+out = open("iteracion8/noticias_composition.16.5.json", "w")
 
 composition = {}
 
