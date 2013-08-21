@@ -1,0 +1,196 @@
+Creator "igraph version 0.6.5 Wed Aug 14 22:34:28 2013"
+Version 1
+graph
+[
+  directed 0
+  node
+  [
+    id 0
+    name "0"
+  ]
+  node
+  [
+    id 1
+    name "2"
+  ]
+  node
+  [
+    id 2
+    name "8"
+  ]
+  node
+  [
+    id 3
+    name "9"
+  ]
+  node
+  [
+    id 4
+    name "10"
+  ]
+  node
+  [
+    id 5
+    name "11"
+  ]
+  node
+  [
+    id 6
+    name "12"
+  ]
+  node
+  [
+    id 7
+    name "13"
+  ]
+  node
+  [
+    id 8
+    name "21"
+  ]
+  node
+  [
+    id 9
+    name "23"
+  ]
+  node
+  [
+    id 10
+    name "27"
+  ]
+  node
+  [
+    id 11
+    name "28"
+  ]
+  node
+  [
+    id 12
+    name "35"
+  ]
+  node
+  [
+    id 13
+    name "36"
+  ]
+  node
+  [
+    id 14
+    name "39"
+  ]
+  node
+  [
+    id 15
+    name "20001"
+  ]
+  node
+  [
+    id 16
+    name "20011"
+  ]
+  node
+  [
+    id 17
+    name "20018"
+  ]
+  node
+  [
+    id 18
+    name "20014"
+  ]
+  node
+  [
+    id 19
+    name "20000"
+  ]
+  edge
+  [
+    source 15
+    target 0
+    V3 1
+  ]
+  edge
+  [
+    source 16
+    target 1
+    V3 0.670822942643391
+  ]
+  edge
+  [
+    source 15
+    target 2
+    V3 0.567239336492891
+  ]
+  edge
+  [
+    source 15
+    target 3
+    V3 0.752640545144804
+  ]
+  edge
+  [
+    source 15
+    target 4
+    V3 0.516666666666667
+  ]
+  edge
+  [
+    source 15
+    target 5
+    V3 0.537207654145996
+  ]
+  edge
+  [
+    source 15
+    target 6
+    V3 0.609073359073359
+  ]
+  edge
+  [
+    source 15
+    target 7
+    V3 0.591731266149871
+  ]
+  edge
+  [
+    source 17
+    target 8
+    V3 0.869565217391304
+  ]
+  edge
+  [
+    source 17
+    target 9
+    V3 0.846153846153846
+  ]
+  edge
+  [
+    source 15
+    target 10
+    V3 0.55
+  ]
+  edge
+  [
+    source 18
+    target 11
+    V3 0.761083743842365
+  ]
+  edge
+  [
+    source 19
+    target 12
+    V3 0.804597701149425
+  ]
+  edge
+  [
+    source 17
+    target 13
+    V3 1
+  ]
+  edge
+  [
+    source 19
+    target 14
+    V3 0.542635658914729
+  ]
+]

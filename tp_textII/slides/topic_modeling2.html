@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>reveal.js - Slide Backgrounds</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<link rel="stylesheet" href="./css/reveal.min.css?print-pdf">
+		<link rel="stylesheet" href="./css/theme/beige.css" id="theme">
+		<link rel="stylesheet" href="./css/print/pdf.css" >
+                <!-- <link rel="stylesheet" href="css/theme/default.css" id="theme"> -->
+                <style>
+                span p {
+                    font-size:12px;
+                }
+                ul li {
+                    list-style-type:none;
+                    font-size:12px; !important
+                }
+                ol li {
+                    font-size:12px; 
+                }
+                .little {
+                    font-size:12px; 
+                }
+                </style>
+	</head>
+	<body>
+		<div class="reveal">
+
+			<div class="slides">
+					<section>
+					<section data-background-transition="slide" data-background="assets/image1.png">
+						<h3>Modelado de Topicos</h3>
+                                                <p>
+                                                Es una técnica para tratar documentos que no tienen alguna categorización,
+                                                y asume que cada documento es una mezcla aleatorias de categorías o tópicos
+                                                </p>
+                                                <p>
+                                                Un tópico en el contexto de modelado de tópicos es una distribución
+                                                de probabilidades de palabras para un conjunto, e indica la probabilidad
+                                                que una palabra aparezca en un documento  sobre un tópico en particular
+                                                </p>
+					</section>
+					<section data-background-transition="slide" data-background="assets/image1.png">
+                                                <h3>Utilidad.</h3>
+						<ul>
+						<li class="fragment" data-fragment-index="0">
+						    Puede ser usado para clasificar documentos similares
+						</li>
+						<li class="fragment" data-fragment-index="1">
+						    Mejorar la idexación de texto y los métodos de recuperación de la información
+						</li>
+						<li class="fragment" data-fragment-index="2">
+						    Identificar la evolución de ciertos tópicos sobre un periodo de Tiempo
+						</li>
+						<li class="fragment" data-fragment-index="3">
+						    Encontrar relaciones entre diferentes tópicos
+						</li>
+						<li class="fragment" data-fragment-index="4">
+						    Predecir citaciones en base a la presencia de similares topicos en un texto
+						</li>
+						<li class="fragment" data-fragment-index="5">
+						    Encontrar patrones repetitivos que pueden derivar de la estructura del texto.
+						</li>
+					</section>
+                                        <section>
+                                                <h3> Supuestos </h3>
+                                                <ul>
+                                                    <li>
+                                                    "exchangeability"
+                                                    <p> El modelado de tópicos asume que las palabras que comprende el texto
+fueron generadas aleatoriamente, y no tiene relación la secuencia en la que aparecen las palabras</p>
+                                                    </li>
+                                                </ul>
+                                        </section>
+                                        <section>
+                                                <h3> evaluar que modelo es mejor</h3>
+                                                <ol>
+                                                    <li>
+                                                    "Perplexity"
+                                                    </li>
+                                                    <li>
+                                                    A través de ensayo y N iteraciónes.
+                                                    </li>
+                                                </ol>
+                                        </section>
+                                       
+					<section data-background-transition="slide" data-background="assets/image1.png">
+                                        <p>
+                                        <h4> En Resumen: <h4>
+                                        <ol>
+                                            <li class="fragment little" data-fragment-index="0">
+                                            Hacer un modelo en base a 10000 documentos.                                 
+                                            </li>
+                                            
+                                            <li class="fragment little" data-fragment-index="1">
+                                            Asignar un topico a nuevos documentos. 
+                                            </li>
+                                        </ol>
+                                        </p>
+					</section>
+				</section>
+                                <section>
+					<h2>¿Cómo lo hicimos?</h2>
+                                        <img width="900" height="600" src="img/structure.png" alt="Estructura del Modelado">
+				</section>
+			</div>
+
+		</div>
+
+		<script src="./js/head.min.js"></script>
+		<script src="./js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				center: true,
+				// rtl: true,
+
+				transition: 'linear',
+				// transitionSpeed: 'slow',
+				// backgroundTransition: 'linear'
+			});
+
+		</script>
+
+	</body>
+</html>
