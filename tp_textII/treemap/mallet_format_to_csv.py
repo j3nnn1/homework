@@ -7,8 +7,8 @@
 #
 # docno => name, topics => topico1 => val_topico1
 #
-compo = open("iteracion3/noticias_composition.txt", "r")
-out = open("iteracion3/noticias_composition.txt.csv", "w")
+compo = open("iteracion4/noticias_composition.4.10.txt", "r")
+out = open("iteracion4/noticias_composition.4.10.txt.csv", "w")
 
 composition = {}
 

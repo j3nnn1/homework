@@ -10,12 +10,12 @@
 #fields[1] nombre_documento
 
 
-threshold  = 0.5
+threshold = float(0.992)
 topic_prefix = 20000
 
 
-compo = open("iteracion3/noticias_composition.txt", "r")
-out = open("iteracion3/noticias_composition.txt.edgeslist", "w")
+compo = open("iteracion4/noticias_composition.4.5.txt", "r")
+out = open("iteracion4/noticias_composition.4.5.txt.edgeslist", "w")
 
 
 def getCountWord(topics):
@@ -44,7 +44,7 @@ for line in compo:
 
     for i,topic in enumerate(topics):
         if (not is_pairs(i) and i < (index_final-1)):
-            if (topics[i+1] > threshold):           
+            if (float(topics[i+1]) > threshold):           
                 #do line
                 line = docno+", "+str(topic_prefix + float(topic))  + ', ' + topics[i+1]
                 line = line + "\n"
