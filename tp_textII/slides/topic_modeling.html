@@ -143,7 +143,6 @@ fueron generadas aleatoriamente, y no tiene relación la secuencia en la que apa
                                            </li>
                                         </ul>
                                 </section>
-
                                 <section>
 					<h5> ¿Qué tan bueno eran los modelos?</h5>
                                         <img width="1000" height="600" src="img/perplexity_k4.png" alt="Perplejidad del Modelado">
@@ -151,10 +150,6 @@ fueron generadas aleatoriamente, y no tiene relación la secuencia en la que apa
 				<section data-background="assets/image1.png">
 					<h5> Con k = 4 y el intervalo=10 </h5>
                                         <img width="1000" height="600" src="img/tremap_k4.10_P0.9995_unigram.png" alt="Estructura del Modelado">
-				</section>
-				<section data-background="assets/image1.png">
-					<h5> Con k=6 y el intervalo=5 </h5>
-					</ol>
 				</section>
                                 <section>
                                         <h5> Topicos k = 4</h5>
@@ -174,14 +169,6 @@ fueron generadas aleatoriamente, y no tiene relación la secuencia en la que apa
                                         </ul>
                                 </section>
 
-                                <section>
-					<h5> ¿Qué tan bueno eran los modelos?</h5>
-                                        <img width="1000" height="600" src="img/perplexity_k4.png" alt="Perplejidad del Modelado">
-                                </section>
-				<section data-background="assets/image1.png">
-					<h5> Con k = 4 y el intervalo=10 </h5>
-                                        <img width="1000" height="600" src="img/tremap_k4.10_P0.9995_unigram.png" alt="Estructura del Modelado">
-				</section>
 				<section data-background="assets/image1.png">
 					<h5> Con k=6 y el intervalo=5 </h5>
                                         <img width="1000" height="600" src="img/treemap_k6.5_P0.9992_unigram.png" alt="Estructura del Modelado">
@@ -199,8 +186,26 @@ fueron generadas aleatoriamente, y no tiene relación la secuencia en la que apa
                                         <img width="1000" height="600" src="img/perplexity.png" alt="Estructura del Modelado">
 				</section>
 				<section data-background="assets/image1.png">
-					<h5> El Modelo con mayor Peso de topico.. </h5>
+					<h5> El Modelo con mayor Peso de topico.. k=8 </h5>
                                         <img width="1000" height="600" src="img/burble_k8.5.mallet_keys.png" alt="Estructura del Modelado">
+				</section>
+
+				<section>
+					<h5> El Modelo con mayor distribución equitativa de palabras k=4 </h5>
+					<img width="1000" height="600" src="img/burble_k4.10.mallet_keys.png">
+				</section>
+				<section data-background="assets/image1.png">
+					<h5> Grafo distribución de las palabras en cada tópico. k=4 </h5>
+				        <img width="1000" height="600" src="img/distribuciondepalabrasentopicos4.10.png" alt="distribucion palabras topicos">
+				</section>
+
+				<section>
+					<h5> Grafo distribución de las palabras en cada tópico. k=8 </h5>
+				        <img width="1000" height="600" src="img/topics_words.8.5.txt.png" alt="distribucion palabras topicos">
+				</section>
+				<section>
+					<h5> Experimento tomando cada diario como un solo documento, k=20 resulta: </h5>
+				        <img width="1000" height="600" src="img/img/treemap_general.png">
 				</section>
                                 <section data-background="assets/image1.png">
                                         <h5> A tomar en cuenta:</h5>
@@ -242,7 +247,7 @@ cada topico tendrá menor cantidad de diarios.
 				// rtl: true,
 
 				transition: 'linear',
-				// transitionSpeed: 'slow',
+				transitionSpeed: 'slow',
 				// backgroundTransition: 'linear'
 			});
 
