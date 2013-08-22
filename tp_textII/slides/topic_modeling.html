@@ -21,6 +21,9 @@
                 .little {
                     font-size:12px; 
                 }
+		b {
+	            color: #2e85de;	
+		}
                 </style>
 	</head>
 	<body>
@@ -102,6 +105,56 @@ fueron generadas aleatoriamente, y no tiene relación la secuencia en la que apa
                                 <section>
 					<h2>¿Cómo lo hicimos?</h2>
                                         <img width="900" height="600" src="img/structure.png" alt="Estructura del Modelado">
+				</section>
+				<section>
+                                        <h3> Archivos Generados por Mallet </h3>
+					<ol>
+						<li>
+						<b>noticias_keys.txt: </b> Peso de los tópicos en circulos
+						</li>
+						<li>
+						<b>noticias_composition.txt:</b> Podías hacer un HeatMap, Treemap, Grafo con un rango de probabilidad, ya que son más de 10000 documentos. 
+						</li>
+						<li>
+						<b>word-topic-counts-file.txt</b> Grafo la distribución de las palabras en los diferentes tópicos así mismo con un rango ya que son muchas.
+						</li>
+						<li>
+						<b>noticias-inferencer.txt</b> Permite inferir o asignarle un tópico a un nuevo documento.
+						</li>
+						<li>
+						<b>noticias-evaluator.txt</b> Permite obtener métricas para evaluar el Modelo, entre ellas la perpplejidad de cada modelo con k tópicos.
+						</li>
+					</ol>
+				</section>
+                                <section>
+                                        <h5> Topicos k = 4</h5>
+                                        <ul>
+                                           <li>
+                                             0 : europa rusia guerra fiscal crisis mayor mundial euros snowden america muertos apoyo menos iran amenaza unidos reino unido asuncion 
+                                           </li>
+                                           <li>
+1 : dolares usd gas precios menos blue cristina venezuela inflacion natural acuerdo crudo mayor ipsa imacec ivp utm petroleo bolsa
+                                           </li>
+                                           <li>
+2 : alta productos fernandez mexico campos cristina maria luz juan martin ritmo kirchner ranking consecutivo aniversario luis hombre manufacturera puntos
+                                           </li>
+                                           <li>
+3 : crisis crecimiento reforma america centro venezuela desarrollo latina ministro plan mayor deuda mundial comercio inversiones economico problemas rol unidos
+                                           </li>
+                                        </ul>
+                                </section>
+
+                                <section>
+					<h5> ¿Qué tan bueno eran los modelos?</h5>
+                                        <img width="1000" height="600" src="img/perplexity_k4.png" alt="Perplejidad del Modelado">
+                                </section>
+				<section data-background="assets/image1.png">
+					<h5> Con k = 4 y el intervalo=10 </h5>
+                                        <img width="1000" height="600" src="img/tremap_k4.10_P0.9995_unigram.png" alt="Estructura del Modelado">
+				</section>
+				<section data-background="assets/image1.png">
+					<h5> Con k=6 y el intervalo=5 </h5>
+					</ol>
 				</section>
                                 <section>
                                         <h5> Topicos k = 4</h5>
