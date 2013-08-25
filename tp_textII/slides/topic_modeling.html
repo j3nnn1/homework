@@ -32,7 +32,7 @@
 			<div class="slides">
 					<section>
 					<section data-background-transition="slide" data-background="assets/image1.png">
-						<h3>Modelado de Topicos</h3>
+						<h3>Modelado de Tópicos</h3>
                                                 <p>
                                                 Es una técnica para tratar documentos que no tienen alguna categorización,
                                                 y asume que cada documento es una mezcla aleatorias de categorías o tópicos
@@ -59,7 +59,7 @@
 						    Encontrar relaciones entre diferentes tópicos
 						</li>
 						<li class="fragment" data-fragment-index="4">
-						    Predecir citaciones en base a la presencia de similares topicos en un texto
+						    Predecir citaciones en base a la presencia de similares tópicos en un texto
 						</li>
 						<li class="fragment" data-fragment-index="5">
 						    Encontrar patrones repetitivos que pueden derivar de la estructura del texto.
@@ -96,7 +96,7 @@ fueron generadas aleatoriamente, y no tiene relación la secuencia en la que apa
                                             </li>
                                             
                                             <li class="fragment little" data-fragment-index="1">
-                                            Asignar un topico a nuevos documentos. 
+                                            Asignar un tópico a nuevos documentos. 
                                             </li>
                                         </ol>
                                         </p>
@@ -173,17 +173,17 @@ fueron generadas aleatoriamente, y no tiene relación la secuencia en la que apa
 				</section>
 
 				<section>
-					<h5> El Modelo más general, topicos=4 </h5>
+					<h5> El Modelo más general, tópicos=4 </h5>
 					<img width="1000" height="600" src="img/burble_k4.10.mallet_keys.png">
 				</section>
 				<section data-background="assets/image1.png">
 					<h5> Grafo distribución de las palabras en cada tópico. k=4 </h5>
-				        <img width="1000" height="600" src="img/topics_words.4.10.txt.png" alt="distribucion palabras topicos">
+				        <img width="1000" height="600" src="img/topics_words.4.10.txt.png" alt="distribucion palabras tópicos">
 				</section>
 
 				<section>
 					<h5> Grafo distribución de las palabras en cada tópico. k=8 </h5>
-				        <img width="1000" height="600" src="img/topics_words.8.5.txt.png" alt="distribucion palabras topicos">
+				        <img width="1000" height="600" src="img/topics_words.8.5.txt.png" alt="distribucion palabras tópicos">
 				</section>
 				<section>
 					<h5> Experimento tomando cada diario como un solo documento, k=20 resulta: </h5>
@@ -196,7 +196,7 @@ fueron generadas aleatoriamente, y no tiene relación la secuencia en la que apa
                                          El Parametro DirichLet permite darle un peso al tópico, haciendo que sobresalgo por encima de otros tópicos, y la variacion de este parametros permite un mejor ajuste del modelo. El intervalo permite que el software realice un calculo optimizado  de los parametros alfa y beta cada N iteraciones.
                                         </li>
                                         <li>
-                                               Conforme se añaden más topicos el modelo se vuelve más específico, y tiende a colocar todos los documentos que pertenecen a un diario en un mismo tópico, para k=10, ocurrió esto, de 10 topicos 8 tenía una probabilidad alta por encima de 0.998  y 7 topicos estaban asociados a un solo diario. No existe un modelo mejor que otro depende del objetivo. Si se desea realizar una clasificador de texto en base al modelado de tópicos, podríamos usar k=cantidad de clases y modificar los parametros que permitan reducir la perplejidad al máximo, de forma que cada tópica pueda representar una clase.
+                                               Conforme se añaden más topicos el modelo se vuelve más específico, y tiende a colocar todos los documentos que pertenecen a un diario en un mismo tópico, para k=10, ocurrió esto, de 10 tópicos 8 tenía una probabilidad alta por encima de 0.998  y 7 tópicos estaban asociados a un solo diario. No existe un modelo mejor que otro depende del objetivo. Si se desea realizar una clasificador de texto en base al modelado de tópicos, podríamos usar k=cantidad de clases y modificar los parametros que permitan reducir la perplejidad al máximo, de forma que cada tópica pueda representar una clase.
                                         </li>
                                         </ul> 
                                 </section>
@@ -208,8 +208,8 @@ fueron generadas aleatoriamente, y no tiene relación la secuencia en la que apa
                                     <p>
 La cantidad de tópicos recomendada no existe por ende se debe realizar una
 gran cantidad de iteraciones para observar cual se ajusta mejor a la data.
-Usualmente mientras más general menor cantidad de topicos mientras más especifico 
-cada topico tendrá menor cantidad de diarios.
+Usualmente mientras más general menor cantidad de tópicos mientras más especifico 
+cada tópico tendrá menor cantidad de diarios.
                                     </p>
                                 </section>
 
