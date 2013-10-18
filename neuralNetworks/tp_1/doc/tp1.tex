@@ -65,27 +65,33 @@
   \vspace{0.2cm}
   \noindent \normalsize{
         La hoja de c\'alculo denominada "clima\_numerico" contiene los mismos patrones
-representados por sus valores numéricos originales (en el caso de los atributos
+representados por sus valores num\'ericos originales (en el caso de los atributos
 humedad y temperatura) o por valores enteros asociados a la categor\'ia
 correspondiente (0=falso y 1= verdadero; 0=lluvioso, 0.5=nublado; 1=soleado).
 Utilice los patrones de la hoja "clima\_numerico" para entrenar un perceptr\'on que
-permita predecir, a partir de una condición clim\'atica dada, si se jugará al golf o no
+permita predecir, a partir de una condici\'on clim\'atica dada, si se jugar\'a al golf o no
   }
   \vspace{0.5cm}
   \end{@twocolumnfalse}
   ]
 
 
-%\section{Introducci\'on}
-\begin{itemize}
-    \item Analice si se producen variantes con respecto a los par\'ametros del algoritmo de entrenamiento. 
-        \\
-        \\
+\section{Analice si se producen variantes con respecto a los par\'ametros del algoritmo de entrenamiento.}
+      
         Se realiz\'o la ejecucion de 50 iteraciones por cada alfa, modificando la cantidad m\'axima de iteraciones
         de forma incremental, el ejercicio por tener pocos n\'umero de filas (patrones) convergi\'o a la soluci\'on
  sin llegar al m\'aximo n\'umero de iteraciones s\'olo para los alfa -0.5, 0.3, 0.4, 0.5. Es importante mencionar que 
-los datos no se encontraban normalizados.
-        
+los datos no se encontraban normalizados, el promedio de los resultados puede visualizarse en la Tabla 1 y los 
+datos se pueden obtener en el siguiente enlace: http://bit.ly/15xcRzx. La figura 1 muestra la relaci\'on entre el valor
+alfa y el n\'umero de iteraciones que le toma llegar a la soluci\'on que permita discriminar.
+
+ 	\begin{figure}[h]
+	  \centering
+	  \includegraphics[scale=0.2]{clima_alfa_iteracion1a.png}
+	  \caption{Comparaci\'on entre el valor del par\'ametro Alfa y el n\'umero de Iteraciones que realiza para llegar a la soluci\'on}
+	  \label{fgr:alfaIteracion}
+	\end{figure}
+
         \begin{table}[h]
         \small
         \caption{ Alfas, Promedio de Iteraciones, Cantidad de Aciertos (promedios) }
@@ -94,12 +100,12 @@ los datos no se encontraban normalizados.
         \hline
         Aciertos (Promedio) & alfa & Ite $<$ Max\_It & Ite (Promedio)\\
         \hline
-        2 & 0.5 & $50/50$ & 22.06 \\
-        2 & 0.4& $50/50$ & 19.04  \\
-        2 & 0.3 & $50/50$ & 24.2 \\
-        2 & -0.5 & $1/50$ & 1 \\
         2 & 0.2 & $50/50$ & 25.5 \\
+        2 & 0.3 & $50/50$ & 24.2 \\
         2 & 0.1 & $50/50$ & 23.64 \\
+        2 & 0.5 & $50/50$ & 22.06 \\
+        2 & 0.4 & $50/50$ & 19.04  \\
+        2 & -0.5 & $1/50$ & 1 \\
         1.54 & -0.1 & $0/50$ & 2550 \\
         1.6 & -0.2 & $0/50$ & 2550 \\
         1.46 & -0.3 & $0/50$ & 2550 \\
@@ -107,246 +113,266 @@ los datos no se encontraban normalizados.
         \hline
         \end{tabular*}
         \end{table}
-        En todas las variaciones de alfa, se reduce el n\'umero de iteraciones siendo el alfa 0.4 el porcentaje de 
-        aprendizaje que puede llegar a reducir el  n\'umero de iteraciones.
 
-    \item Analice si es necesario escalar los datos de entrada. 
-    \item ¿Es posible clasificar todos los patrones correctamente ingresando todos los de una clase primero y luego todos los de otra clase?
-    \item A partir de los pesos del perceptron entrenado, indique cual es la funci\'on discriminante obtenida.
-    \item seleccione dos patrones y calcule manualmente, para cada uno de ellos la respuesta del perceptron entrenado.
-\end{itemize}
+La figura 2  muestra un promedio de 50 iteraciones por cada valor de alfa, se muestra el sub conjunto donde el perceptron
+converge a la soluci\'on y el n\'umero de iteraciones es menor que el valor m\'aximo estipulado como par\'ametro inicial.
+Para valores cercanos a 0 de alfa tienen un menor n\'umero de iteraci\'on, donde el valor m\'inimo es 7.66 y su m\'aximo valor
+25.5 para valores de alfa sobre 0.3 a 0.4. 
 
-El Modelado de T\'opicos es una t\'ecnica para tratar documentos que no tienen alguna categorizaci\'on, esta t\'ecnica asume que cada documento es una mezcla aleatoria de categor\'ias o t\'opicos, donde cada categor\'ia es definida por la preferencia de algunas palabras sobre otras.
-\\
-\\
-Un t\'opico en el contexto de modelado de t\'opicos es una distribuci\'on
-de probabilidades de palabras para un conjunto, e indica la probabilidad
-que una palabra aparezca en un documento  sobre un t\'opico en particular. Para obtener esto el modelado de t\'opicos asume que las palabras que comprende el texto fueron generadas aleatoriamente y no poseen relaci\'on alguna. Su objetivo es Inferir una convincente respuesta bajo la asunci\'on anterior.  
-\\
-\\
-Los proyectos de Modelados de t\'opicos se dividen en:
-\begin{itemize}
-\item \emph{Proyectos de enfoque sincr\'onico}. 
-          en el cual el valor de la unidad de an\'alisis no 
-          posee l\'imite de tiempo, o mejor dicho no se 
-          identifica con una brecha de tiempo.
+	\begin{figure}[h]
+	  \centering
+	  \includegraphics[scale=0.2]{adult_alfa_iteracion_itefinal.png}
+	  \caption{Comparaci\'on entre el valor del par\'ametro Alfa y el n\'umero de Iteraciones que realiza para llegar a la soluci\'on}
+	  \label{fgr:alfaIteracion}
+	\end{figure}
 
-\item \emph{Proyectos de enfoque diacr\'onico}. 
-          La unidad de analisis de tiempo se genera 
-          en un fecha o rango de fecha definido.
-\end{itemize}
-El Modelado de T\'opicos puede ser usado para clasificar documentos similares 
-adem\'as permite mejorar la indexaci\'on de texto, pudiendose combinar con m\'etodos de 
-recuperaci\'on de informaci\'on otra de sus aplicaciones consiste en identificar la evoluci\'on de ciertos t\'opicos sobre
-un periodo de tiempo adem\'as de encontrar relaciones entre los diferentes t\'opicos.
-Tambi\'en predecir citaciones en base a la presencia de t\'opicos similares en un texto.
-\\ 
-\\
-Para evaluar que modelo de t\'opicos se ajusta mejor a los datos, muchos papers mencionan que es necesario 
-ejecutar en N iteraciones dependiendo del objetivo del modelo si es algo muy general o muy espec\'ifico depende
-de los par\'ametros que reciba el algoritmo. Otra medida  es la perplejidad por palabra que consiste
-en la cantidad de bits utilizados para modelar un texto, en cuanto la perplejidad es menor se podr\'ia decir que
-el modelo es m\'as espec\'ifico y se ajusta mejor al texto, por lo que se considera mejor 
-tener un modelo con menor perplejidad.
+        En todas las variaciones de alfa desde 0.1 a 0.5 el perceptron obtiene la soluci\'on antes de llegar a la m\'axima iteraci\'on. 
+        La tercera columna muestra el n\'umero de iteraciones que realiz\'o sin llegar a la m\'axima iteraci\'on.
+        La \'ultima columna muestra la iteraci\'on promedio por lo que se puede afirmar que sin escalar los datos, el algoritmo realizar\'a
+aproximadamente desde 19 hasta 26 iteraciones. A diferencia de utilizar los datos escalados,  se observa que se reducen dr\'asticamente el n\'umero 
+de iteraciones promedio pasando a tener un m\'inimo de 3 hasta 11 iteraciones. Esto se puede observar mejor en la siguiente secci\'on. 
 
-\section{Preparaci\'on e Instalaci\'on}
+       
+ \section{Analice si es necesario escalar los datos de entrada.}
+    Luego de haber escalado los datos a un intervalo $[0,1]$ comparando los resultados anteriores.  se puede observar que:
+    \\ Se reduce el n\'umero de iteraciones un 50\% si los datos estan escalados, por lo tanto el tiempo de c\'omputo es menor. 
+    \\ El n\'umero de Aciertos se ve afectado, reduciendo un poco la cantidad de aciertos para todos los alfas. 
+sin embargo el n\'umero de patrones es peque\~no para afirmar alguna premisa sobre este punto.
+
+        \begin{table}[h]
+        \small
+        \caption{ Alfas, Promedio de Iteraciones, Cantidad de Aciertos (promedios) }
+        \label{tbl:example}
+        \begin{tabular*}{0.5\textwidth}{@{\extracolsep{\fill}}llll}
+        \hline
+        Aciertos (Promedio) & alfa & Ite $<$ Max\_It & Ite (Promedio)\\
+        \hline
+        1.1  & 0.5 & $50/50$ & 11.96 \\
+        1.0476  & 0.4& $21/50$ & 8.4285  \\
+        1.4615 & 0.3 & $13/50$ & 2.8461 \\
+        1.5384 & 0.1 & $13/50$ & 3.8461 \\
+        0.8333 & 0.2 & $12/50$ & 3.25 \\
+        1 & -0.4 & $1/50$ & 1 \\
+        1.5 & -0.1 & $4/50$ & 1.5 \\
+        1.46 & -0.3 & $3/50$ & 1.333 \\
+        1.02 & -0.2 & $1/50$ & 1 \\
+        1 & -0.5 & $0/50$ & 2550 \\
+        \hline
+        \end{tabular*}
+        \end{table}
+
+    \section{Es posible clasificar todos los patrones correctamente ingresando todos los de una clase primero y luego todos los de otra clase?}
+
+    No, adem\'as el perceptron utiliza un tiempo mayor al promedio.\%
+
+    En la tabla 3 se puede observar como var\'ia con respecto a los diferentes par\'ametros, adem\'as visualizamos que alfa es
+m\'as conveniente utilizar para obtener una buena relaci\'on entre la mayor cantidad de aciertos y el menor n\'umero de iteraciones. 
+\\
+En todas las iteraciones se detiene antes de llegar al m\'aximo n\'umero de iteraciones, y en funci\'on de esto podemos
+comprobar que el par\'ametro alfa nos indicar\'a el porcentaje de aprendizaje. Un alfa con valores alto
+podr\'ia llegar a la soluci\'on de forma m\'as r\'apida  o puede generar mayor n\'umero de iteraciones al excederse en el diferencial,  que con un alfa m\'as peque\~no.
+\\
+Para valores de alfa negativos es menor la frecuencia con la
+que el perceptron obtiene la soluci\'on antes de alcanzar el n\'umero m\'aximo de iteraciones.
+Por lo cual la selecci\'on del par\'ametro alfa depende de los datos y debe realizarse N ejecuciones
+para obtener la mejor relaci\'on entre el n\'umero de iteraciones que realiza y
+el porcentaje de aprendizaje alfa, En este caso los valores de alfa donde converge a una soluci\'on
+sin igualar el m\'aximo valor de n\'umero de iteraciones tiene el rango $$[0.1, 0.5]$$.
+
+        \begin{table}[h]
+        \small
+        \caption{ Alfas, Promedio de Iteraciones, Cantidad de Aciertos (promedios) }
+        \label{tbl:example}
+        \begin{tabular*}{0.5\textwidth}{@{\extracolsep{\fill}}llll}
+        \hline
+        Aciertos (Promedio) & alfa & Ite $<$ Max\_It & Ite (Promedio)\\
+        \hline
+        0.14  & 0.5 & $50/50$ & 1.88 \\
+        0.06  & 0.4 & $50/50$ & 1.88  \\
+        0.08  & 0.3 & $50/50$ & 4.0476 \\
+        0.08  & 0.1 & $13/50$ & 3.8461 \\
+        0.08  & 0.2 & $12/50$ & 3.25 \\
+        1 & -0.5 & $8/50$ & 1 \\
+        1 & -0.4 & $13/50$ & 1.4615 \\
+        1.46 & -0.3 & $21/50$ & 4.0476 \\
+        1.5 & -0.1 & $50/50$ & 2.36 \\
+        1.02 & -0.2 & $50/50$ & 2.7 \\
+        \hline
+        \end{tabular*}
+        \end{table}
+
+    \section{A partir de los pesos del perceptron entrenado, indique cual es la funci\'on discriminante obtenida.}
+
+        Tomando en cuenta el menor n\'umero de iteraciones y mayor n\'umero de aciertos, seleccionamos este perceptron:
+        \\
+        i, nrow, alfa, Max\_It, b, W(1), W(2), W(3), W(4), Ite, Aciertos
+        \\
+        0,501,0.5,100,-0.42337,0.10824,0.89026,-0.64481,-0.77112,6,2
+        \\
+
+        X1 (0.10824) + X2 (0.89026) + X3(-0.64481) + X4(-0.77112)
+        \\
+        Ambiente(0.10824)  + Temperatura(0.89026)  + Humedad(-0.64481) +  Viento(-0.77112)
+
+    \section{seleccione dos patrones y calcule manualmente, para cada uno de ellos la respuesta del perceptron entrenado.}
+
+	Patron 1: fila5: 0,1,57,0,1
+        \\
+	= 0(0.10824) + 1 (0.89026) + 57(-0.64481) + 0(-0.77112)
+        \\
+	= 35.86
+        \\
+	s\'i $$ 35.86 >= 0$$ entonces Y = 1 OK
+        \\
+	otro caso Y = 0
+        \\
+	Patron 2: Fila6: 0,9,75,1,0
+        \\
+	= 0(0.10824) + 9 (0.89026) + 75(-0.64481) + 1(-0.77112)
+        \\
+	= 8.01234 - 48.36075 - 0.77112
+        \\
+	= -41.119530000000005
+        \\
+	s\'i  $$ -41.119530000000005 >= 0$$ entonces Y=1
+        \\
+	otro caso Y=0 OK
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% EXERCISE 2
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\twocolumn[
+  \begin{@twocolumnfalse}
+  \vspace{0.2cm}
+  \noindent \normalsize{
+El archivo “Adult\_Parte1.xls” contiene 11029 registros de empleados de una empresa.
+Para cada uno de ellos se ha registrado su edad, nivel educativo, cantidad de horas
+semanales que trabaja y si gana o no más de 50000 d\'olares al a\~no.
+Entrene un Perceptr\'on que, a partir de una muestra formada por los tres primeros
+atributos permita decidir si gana m\'as de 50000 d\'olares al a\~no o no.
+Para ello utilice el 80\% de las muestras para hacer el entrenamiento y el 20\% restante
+para realizar el testeo
+}
+  \vspace{0.5cm}
+  \end{@twocolumnfalse}
+]
+
+\section{ Resoluci\'on del problema, Sin escalar los datos de entrada y distintos valores de alfa.}
+    En la siguiente tabla se muestra el valor promedio de: Alfa, Iteraci\'on final que
+     es menor al m\'aximo valor de iteraci\'on y Cantidad de Aciertos promedio, para datos no
+escalados el n\'umero de aciertos no var\'ia fuertemente con el parametro alfa y se mantiene 
+estable en 2202 a 2203. Sin embargo el n\'umero de iteraciones promedio con respecto al valor del par\'ametro alfa
+var\'ia fuertemente teniendo su m\'inimo valor en el \emph{alfa} $$ [0.2,0.3] $$ 
+    
+    \begin{table}[h]
+        \small
+        \caption{ Alfas, Promedio de Iteraciones, Cantidad de Aciertos (promedios) }
+        \label{tbl:example}
+        \begin{tabular*}{0.5\textwidth}{@{\extracolsep{\fill}}llll}
+        \hline
+        Aciertos (Promedio) & alfa & Ite $<$ Max\_It & Ite (Promedio)\\
+        \hline
+        2203.75 & 0.5 & $16/20$ &  2893.25\\
+        2202.9  & 0.4 & $10/20$ & 2582.7  \\
+        2203.31 & 0.3 & $16/20$ & 1704.688 \\
+        2203   & 0.2 & $9/20$ & 987.222 \\
+        2202.10  & 0.1 & $10/20$ & 3350.2 \\
+        \hline
+        \end{tabular*}
+        \end{table}
+El resto de los valores alfa se pueden consultar acá: http://bit.ly/1bfJwJ6 , 
+En el gr\'afico de puntos se puede observar que el mayor n\'umero de aciertos se obtiene para los valores de alfa 0.3 y 0.5.
+Adem\'as el valor m\'inimo de iteraciones est\'a asociado a un valor bajo en el par\'ametro alfa. A menor valor de alfa 
+menor n\'umero de iteraciones, por lo que se podr\'ia decir que se deber\'ia iniciar con par\'ametros de alfa peque\~nos e ir luego
+aumentando de acuerdo a la comparacion de las iteraciones, en la figura 3 la tonalidad m\'as oscura de azul representa valores bajos en 
+cuanto a cantidad de iteraciones.
+
+	\begin{figure}[h]
+	  \centering
+	  \includegraphics[scale=0.2]{adult_alfa_points_iteracion_iteinal.png}
+	  \caption{Comparaci\'on entre el valor del par\'ametro Alfa y el n\'umero de Aciertos}
+	  \label{fgr:alfaIteracion}
+	\end{figure}
+
+	\begin{figure}[h]
+	  \centering
+	  \includegraphics[scale=0.2]{adult_alfa_iteracion_promedio_final.png}
+	  \caption{Comparaci\'on entre el valor del par\'ametro Alfa y el n\'umero de Iteraciones}
+	  \label{fgr:alfaIteracion}
+	\end{figure}
+
+\section{ Resoluci\'on del problema, Escalando los datos linealmente y distintos valores de alfa.}
+    De nuevo como en el ejercicio anterior al realizar el escalado de datos se reduce el n\'umero de 
+iteraciones, de aproximadamente 2000 a 133 iteraciones como m\'inimo valor, esto puede mejorar el desempeño del perceptr\'on
+en casos de tener conjunto de datos con gran n\'umero de patrones. ya que a medida que poseemos m\'as patrones tender\'a
+a demorar por el orden de complejidad del algoritmo si bien no es catalogado como un algoritmo NP-hard ya que tiene un orden  de complejidad polinomial,
+ el proceso de selecci\'on de pesos se puede hacer m\'as largo a medida que incremente el n\'umero de patrones.
+ Un aspecto importante es que a pesar que en algunos valores de alfa no llegaron a discriminar completamente todos los patrones
+el n\'umero de aciertos es bastante cercano a los valores de alfa que si discriminaron completamente los patrones.
+Y el n\'umero de aciertos va decreciendo mientras m\'as se acerca a valores negativos de alfa.
+
+    \begin{table}[h]
+        \small
+        \caption{ Alfas, Promedio de Iteraciones, Cantidad de Aciertos (promedios) }
+        \label{tbl:example}
+        \begin{tabular*}{0.5\textwidth}{@{\extracolsep{\fill}}llll}
+        \hline
+        Aciertos (Promedio) & alfa & Ite $<$ Max\_It & Ite (Promedio)\\
+        \hline
+        2202.1 & 0.5 & $10/10$ &  227.8\\
+        2202.1  & 0.4 & $10/10$ & 133.2  \\
+        2181.8 & 0.3 & $0/10$ &  11000 \\
+        2161   & 0.2 & $0/20$ & 11000 \\
+        2118  & 0.1 & $0/20$ & 11000 \\
+        971  & -0.1 & $0/20$ & 11000 \\
+        971  & -0.2 & $0/20$ & 11000 \\
+        971  & -0.3 & $0/20$ & 11000 \\
+        971  & -0.4 & $0/20$ & 11000 \\
+        971  & -0.5 & $0/20$ & 11000 \\
+        \hline
+        \end{tabular*}
+        \end{table}
+ Se puede visualizar mejor lo comentado anteriorment  en la figura 5.
+	\begin{figure}[h]
+	  \centering
+	  \includegraphics[scale=0.2]{adult_alfa_iteracion_escalado.png}
+	  \caption{Comparaci\'on entre el valor del par\'ametro Alfa y el n\'umero de Iteraciones}
+	  \label{fgr:alfaIteracion}
+	\end{figure}
+
+
+\section{ Resoluci\'on del problema, Orden de Ingreso de Muestras, muestras de una misma clase, y muestras alternadas y distintos valores de alfa.}
+
+        Cuando los patrones se encuentran alternados por clase se mantienen el n\'umero de iteraciones bajo, a diferencia de 
+        colocar todos los patrones que pertenecen a una clase primero, esto lo que genera es incrementar el n\'umero de iteraciones
+        haciendo que resuelve de forma m\'as r\'apida y sencilla.
+
+        \begin{table}[h]
+        \small
+        \caption{ Alfas, Promedio de Iteraciones, Cantidad de Aciertos (promedios) }
+        \label{tbl:example}
+        \begin{tabular*}{0.5\textwidth}{@{\extracolsep{\fill}}llll}
+        \hline
+        Aciertos (Promedio) & alfa & Ite $<$ Max\_It & Ite (Promedio)\\
+        \hline
+        2200 & 0.5 & $20/20$ &  166.4\\
+        2200  & 0.4 & $20/20$ & 218.9  \\
+        2166 & 0.3 & $0/10$ &  3000 \\
+        2148 & 0.2 & $0/10$ &  3000 \\
+        2079 & 0.1 & $0/10$ &  3000 \\
+        375  & -0.1 & $0/20$ & 3000 \\
+        375  & -0.2 & $0/20$ & 3000 \\
+        375  & -0.3 & $0/20$ & 3000 \\
+        375  & -0.4 & $0/20$ & 3000 \\
+        375  & -0.5 & $0/20$ & 3000 \\
+        \hline
+        \end{tabular*}
+        \end{table}
 
 %Footnotes
-\footnotetext{\dag~ Script para formatear Git Hub: [http://bit.ly/15VZJBC].}
+%\footnotetext{\dag~ Script para formatear Git Hub: [http://bit.ly/15VZJBC].}
+%\item \emph{Importar Archivos},
 
-En cuanto a nutch y solr s\'olo requieren ser descargados y modificar los archivos de configuraci\'on  a medida de lo que se requiera, en nuestro caso necesitabamos que indexara p\'aginas que pertenecieran al mismo dominio. Adem\'as Requiere tener java instalado en la m\'aquina.
-\\
-El proceso de Descarga de los diarios se realiz\'o durante 2 semanas, sin embargo realizaremos modelado de t\'opicos sin tomar en cuenta la secuencia en que fueron publicados los art\'iculos. Luego del formato CSV obtenido a trav\'es del servidor Solr fue llevado al formato:
-\\
-Directorio/file1.txt \\
-Directorio/file2.txt \\
-\\
-En el cual se importa la carpeta que contiene los archivos que servir\'an como
- entrenamiento para el modelado de t\'opicos. Luego se tom\'o un 10\% como muestra 
-para realizar la evaluaci\'on e inferencia de nuevos t\'opicos. Los archivos usados 
-para entrenamiento se encuentran en la carpeta \emph{train}, y los usados para evaluar el
-modelo en la carpeta \emph{test} en el repositorio listado en las referencias.
-\\
-\\
-En este trabajo utilizamos Mallet y la implementaci\'on que contiene del Algorithm LDA (latent Dirichlet allocation) para realizar el Modelado de t\'opicos, mediante el ajuste de las frecuencias de palabras  a la probabilidad a priori, y Gibbs Sampling para simular el c\'alculo de la probabilidad a posteriori, sin embargo se puede utilizar otro tipo de distribuci\'on en ambas etapas, editando par\'ametros de software Mallet. 
-\\
-\\
-se realiz\'o el Modelado de t\'opicos en muchas iteraciones
- con diferentes par\'ametros para visualizar qur\'e combinaci\'on de 
-par\'ametros ser\'ia la m\'as \'optima. Durante 4 iteraci\'ones se  a\~nadi\'o m\'as palabras al listado de stopwords, cabe destacar que Mallet no trae en su instalaci\'on por defecto con un listado de stopwords en espa\~nol. Sin embargo se pueden añadir una lista de stopwords en funci\'on del corpus.
-\\
-\\
-Cada iteraci\'on consta de los siguientes procesos:
-\begin{itemize}
-\item \emph{Importar Archivos},
-            Este proceso convierte los archivos 
-            en formato directorio/file1.txt  al formato Mallet, para el 
-            entrenamiento y evaluaci\'on del Modelo. 
-\item \emph{Entrenamiento},
-            Este proceso a trav\'es de los par\'ametros 
-            configurados en Mallet realiza el entrenamiento 
-            con el formato que arroj\'o el paso anterior. (entrenamiento\_unigram.sh)
-\item \emph{Inferencia de nuevos datos},
-            Teniendo el archivo con formato Mallet de los datos de test, 
-            y el archivo del modelo de entrenamiento, obtenido en el paso anterior, 
-            se realiza la asignaci\'on de t\'opicos a los documentos de \emph{test} (ver inferencer.sh)
-            
-\item \emph{Evaluacion de la inferencia},
-            Mallet permite evaluar los modelos generados, a trav\'es del comando 
-            evaluate-topics, esto toma como par\'ametro de entrada el archivo obtenido en 
-            el anterior paso. Y permite visualizar que tan espec\'ifico o general es un modelo
-            a trav\'es de la m\'etrica de perplejidad. (ver evaluate.sh)
-\end{itemize}
-
-Luego de haber cumplido el anterior proceso, graficamos la perplejidad y
- elegimos dos modelos, k=8 (k = n\'umero de t\'opicos) porque tiene  el mayor peso en uno de sus 
-t\'opicos con respecto a todas las iteraciones y conserva la generalidad del modelo para asociar diarios.
- Y k=4 e i=10 ya que de acuerdo a la siguiente
- gr\'afica tiene el menor valor de la perplejidad en este n\'umero de t\'opico que es  m\'as general.
-
-\begin{figure}[h]
-  \centering
-  %\includegraphics[scale=0.2]{perplexity.png}
-  \caption{Perplejidad para cada iteraci\'on con la variaci\'on de k e i (par\'ametro que optimiza el modelado de t\'opico) } 
-  \label{fgr:perplexity}
-\end{figure}
-
-Adem\'as se puede observar que a medida que incrementamos los tags se decrementa la perplejidad, 
-por lo que es una medida que te permite definir si ser\'a mejor clasificador el modelo.
-Para modelos m\'as generales la perplejidad  ser\'a mayor.
-
-\subsection{ Visualizando m\'as de 10000 art\'iculos}
-Los archivos generados por Mallet luego de su entrenamiento son:
-\begin{itemize}
-\item \emph{noticias\_keys.txt}, tiene un listado de los t\'opicos , y a cada t\'opico le asigna un peso, de acuerdo a su relevancia. hicimos un gr\'afico de c\'irculos donde el di\'ametro del c\'irculo corresponde al peso del t\'opico.  
-\item \emph{noticias\_composition.txt}, hicimos un treemap limitando el n\'umero de documentos a incluir por t\'opico, ya que el n\'umero de documentos es muy alto.
-\item word-topic-count-files.txt, con este archivo realizamos el grafo de la distribuci\'on de palabras a trav\'es de los t\'opicos.
-      Este grafo se realiz\'o tomando un l\'imite de probabilidades ya que son muchos documentos.
-\item noticias\_inferencer.txt, muestra el t\'opico asignado a el nuevo documento.
-\item \emph{noticias\_evaluator.txt}, Permite obtener m\'etricas para evaluar el Modelo, entre ellas la perplejidad.
-\end{itemize}
-
-\subsection{ Gr\'aficos de burbujas para T\'opicos para k=8  }
-\begin{figure}[h]
-  \centering
-  %\includegraphics[scale=0.2]{burble_k8_5_mallet_keys.png}
-  \caption{T\'opicos y sus Pesos.}  
-  \label{fgr:perplexity}
-\end{figure}
-
-El t\'opico m\'as relevante, de acuerdo a su frecuencia de aparici\'on es el tema del cepo cambiario.  
-Puede deberse a incluir mayor cantidad de diarios de Argentina que del resto del mundo.  
-Otro t\'opico que destaca, menciona la crisis y deficit en europa.  
-Al hablar de petr\'oleo, reformas, chav\'ez y crisis se asocia a Venezuela. 
-Y el t\'opico que muestra temas como t\'opicos guerra, snowden, amenaza, usd, gas se asocia a Rusia.
-
-\subsection{ Gr\'aficos de burbujas para T\'opicos para k=4  }
-\begin{figure}[h]
-  \centering
-  %\includegraphics[scale=0.2]{burble_k4_10_mallet_keys.png}
-  \caption{T\'opicos y sus Pesos.}  
-  \label{fgr:burble}
-\end{figure}
-
-T\'opicos de la figura 3:
-Dolares, Blue, fernandez, inflaci\'on, crisis, seguridad es el t\'opico con mayor peso y asocia a todos los diarios de argentina.
-\\
-Crisis en europa, deuda y deficit, representan a los diarios espa\~noles. 
-\\
-Venezuela, mundial, unidos, america latina, guerra, snowden, dolares, crisis, amenaza, acuerdos, china. Asocia a los diarios de actualidadRT.com
-y avn.info.ve, puede deberse a que ambos pa\'ises ofrecieron asilo a snowden.
-
-\subsection{ Grafo con la distribuci\'on de palabras por t\'opicos para k=4  }
-
-Se puede observar en la figura 5 que el t\'opico 3 contiene un n\'umero mayor de palabras con respecto a los otros t\'opicos.
-Siento este t\'opico m\'as general: crisis crecimiento reforma america centro venezuela desarrollo latina 
-ministro plan mayor deuda mundial comercio inversiones economico problemas rol unidos.
-
-\begin{figure}[h]
-  \centering
-  %\includegraphics[scale=0.2]{topics_words_4_10_txt.png}
-  \caption{Distribuci\'on de Palabras por t\'opico, para k=4.}  
-  \label{fgr:perplexity}
-\end{figure}
-
-\subsection{ Treemap para k=8  }
-
-\begin{figure}[h]
-  \centering
-  %\includegraphics[scale=0.2]{tremap_k8_5_P0_998_unigram.png}
-  \caption{Treemap para k=8, el color representa un t\'opico, y como agrupa los diferentes diarios.}  
-  \label{fgr:treemap}
-\end{figure}
-
- avn.info.ve, telegrafo.com.ec, eleconomista.com.mx, tienen los t\'opicos: centro venezuela
- desarrollo chavez interes america mundial muertos comercio latina
- politicas acuerdo eeuu redaccion revolucion crisis region snowden unidos. 	
-\\
-
- ultimahora.com, cincodias.com, los asocia con los t\'opicos: europa credito asuncion
- fiscal inversiones rosalia subidas egipto depositos impuestos diaz palacio gibraltar. 
-En este t\'opico debe asociar a diarios de paraguay s\'olo que no son listado por no 
-tener una probabilidad de pertenencia por encima de 0.998
-\\
- 
- elpais.com, nuevatribuna.com menciona: euros alta crisis america europa fiscal 
-deuda reforma  debate barcelona ministro partido 
-medidas deficit paga bruselas francia bankia.
-\\
-el resto de los diarios de Argentina los asocia con el t\'opico 2, dolares precios 
-inflacion cristina blue pesos menos crecimiento productos mayor maria 
-crisis acuerdo oficial demanda bolsa credito argentinos deuda.
-
-
-\section{Conclusiones.}
-El potencial del modelado de t\'opicos no se observa en cada 
-documento individualmente, sino m\'as bien en un enfoque global analizando 
-grandes cantidades de documentos para visualizar patrones entre ellos. 
-\\
-\\
-El Parametro DirichLet permite darle un peso al t\'opico, haciendo 
-que sobresalgo por encima de otros t\'opicos, y la variacion de este 
-parametros permite un mejor ajuste del modelo.
-\\
-\\
-El intervalo permite que el software realice un calculo optimizado de los parametros alfa y beta cada N iteraciones.
-\\
-\\
-Conforme se a\~naden m\'as t\'opicos el modelo se vuelve m\'as espec\'ifico, y tiende a colocar todos los documentos que pertenecen a un diario en un mismo t\'opico, para k=10, ocurri\'o esto, de 10 t\'opicos 8 ten\'ia una probabilidad alta por encima de 0.998 y 7 t\'opicos estaban asociados a un solo diario.
-\\
-\\
-No existe un modelo mejor que otro, depende del objetivo. Si se desea realizar
-\\
-\\
- una clasificador de texto en base al modelado de t\'opicos, 
-podr\'iamos usar k=cantidad de clases y modificar los parametros que permitan 
-reducir la perplejidad al m\'aximo, de forma que cada t\'opico pueda representar una clase.
-\\
-\\
-luego de cada ejecuci\'on, siempre arrojar\'a resultados diferentes ya que Mallet utiliza Gibbs sampling por defecto, para calcular la probabilidad a posteriori. Por ende la comparaci\'on entre modelos no es muy pr\'actica.
-\\
-\\
-La cantidad de t\'opicos recomendada no existe por ende se debe realizar una gran cantidad de iteraciones para observar cual se ajusta mejor a la data. Usualmente mientras m\'as general menor cantidad de t\'opicos mientras m\'as espec\'ifico cada t\'opico tendr\'a menor cantidad de diarios.
-
-\section{Referencias.}
-
-\begin{itemize}
-\item{Lista de Desarrollo Mallet} http://comments.gmane.org/gmane.comp.ai.mallet.devel/1294
-\item{Modelado de Topicos, Universidad de Princeton} http://www.cs.princeton.edu/~blei/topicmodeling.html
-\item{Topic Modelling with MALLET} http://hublog.hubmed.org/archives/001870.html
-\item{Comprehending the Digital Humanities} https://dhs.stanford.edu/comprehending-the-digital-humanities/
-\item{Gephi + MALLET + EMDA} http://www.robincamille.com/
-\item{Identifying the pathways for meaning circulation using text network analysis} http://noduslabs.com/research/pathways-meaning-circulation-text-network-analysis/ 
-\item{Redes de T\'opicos} https://dhs.stanford.edu/visualization/topic-networks/
-\item{Review Mallet} http://journalofdigitalhumanities.org/2-1/review-mallet-by-ian-milligan-and-shawn-graham/
-\item{Visualizing Topic Models with Force-Directed Graphs} http://tedunderwood.com/2012/12/02/visualizing-topic-models-with-force-directed-graphs/
-\item{Mallet Paper} http://courses.washington.edu/ling572/winter2013/slides/class2\_570\_mallet.pdf
-\item{SIGKDD 2011 Conference}http://www.bytemining.com/2011/08/sigkdd-2011-conference-day-1-graph-mining-and-david-bleitopic-models/
-\item{C\'odigo Empleado en este trabajo Pr\'actico} http://github.com/j3nnn1/topic\_model
-\item{Slides en HTML sobre Modelado de T\'opicos} http://j3nnn1.github.io/homework/tp\_textII/slides/topic\_modeling.html
-\item{Perplejidad } http://es.wikipedia.org/wiki/Perplejidad
-
-\end{itemize}
 
 \footnotesize{
 %\bibliography{rsc} %your .bib file
