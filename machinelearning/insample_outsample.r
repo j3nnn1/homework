@@ -1,3 +1,4 @@
+# not catch the noise and yes to the signal!
 
 library(kernlab)
 data(spam)
@@ -15,5 +16,19 @@ rule1 <- function(x) {
   prediction[x > 2.45  & x <= 2.70] <- 'nonspam'
   return(prediction)
 }
-
+rule2 <- function(x) {
+  prediction <- rep(NA, length(x))
+  prediction[x > 2.8] <- 'spam'
+  prediction[x <= 2.8] <- 'nonspam'
+  return(prediction)
+}
 table (rule1(smallSpam$capitalAve), smallSpam$type)
+table (rule1(spam$capitalAve), spam$type)
+print ('Rule 2: ')
+table (rule2(smallSpam$capitalAve),smallSpam$type)
+table (rule2(spam$capitalAve), spam$type)
+
+print ('Accuraccy')
+
+sum(rule1(spam$capitalAve)==spam$type)
+sum(rule2(spam$capitalAve)==spam$type)
