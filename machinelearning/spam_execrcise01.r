@@ -1,6 +1,9 @@
 
 #elements precdictions 
+
 # question, input data, features, algorithm, parameters, evaluation
+# in sample error, Error of traning dataset
+# out sample error, Error of testing dataset
 library(kernlab)
 data(spam)
 head(spam)
