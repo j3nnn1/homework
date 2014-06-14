@@ -22,8 +22,23 @@ test <- Wage[-inTrain,];
 
 table(training$jobclass)
 
-dummy = dummyVars(wage ~ jobclass, data=training);
-head(predict(dummies, newdata=training)
+dummies = dummyVars(wage ~ jobclass, data=training);
+head(predict(dummies, newdata=training));
+
+#nsv
+nsv = nearZeroVar(training, saveMetrics=TRUE);
+
+#create a var polinomial
+#df specify the grade of polynomial
+library(splines);
+bsBasis <- bs(training$age, df=3);
+
+#fitting curves with splines
+
+lm1 = lm(wage~bsBasis, data=training);
+plot(training$age, training$wage, pch=19,cex=0.5);
+points(training$age, predict(lm1, newdata=training), col="red", pch=19, cex=0.5);
 
 
 
+predict(bsBasis, age=testing$age);
