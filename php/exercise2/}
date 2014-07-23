@@ -1,0 +1,12 @@
+
+class Sandwich {
+private breadTypes = null; 
+private ingredients  = array();
+
+public function __construct(){
+}
+public function addIngredient($ingredient) {
+    $this->ingredients[] = $ingredient;
+    return $this->ingredients;	
+}
+}
