@@ -1,0 +1,506 @@
+.libpaths()
+install.packages("rJava")
+.libpaths()
+libpaths()
+libPaths()
+.libPaths()
+tr <-
+read.csv("/home/gise/Documents/Aprendizaje Automatico/datasets20120701/transacciones_v5_ext1.csv",sep=";",dec=".",as.is=T,header=T)
+cl  <- kmeans (tr[["precio"]] ,3,nstart=100)
+tr[["precio"]]
+tr[["precio"]][cl$cluster == 1] <- 'A'
+tr[["precio"]][cl$cluster == 2] <- 'B'
+tr[["precio"]][cl$cluster == 3] <- 'C'
+tr[["precio"]]
+cl  <- kmeans (tr[["cant"]] ,5,nstart=100)
+tr[["cant"]]
+tr[["cant"]][cl$cluster == 1] <- 'A'
+tr[["cant"]][cl$cluster == 2] <- 'B'
+tr[["cant"]][cl$cluster == 3] <- 'C'
+tr[["cant"]][cl$cluster == 4 ] <- 'D'
+tr[["cant"]][cl$cluster == 5] <- 'E'
+tr[["cant"]]
+cl  <- kmeans (tr[["vta_tot"]] ,3,nstart=100)
+tr[["vta_tot"]]
+tr[["vta_tot"]][cl$cluster == 1] <- 'A'
+tr[["vta_tot"]][cl$cluster == 2] <- 'B'
+tr[["vta_tot"]][cl$cluster == 3] <- 'C'
+tr[["vta_tot"]]
+write.csv("tr",/home/gise/Documents/Aprendizaje Automatico/datasets20120701/TR.csv,col.names=T,sep=";")
+write.csv(tr,/home/gise/Documents/Aprendizaje Automatico/datasets20120701/TR.csv,col.names=T,sep=";")
+write.csv(tr,file="/home/gise/Documents/Aprendizaje Automatico/datasets20120701/TR.csv",col.names=T,sep=";")
+str(tr)
+tr[["n_ped"]] <- as.factor(tr[["precio"]])
+str(tr)
+read.csv("/home/gise/Documents/Aprendizaje Automatico/datasets20120701/transacciones_v5_ext1.csv",sep=";",dec=".",as.is=T,header=T)
+cl  <- kmeans (tr[["precio"]] ,3,nstart=100)
+tr[["precio"]]
+tr[["precio"]][cl$cluster == 1] <- 'A'
+tr[["precio"]][cl$cluster == 2] <- 'B'
+tr[["precio"]][cl$cluster == 3] <- 'C'
+tr[["precio"]]
+cl  <- kmeans (tr[["cant"]] ,5,nstart=100)
+tr[["cant"]]
+tr[["cant"]][cl$cluster == 1] <- 'A'
+tr[["cant"]][cl$cluster == 2] <- 'B'
+tr[["cant"]][cl$cluster == 3] <- 'C'
+tr[["cant"]][cl$cluster == 4 ] <- 'D'
+tr[["cant"]][cl$cluster == 5] <- 'E'
+tr[["cant"]]
+cl  <- kmeans (tr[["vta_tot"]] ,3,nstart=100)
+tr[["vta_tot"]]
+tr[["vta_tot"]][cl$cluster == 1] <- 'A'
+tr[["vta_tot"]][cl$cluster == 2] <- 'B'
+tr[["vta_tot"]][cl$cluster == 3] <- 'C'
+str(tr)
+tr[["cod_cte"]] <- as.factor(tr[["cod.cte"]])
+str(tr)
+read.csv("/home/gise/Documents/Aprendizaje Automatico/datasets20120701/transacciones_v5_ext1.csv",sep=";",dec=".",as.is=T,header=T)
+tr <- read.csv("/home/gise/Documents/Aprendizaje Automatico/datasets20120701/transacciones_v5_ext1.csv",sep=";",dec=".",as.is=T,header=T)
+cl  <- kmeans (tr[["precio"]] ,3,nstart=100)
+tr[["precio"]]
+tr[["precio"]][cl$cluster == 1] <- 'A'
+tr[["precio"]][cl$cluster == 2] <- 'B'
+tr[["precio"]][cl$cluster == 3] <- 'C'
+tr[["precio"]]
+cl  <- kmeans (tr[["cant"]] ,5,nstart=100)
+tr[["cant"]]
+tr[["cant"]][cl$cluster == 1] <- 'A'
+tr[["cant"]][cl$cluster == 2] <- 'B'
+tr[["cant"]][cl$cluster == 3] <- 'C'
+tr[["cant"]][cl$cluster == 5] <- 'E'
+tr[["cant"]]
+cl  <- kmeans (tr[["vta_tot"]] ,3,nstart=100)
+tr[["vta_tot"]]
+tr[["vta_tot"]][cl$cluster == 1] <- 'A'
+tr[["vta_tot"]][cl$cluster == 2] <- 'B'
+tr[["vta_tot"]][cl$cluster == 3] <- 'C'
+tr[["vta_tot"]]
+tr <- read.csv("/home/gise/Documents/Aprendizaje Automatico/datasets20120701/transacciones_2009.csv",sep=";",dec=".",as.is=T,header=T)
+tr2 <- read.transactions("/home/gise/Documents/Aprendizaje Automatico/datasets20120701/transacciones_2009.csv",format="single",sep=";",cols=c(1,5),rm.duplicates=T)
+library(arules)
+tr2 <- read.transactions("/home/gise/Documents/Aprendizaje Automatico/datasets20120701/transacciones_2009.csv",format="single",sep=";",cols=c(1,5),rm.duplicates=T)
+rules <- apriori(tr2, parameter= list(supp=0.05, conf=0.1))
+rules <- apriori(tr2, parameter= list(supp=0.05, conf=0.05))
+rules <- apriori(tr2, parameter= list(supp=0.01, conf=0.05))
+rules <- apriori(tr2, parameter= list(supp=0.01, conf=0.01))
+inspect(head(sort(rules,by="lift"))
+)
+inspect(head(sort(rules,by="lift"),20)
+)
+inspect(rules)
+plot(rules)
+rules <- apriori(tr2, parameter= list(supp=0.005, conf=0.01))
+inspect(rules)
+tr2
+tr2 <- read.transactions("/home/gise/Documents/Aprendizaje Automatico/datasets20120701/transacciones_2009.csv",format="single",sep=";",cols=c(1,5),rm.duplicates=T)
+tr2 <- read.transactions("/home/gise/Documents/Aprendizaje Automati
+rules <- apriori(tr2, parameter= list(supp=0.00, conf=0.01))
+inspect(rules)
+rules <- apriori(tr2, parameter= list(supp=0.001, conf=0.01))
+rules <- apriori(tr2, parameter= list(supp=0.01, conf=0.01))
+inspect(rules)
+## read example data
+x <- read_baskets(con
+ = system.file("misc", "zaki.txt", package =
+"arulesSequences"),
+info = c("sequenceID","eventID","SIZE"))
+as(x, "data.frame"
+X
+ = system.file("misc", "zaki.txt", package =
+"arulesSequences"),
+info = c("sequenceID","eventID","SIZE"))
+X = system.file("misc", "zaki.txt", package ="arulesSequences")
+X
+misc
+str(X)
+X = system.file("misc")
+X
+X = system.file( "zaki.txt")
+X
+x <- read_baskets(con=system.file("misc", "zaki.txt", package ="arulesSequences"), info = c("sequenceID","eventID","SIZE"))
+library(arules)
+x <- read_baskets(con=system.file("misc", "zaki.txt", package ="arulesSequences"), info = c("sequenceID","eventID","SIZE"))
+install.packages("arulesSequences")
+inspect(zaki)
+x <- read_baskets(con=system.file("misc", "zaki.txt", package ="arulesSequences"), info = c("sequenceID","eventID","SIZE"))
+library(arulesSequences)
+x <- read_baskets(con=system.file("misc", "zaki.txt", package ="arulesSequences"), info = c("sequenceID","eventID","SIZE"))
+inspect(zaki.txt)
+inspect(zaki)
+inspect(misc)
+zaki
+example(ruleInduction, package = "arulesSequences")
+x <- read_baskets("/home/gise/Documents/Aprendizaje Automatico/datasets20120701/sequences.csv",sep=";",info=c("sequenceID","eventID","SIZE"))
+x <- read_baskets("/home/gise/Documents/Aprendizaje Automatico/datasets20120701/sequences.csv",sep=";",info=c("sequenceID","eventID","SIZE"))
+x
+x
+info = c("sequenceID","eas(x, "data.frame")
+x2 <- (x, "data.frame")
+x2 <- as(x, "data.frame")
+x2
+head(x2)
+x <- read_baskets("/home/gise/Documents/Aprendizaje Automatico/datasets20120701/sequences_v2.csv",sep=";",info=c("sequenceID","eventID","SIZE"))
+x2 <- as(x, "data.frame")
+x2
+ruleInduction(x, transactions, confidence = 0.8, control = NULL)
+ruleInduction(x2, transactions, confidence = 0.8, control = NULL)
+s3 <- cspade(t, parameter = list(support=0.03),
+control
+ = list(verbose=TRUE))
+x3 <- cspade(x2, parameter = list(support=0.03),control=F)
+summary(x)
+inspect(misc)
+example(ruleInduction, package = "arulesSequences")
+inspect(misc)
+x <- read_baskets("/home/gise/Documents/Aprendizaje Automatico/datasets20120701/transacciones_v2.basket",sep=",",info=c("sequenceID","eventID","SIZE"))
+ unlist(tapply(seq(t), transactionInfo(t)$sequenceID,
+cspade+         function(x) x - min(x) + 1), use.names = FALSE)
+x4 <-  unlist(tapply(seq(x), transactionInfo(x)$sequenceID,function(x) x - min(x) + 1), use.names = FALSE)
+x4
+x <- read_baskets("/home/gise/Documents/Aprendizaje Automatico/datasets20120701/transacciones_v2.basket",sep=",",info=c("sequenceID","eventID","SIZE"))
+z <- as(zaki, "timedsequences")
+z
+inspect(z)
+s3 <- cspade(t, parameter = list(support=0.03),
+control
+ = list(verbose=TRUE))
+summary(s3)
+t
+summary(t)
+inspect(t)
+q()
+library("tm")
+#diccionario total contiene el diccionario k y corpo
+dfdicci= read.table("/home/gise/Documents/Aprendizaje Automatico/textos tm/dic_total_uniq.txt")
+mdicci = as.matrix(dfdicci)
+vdicci = as.vector(mdicci)
+dicci = Dictionary(vdicci)
+#leyendo cada corpus
+(closk = Corpus(DirSource("/home/gise/Documents/Aprendizaje Automatico/aa/tp_aa_2/data/textoplanotrain.zip/train/k/"), readerControl = list(language="es")))
+(closcorpo = Corpus(DirSource("/home/gise/Documents/Aprendizaje Automatico/aa/tp_aa_2/data/textoplanotrain.zip/train/corpo/"), readerControl = list(language="es")))
+closk <- tm_map(closk,removeWords,stopwords("spanish"))
+closcorpo <- tm_map(closcorpo,removeWords,stopwords("spanish"))
+#uniendo cada corpus
+merge <- c(closk, closcorpo)
+#aplicando el diccionario.
+dtmk = DocumentTermMatrix(merge, list(dictionary=dicci))
+#convirtiendo en data frame
+df.merge<- as.data.frame(inspect(dtmk))
+rownames(df.merge)<- 1:nrow(dtmk)
+class <- c(rep("k",702),rep("corpo",551))
+ncol(df.merge)
+df.merge<- cbind(df.merge,class)
+#guardando dataframe para uso externo como csv
+write.csv(df.merge, "~/weka/tp_aa_2/outputs/dataframediccionario.csv")
+###carpetas.
+filas = nrow(df.merge)
+K = 10
+k = 1
+cantfilesxcarpetas = filas %/% K
+set.seed(5)
+aleatorio = runif(filas)
+vrango = rank(aleatorio)
+bloque = (vrango - 1) %/%  cantfilesxcarpetas + 1
+bloque = as.factor(bloque)
+summary(bloque)
+library("rpart")
+all.err = numeric(0)
+all.mc = table(factor(c(0)))
+for (k in 1:K) {
+arbol = rpart(class ~ ., data= df.merge[bloque!=k,], method="class")
+pred = predict(arbol, newdata= df.merge[bloque==k,], type="class")
+mc = table(df.merge$class[bloque==k], pred)
+all.mc  = rbind(all.mc, mc)
+err = 1.0 - (mc[1,1]+ mc[2,2])/sum(mc)
+all.err = rbind(all.err, err)
+}
+#importancia de las variables.
+library("caret")
+df = read.table('/home/gise/Documents/Aprendizaje Automatico/textos tm/dataframediccionario.csv', header=T, sep=',')
+cerovalores = nearZeroVar(df, freqCut = 95/5, uniqueCut = 10, saveMetrics = TRUE)
+cerovaloresquitar = nearZeroVar(df, freqCut=95/5, uniqueCut = 10)
+quitar = cerovalores[cerovalores$nzv==TRUE,]
+nrow(quitar)
+nrow(cerovalores)
+diccionarionuevo = df[, -cerovaloresquitar]
+#guardo como dataframe el diccionario
+write.csv(diccionarionuevo, '/home/gise/Documents/Aprendizaje Automatico/textos tm/diccionariofiltrado.csv')
+#createFolds(y, k = 10, list = TRUE, returnTrain = FALSE)
+#dibujando el nuevo diccionario.
+#featurePlot(diccionarionuevo[1:276], diccionarionuevo$class, "pairs")
+#armando parametros para que admita cross validation con caret
+fitControl <- trainControl(method = "repeatedcv",
+number = 10,
+repeats = 3,
+returnResamp = "all")
+#cortando ejemplo
+entrenamiento <- sample(seq(along=diccionarionuevo$class), length(diccionarionuevo$class)/2)
+traindata <- diccionarionuevo[entrenamiento,]
+testdata <- diccionarionuevo[-entrenamiento,]
+#Entrenando
+tmp <- subset(traindata, select = X:voz)
+gbmFit <- train (tmp, 
+traindata$class,
+method = "gbm",
+trControl= fitControl,
+verbose=FALSE)
+gbmFit$results
+bestlesscomplex = tolerance(gbmFit$results, "Kappa", 2, maximize=TRUE)
+bestlesscomplex = tolerance(gbmFit$results, "Accuracy", 2, maximize=TRUE)
+cat("Mejores modelos con dos 2 de los mejores: \n")
+gbmFit$results[bestlesscomplex,]
+tmp <- subset(testdata, select = X:voz)
+#earth method
+#prediccion = predict(gbmFit$finalModel, newdata=tmp)
+predictions <- extractPrediction(list(gbmFit), testX = tmp, testY = testdata$class)
+#Mostramos solo los de prueba.
+testpredictions = predictions[predictions$dataType=="Test",]
+#sensibilidad
+sensitivity(testpredictions$pred, testpredictions$obs)
+#matriz de confusión
+confusionMatrix(testpredictions$pred, testpredictions$obs)
+#matriz de contusion de gbmFit3 sin la data de prueba. #para crossvalidations #OJO
+confusionMatrix(gbmFit)
+library(gbmFit)
+library(gbm)
+install.packages("gbm")
+install.packages("gbmFit")
+install.packages("gbm.fit")
+#importancia de las variables.
+library("caret")
+df = read.table('/home/gise/Documents/Aprendizaje Automatico/textos tm/dataframediccionario.csv', header=T, sep=',')
+cerovalores = nearZeroVar(df, freqCut = 95/5, uniqueCut = 10, saveMetrics = TRUE)
+cerovaloresquitar = nearZeroVar(df, freqCut=95/5, uniqueCut = 10)
+quitar = cerovalores[cerovalores$nzv==TRUE,]
+nrow(quitar)
+nrow(cerovalores)
+diccionarionuevo = df[, -cerovaloresquitar]
+#guardo como dataframe el diccionario
+write.csv(diccionarionuevo, '/home/gise/Documents/Aprendizaje Automatico/textos tm/diccionariofiltrado.csv')
+#createFolds(y, k = 10, list = TRUE, returnTrain = FALSE)
+#dibujando el nuevo diccionario.
+#featurePlot(diccionarionuevo[1:276], diccionarionuevo$class, "pairs")
+#armando parametros para que admita cross validation con caret
+fitControl <- trainControl(method = "repeatedcv",
+number = 10,
+repeats = 3,
+returnResamp = "all")
+#cortando ejemplo
+entrenamiento <- sample(seq(along=diccionarionuevo$class), length(diccionarionuevo$class)/2)
+traindata <- diccionarionuevo[entrenamiento,]
+testdata <- diccionarionuevo[-entrenamiento,]
+#Entrenando
+tmp <- subset(traindata, select = X:voz)
+gbmFit <- train (tmp, 
+traindata$class,
+method = "gbm",
+trControl= fitControl,
+verbose=FALSE)
+gbmFit$results
+bestlesscomplex = tolerance(gbmFit$results, "Kappa", 2, maximize=TRUE)
+bestlesscomplex = tolerance(gbmFit$results, "Accuracy", 2, maximize=TRUE)
+cat("Mejores modelos con dos 2 de los mejores: \n")
+gbmFit$results[bestlesscomplex,]
+tmp <- subset(testdata, select = X:voz)
+#earth method
+#prediccion = predict(gbmFit$finalModel, newdata=tmp)
+predictions <- extractPrediction(list(gbm.fit), testX = tmp, testY = testdata$class)
+#Mostramos solo los de prueba.
+testpredictions = predictions[predictions$dataType=="Test",]
+#sensibilidad
+sensitivity(testpredictions$pred, testpredictions$obs)
+#matriz de confusión
+confusionMatrix(testpredictions$pred, testpredictions$obs)
+#matriz de contusion de gbmFit3 sin la data de prueba. #para crossvalidations #OJO
+df = read.table('/home/gise/Documents/Aprendizaje Automatico/textos tm/dataframediccionario.csv', header=T, sep=',')
+cerovalores = nearZeroVar(df, freqCut = 95/5, uniqueCut = 10, saveMetrics = TRUE)
+cerovaloresquitar = nearZeroVar(df, freqCut=95/5, uniqueCut = 10)
+quitar = cerovalores[cerovalores$nzv==TRUE,]
+nrow(quitar)
+nrow(cerovalores)
+diccionarionuevo = df[, -cerovaloresquitar]
+#guardo como dataframe el diccionario
+write.csv(diccionarionuevo, '/home/gise/Documents/Aprendizaje Automatico/textos tm/diccionariofiltrado.csv')
+#createFolds(y, k = 10, list = TRUE, returnTrain = FALSE)
+#dibujando el nuevo diccionario.
+#featurePlot(diccionarionuevo[1:276], diccionarionuevo$class, "pairs")
+#armando parametros para que admita cross validation con caret
+fitControl <- trainControl(method = "repeatedcv",
+number = 10,
+repeats = 3,
+returnResamp = "all")
+#cortando ejemplo
+entrenamiento <- sample(seq(along=diccionarionuevo$class), length(diccionarionuevo$class)/2)
+traindata <- diccionarionuevo[entrenamiento,]
+testdata <- diccionarionuevo[-entrenamiento,]
+#Entrenando
+tmp <- subset(traindata, select = X:voz)
+gbm.fit <- train (tmp, 
+traindata$class,
+method = "gbm",
+trControl= fitControl,
+verbose=FALSE)
+gbm.fit$results
+bestlesscomplex = tolerance(gbm.fit$results, "Kappa", 2, maximize=TRUE)
+bestlesscomplex = tolerance(gbm.fit$results, "Accuracy", 2, maximize=TRUE)
+cat("Mejores modelos con dos 2 de los mejores: \n")
+gbm.fit$results[bestlesscomplex,]
+tmp <- subset(testdata, select = X:voz)
+#earth method
+#prediccion = predict(gbmFit$finalModel, newdata=tmp)
+predictions <- extractPrediction(list(gbm.fit), testX = tmp, testY = testdata$class)
+#Mostramos solo los de prueba.
+testpredictions = predictions[predictions$dataType=="Test",]
+#sensibilidad
+sensitivity(testpredictions$pred, testpredictions$obs)
+#matriz de confusión
+confusionMatrix(testpredictions$pred, testpredictions$obs)
+#matriz de contusion de gbmFit3 sin la data de prueba. #para crossvalidations #OJO
+library("tm")
+#diccionario total contiene el diccionario k y corpo
+dfdicci= read.table("/home/gise/Documents/Aprendizaje Automatico/textos tm/dic_total_uniq.txt")
+mdicci = as.matrix(dfdicci)
+vdicci = as.vector(mdicci)
+dicci = Dictionary(vdicci)
+#leyendo cada corpus
+(closk = Corpus(DirSource("/home/gise/Documents/Aprendizaje Automatico/aa/tp_aa_2/data/textoplanotrain.zip/train/k/"), readerControl = list(language="es")))
+(closcorpo = Corpus(DirSource("/home/gise/Documents/Aprendizaje Automatico/aa/tp_aa_2/data/textoplanotrain.zip/train/corpo/"), readerControl = list(language="es")))
+closk <- tm_map(closk,removeWords,stopwords("spanish"))
+closcorpo <- tm_map(closcorpo,removeWords,stopwords("spanish"))
+#uniendo cada corpus
+merge <- c(closk, closcorpo)
+#aplicando el diccionario.
+dtmk = DocumentTermMatrix(merge, list(dictionary=dicci))
+#convirtiendo en data frame
+df.merge<- as.data.frame(inspect(dtmk))
+rownames(df.merge)<- 1:nrow(dtmk)
+class <- c(rep("k",702),rep("corpo",551))
+ncol(df.merge)
+df.merge<- cbind(df.merge,class)
+#guardando dataframe para uso externo como csv
+write.csv(df.merge, "/home/gise/Documents/Aprendizaje Automatico/textos tm/dataframediccionario")
+df = read.table('/home/gise/Documents/Aprendizaje Automatico/textos tm/dataframediccionario.csv', header=T, sep=',')
+cerovalores = nearZeroVar(df, freqCut = 95/5, uniqueCut = 10, saveMetrics = TRUE)
+cerovaloresquitar = nearZeroVar(df, freqCut=95/5, uniqueCut = 10)
+quitar = cerovalores[cerovalores$nzv==TRUE,]
+nrow(quitar)
+nrow(cerovalores)
+diccionarionuevo = df[, -cerovaloresquitar]
+#guardo como dataframe el diccionario
+write.csv(diccionarionuevo, '/home/gise/Documents/Aprendizaje Automatico/textos tm/diccionariofiltrado.csv')
+#createFolds(y, k = 10, list = TRUE, returnTrain = FALSE)
+#dibujando el nuevo diccionario.
+#featurePlot(diccionarionuevo[1:276], diccionarionuevo$class, "pairs")
+#armando parametros para que admita cross validation con caret
+fitControl <- trainControl(method = "repeatedcv",
+number = 10,
+repeats = 3,
+returnResamp = "all")
+#cortando ejemplo
+entrenamiento <- sample(seq(along=diccionarionuevo$class), length(diccionarionuevo$class)/2)
+traindata <- diccionarionuevo[entrenamiento,]
+testdata <- diccionarionuevo[-entrenamiento,]
+#Entrenando
+tmp <- subset(traindata, select = X:voz)
+gbmfit <- train (tmp, 
+traindata$class,
+method = "gbm",
+trControl= fitControl,
+verbose=FALSE)
+gbmfit$results
+bestlesscomplex = tolerance(gbmfit$results, "Kappa", 2, maximize=TRUE)
+bestlesscomplex = tolerance(gbmfit$results, "Accuracy", 2, maximize=TRUE)
+cat("Mejores modelos con dos 2 de los mejores: \n")
+gbmfit$results[bestlesscomplex,]
+tmp <- subset(testdata, select = X:voz)
+#earth method
+#prediccion = predict(gbmFit$finalModel, newdata=tmp)
+predictions <- extractPrediction(list(gbmfit), testX = tmp, testY = testdata$class)
+#Mostramos solo los de prueba.
+testpredictions = predictions[predictions$dataType=="Test",]
+#sensibilidad
+sensitivity(testpredictions$pred, testpredictions$obs)
+#matriz de confusión
+confusionMatrix(testpredictions$pred, testpredictions$obs)
+#matriz de contusion de gbmFit3 sin la data de prueba. #para crossvalidations #OJO
+confusionMatrix(gbmfit)
+library(gbm)
+tmp <- subset(traindata, select = X:voz)
+gbmfit <- train (tmp, 
+traindata$class,
+method = "gbm",
+trControl= fitControl,
+verbose=FALSE)
+tmp <- subset(traindata, select = X:voz)
+gbmfit <- train (tmp, traindata$class,method = "gbm",trControl= fitControl,verbose=FALSE)
+gbmfit <- train (tmp, traindata$class,method ="gbm",trControl= fitControl,verbose=FALSE)
+gbmfit <- train(tmp,traindata$class,method="gbm",trControl=fitControl,verbose=F)
+instal.packages("e1071")
+install.packages("e1071")
+library(e1071)
+df = read.table('/home/gise/Documents/Aprendizaje Automatico/textos tm/dataframediccionario.csv', header=T, sep=',')
+cerovalores = nearZeroVar(df, freqCut = 95/5, uniqueCut = 10, saveMetrics = TRUE)
+cerovaloresquitar = nearZeroVar(df, freqCut=95/5, uniqueCut = 10)
+quitar = cerovalores[cerovalores$nzv==TRUE,]
+nrow(quitar)
+nrow(cerovalores)
+diccionarionuevo = df[, -cerovaloresquitar]
+write.csv(diccionarionuevo, '/home/gise/Documents/Aprendizaje Automatico/textos tm/diccionariofiltrado.csv')
+#createFolds(y, k = 10, list = TRUE, returnTrain = FALSE)
+#dibujando el nuevo diccionario.
+#featurePlot(diccionarionuevo[1:276], diccionarionuevo$class, "pairs")
+#armando parametros para que admita cross validation con caret
+fitControl <- trainControl(method = "repeatedcv",
+number = 10,
+repeats = 3,
+returnResamp = "all")
+#cortando ejemplo
+entrenamiento <- sample(seq(along=diccionarionuevo$class), length(diccionarionuevo$class)/2)
+traindata <- diccionarionuevo[entrenamiento,]
+testdata <- diccionarionuevo[-entrenamiento,]
+#Entrenando
+tmp <- subset(traindata, select = X:voz)
+gbmfit <- train (tmp, traindata$class,method = "gbm",trControl= fitControl,verbose=FALSE)
+gbmfit$results
+bestlesscomplex = tolerance(gbmfit$results, "Kappa", 2, maximize=TRUE)
+bestlesscomplex = tolerance(gbmfit$results, "Accuracy", 2, maximize=TRUE)
+cat("Mejores modelos con dos 2 de los mejores: \n")
+gbmfit$results[bestlesscomplex,]
+tmp <- subset(testdata, select = X:voz)
+#earth method
+#prediccion = predict(gbmFit$finalModel, newdata=tmp)
+predictions <- extractPrediction(list(gbmfit), testX = tmp, testY = testdata$class)
+#Mostramos solo los de prueba.
+testpredictions = predictions[predictions$dataType=="Test",]
+#sensibilidad
+sensitivity(testpredictions$pred, testpredictions$obs)
+#matriz de confusión
+confusionMatrix(testpredictions$pred, testpredictions$obs)
+#matriz de contusion de gbmFit3 sin la data de prueba. #para crossvalidations #OJO
+confusionMatrix(gbmfit)
+library(RWeka)
+for (k in 1:K) {
+svm <- AdaBoostM1(class ~ ., data = df.merge [bloque!=k,], method="class",
+control = Weka_control(W = "DecisionStump"))
+table(predict(m1), df.merge$class)}
+Weka_control()
+CONTROL()
+WOOW
+WOOK
+WOOW()
+library(RWeka)
+svm <- AdaBoostM1(class ~ ., data = df.merge
+control = Weka_control(W = "DecisionStump"))
+table(predict(m1), df.merge$class)}
+evaluate_Weka_classifier(object, newdata = NULL, cost = NULL,
+numFolds = 0, complexity = FALSE,
+)
+svm <- AdaBoostM1(class ~ ., data = df.merge,control = Weka_control(W = "DecisionStump"))
+svm <- AdaBoostM1(Class ~ ., data = df.merge,control = Weka_control(W = "DecisionStump"))
+svm <- AdaBoostM1(class ~ ., data = df.merge,control = Weka_control(W = "DecisionStump"))
+head df.merge
+head(df.merge)
+svm <- AdaBoostM1(class~ ., data = df.merge,control = Weka_control(W = "DecisionStump"))
+savehistory(file=/home/gise/Documents/Aprendizaje Automatico/textos tm/Rhistory)
+savehistory(file="/home/gise/Documents/Aprendizaje Automatico/textos tm/Rhistory")
