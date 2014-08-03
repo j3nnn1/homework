@@ -1,0 +1,14 @@
+
+t = [0:0.01:0.98]
+y1 = sin(2*pi*4*t)
+plot(t, y1)
+hold on;
+y2 = cos(2*pi*4*t)
+plot(t, y2, 'r')
+
+ylabel('time')
+xlabel('value')
+
+legend('sin', 'cos')
+title('my plot')
+print('-dsvg', 'myplot.png')

@@ -1,0 +1,84 @@
+
+A = [1 2; 3 4; 5 6]
+
+B = [11 12; 13 14; 15 16]
+
+C = [1 1; 2 2 ]
+
+A * C
+
+A .* B % each elemento from A is multiply by a element B
+
+A .^2
+
+v = [1; 2; 3]
+
+1 ./v 
+
+1 ./A 
+
+log(v)
+
+exp(v)
+
+abs(v)
+
+-v
+
+v + 1
+
+v + ones(length(v), 1)
+
+A' %transpose matrix A
+
+a = [1 15 2 0.5]
+b = [1 15; 2 0.5]
+val = max(a)
+[val, ind] =  max(a)
+[val, ind] =  max(b)
+a<3
+find(a<3)
+[val, ind] = find(a<3)
+
+%create a matrix
+magic(3)
+
+%sum
+prod(a)
+ceil(a)
+floor(a)
+rand(3)
+
+max(A, [], 1) %find the maximun value for each column
+
+max(A, [], 2) %find the maximun value for each row
+
+max(A(:)) %find the maximun value for  entire matrix
+
+sum(A, 1) % sum for each column
+
+sum(A, 2) % sum for each row
+
+% rate classification or accuracy
+A .* eye(9) %only diag stay with numbers
+
+%to sum diag
+sum(sum(A.*eye(3)))
+
+%voltear la diagonal de la matrix
+flipud(eye(3))
+
+pinv(A)
+
+inv(A)
+
+
+
+
+
+
+
+
+
+
+
