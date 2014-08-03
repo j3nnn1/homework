@@ -21,4 +21,24 @@ plot(wiki$usdmax, wiki$medium, col=wiki$medium)
 plot(wiki$avg, wiki$medium, col=wiki$medium) 
 summary(wiki$medium)
 
+library(ggplot2);
+qplot(wiki$sum, wiki$medium)
+qplot(wiki$avg, wiki$medium, col=wiki$medium);
+qplot(wiki$usdmax, wiki$medium, col=wiki$medium);
+
+smoothScatter(log(wiki$count), log(wiki$avg))
+smoothScatter(log(wiki$count), log(wiki$avg), colramp=colorRampPalette(c('white', 'blue')))
+smoothScatter(log(wiki$count), log(wiki$usdmax), colramp=colorRampPalette(c('white', 'deeppink')))
+
+
+wiki$stop_date = as.numeric(wiki$stop_date)
+wiki$start_date = as.numeric(wiki$start_date)
+wikinumeric = wiki[,-c(1,2)]
+cors = cor(wikinumeric, use='pair')
+
+require(lattice)
+levelplot(cors)
+image(cors, col=col.corrgram(7)) # rainbow, heat.colors, topo.colors, terrain.colors 
+image(cors, col = heat.colors(7))
+axis(1, at=seq(0,1, length=nrow(cors)), labels=row.names(cors))
 
